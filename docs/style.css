@@ -11,16 +11,6 @@ header, nav, main, footer {
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
 a {
     text-decoration: none;
 }
@@ -36,15 +26,57 @@ nav {
     overflow: hidden;
 }
 
-/* Style the dropdown menu */
-.dropdown-menu {
+
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .subnav .subnavbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: #002b00;
+  }
+  
+  .subnav-content {
     display: none;
     position: absolute;
-    background-color: white;
+    left: 0;
+    background-color: red;
+    width: 100%;
     z-index: 1;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-menu {
+  }
+  
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+  
+  .subnav:hover .subnav-content {
     display: block;
-}
+  }
