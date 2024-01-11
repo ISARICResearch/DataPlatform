@@ -26,13 +26,13 @@ a {
 }
 
 footer {
-    background: #333;
+    background: #e00047;
     color: #fff;
     margin-top: 20px;
 }
 
 nav {
-    background-color: #e00047;
+    background: #e00047;
     overflow: hidden;
 }
 
