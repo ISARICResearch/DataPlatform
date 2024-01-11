@@ -1,37 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
     background: #ffffea;
-}
-
-header, nav, main, footer {
-    padding: 20px;
-    text-align: center;
-}
-
-a {
-    text-decoration: none;
-}
-
-footer {
-    background: #e00047;
-    color: #fff;
-    margin-top: 20px;
-}
-
-nav {
-    background: #e00047;
+  }
+  
+  .navbar {
     overflow: hidden;
-}
-
-
-
-.navbar a {
+    background-color: #e00047; 
+  }
+  
+  .navbar a {
     float: left;
     font-size: 16px;
-    color: white;
+    color: #ffffea;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -54,14 +35,14 @@ nav {
   }
   
   .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: #002b00;
+    background-color: #475160;
   }
   
   .subnav-content {
     display: none;
     position: absolute;
     left: 0;
-    background-color: red;
+    background-color: #475160;
     width: 100%;
     z-index: 1;
   }
