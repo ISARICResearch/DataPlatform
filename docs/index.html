@@ -6,14 +6,33 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to a CSS file for styling -->
 </head>
 <body>
+
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="data-capture.html">Data Capture</a></li>
-            <li><a href="data-processing.html">Data Processing</a></li>
-            <li><a href="data-analysis.html">Data Analysis</a></li>
+            <li class="dropdown">
+                <a href="data-capture.html">Data Capture</a>
+                <ul class="dropdown-menu">
+                    <li><a href="data-capture-arch.html">ARCH</a></li>
+                    <li><a href="data-capture-bridge.html">BRIDGE</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="data-processing.html">Data Processing</a>
+                <li><a href="data-processing-autoparser.html">Autoparser</a></li>
+                <li><a href="data-processing-fhir.html">FHIR Implementation</a></li>
+            </li>
+            <li class="dropdown">
+                <a href="data-analysis.html">Data Analysis</a>
+                <li><a href="data-analysis-summary.html">Summary</a></li>
+                <li><a href="data-analysis-answers.html">Answers</a></li>
+                <li><a href="data-analysis-transformation.html">Transformation</a></li>
+
+
+            </li>
         </ul>
-    </nav>
+    </nav>    
     
     <header>
         <h1>ISARIC Data Platform</h1>
