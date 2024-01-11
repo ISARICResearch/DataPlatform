@@ -27,37 +27,66 @@ body {
     font-size: 16px;  
     border: none;
     outline: none;
-    color: white;
+    color: #ffffea;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
   }
   
+  .nav-link {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    height: 50px; /* Adjust the height as needed */
+  }
+  
+  .nav-link img {
+    height: 50%;
+    vertical-align: middle;
+  }
+
   .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: #475160;
+    background-color: #e00047;
   }
   
   .subnav-content {
     display: none;
     position: absolute;
     left: 0;
-    background-color: #475160;
+    background-color: #e00047;
     width: 100%;
     z-index: 1;
   }
   
   .subnav-content a {
     float: left;
-    color: white;
+    color: #ffffea;
     text-decoration: none;
   }
   
   .subnav-content a:hover {
-    background-color: #eee;
+    background-color: #ffffea;
     color: black;
   }
   
   .subnav:hover .subnav-content {
     display: block;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e00047;
+    color: #ffffea;
+    text-align: center;
+ }
+
+ .content {
+    padding: 20px; /* Adjust the value to increase or decrease the space */
   }

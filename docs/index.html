@@ -2,109 +2,62 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+<link rel="stylesheet" href="style.css">
 
-.navbar {
-  overflow: hidden;
-  background-color: #333; 
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.subnav {
-  float: left;
-  overflow: hidden;
-}
-
-.subnav .subnavbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .subnav:hover .subnavbtn {
-  background-color: red;
-}
-
-.subnav-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  background-color: red;
-  width: 100%;
-  z-index: 1;
-}
-
-.subnav-content a {
-  float: left;
-  color: white;
-  text-decoration: none;
-}
-
-.subnav-content a:hover {
-  background-color: #eee;
-  color: black;
-}
-
-.subnav:hover .subnav-content {
-  display: block;
-}
-</style>
 </head>
 <body>
 
 <div class="navbar">
-  <a href="#home">Home</a>
+  
+  <a href="#home" class="nav-link"><img src="isaric_logo.png" alt="Home"></a>
   <div class="subnav">
-    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Data Capture<i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#company">Company</a>
-      <a href="#team">Team</a>
-      <a href="#careers">Careers</a>
+      <a href="#company">ARCH</a>
+      <a href="#team">BRIDGE</a>
     </div>
   </div> 
   <div class="subnav">
-    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Data Processing<i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#bring">Bring</a>
-      <a href="#deliver">Deliver</a>
-      <a href="#package">Package</a>
-      <a href="#express">Express</a>
+      <a href="#bring">Autoparser</a>
+      <a href="#deliver">FHIR Implementation</a>
+
     </div>
   </div> 
   <div class="subnav">
-    <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Data Analysis<i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#link1">Link 1</a>
-      <a href="#link2">Link 2</a>
-      <a href="#link3">Link 3</a>
-      <a href="#link4">Link 4</a>
+      <a href="#link1">Summary</a>
+      <a href="#link2">Research Answers</a>
+      <a href="#link3">Transformations</a>
     </div>
   </div>
   <a href="#contact">Contact</a>
 </div>
 
-<div style="padding:0 16px">
-  <h3>Subnav/dropdown menu inside a Navigation Bar</h3>
-  <p>Hover over the "about", "services" or "partners" link to see the sub navigation menu.</p>
-</div>
+<div class="content">
+    <h2>Welcome to the ISARIC Data Platform</h2>
+    <p>The official repository for the ISARIC Data Platform, a collaborative and patient-oriented hub designed to drive global clinical studies in the face of severe infections and rapidly emerging public health threats.</p>
+  
+    <h3>Our Platform Serves Three Pivotal Roles:</h3>
+    <ul>
+      <li><strong>Data Capture:</strong> Ensuring the integrity and reliability of data from the outset, this segment is dedicated to the meticulous acquisition of clinical data.</li>
+      <li><strong>Data Processing:</strong> Focused on data transformation and preparation, this area is key to maintaining data quality and making it suitable for in-depth analysis.</li>
+      <li><strong>Data Analysis:</strong> Here, we delve into the processed data to unearth vital insights, employing state-of-the-art analytical techniques to inform decision-making and contribute to life-saving knowledge.</li>
+    </ul>
+  
+    <p>The ISARIC Data Platform is at the forefront of tackling critical health challenges. By fostering a collaborative environment, we support the development and execution of crucial research protocols.</p>
+  
+    <h3>Our Goal:</h3>
+    <p>Our goal is to maximize the availability of clinical information and generate new knowledge, thereby having a profound impact on public health and saving lives. This repository is the heart of our collaborative efforts, documenting and supporting the development of tools and methodologies that empower our mission.</p>
+  </div>
+  
+  
+
+<div class="footer">
+    <p>Footer</p>
+  </div>
 
 </body>
 </html>
