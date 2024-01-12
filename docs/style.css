@@ -1,81 +1,65 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background: white;
-  }
-  
-  .navbar {
-    overflow: hidden;
-    background-color: #e00047; 
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .subnav {
-    float: left;
-    overflow: hidden;
-  }
-  
-  .subnav .subnavbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  
-  .nav-link {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    height: 50px; /* Adjust the height as needed */
-  }
-  
-  .nav-link img {
-    height: 50%;
-    vertical-align: middle;
-  }
+* {box-sizing: border-box;}
 
-  .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: #e00047;
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+#navbar a {
+  float: left;
+  color: #e00047;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  background-color: #ffffea;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #e00047;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
   }
-  
-  .subnav-content {
-    display: none;
-    position: absolute;
-    left: 0;
-    background-color: #e00047;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .subnav-content a {
-    float: left;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .subnav-content a:hover {
-    background-color: white;
-    color: black;
-  }
-  
-  .subnav:hover .subnav-content {
+  #navbar a {
+    float: none;
     display: block;
+    text-align: left;
   }
+  #navbar-right {
+    float: none;
+  }
+}
 
   .footer {
     position: fixed;

@@ -7,57 +7,55 @@
 </head>
 <body>
 
-<div class="navbar">
-  
-  <a href="#home" class="nav-link"><img src="isaric_logo.png" alt="Home" width="auto" height="500"></a>
-  <div class="subnav">
-    <button class="subnavbtn">Data Capture<i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#company">ARCH</a>
-      <a href="#team">BRIDGE</a>
-    </div>
-  </div> 
-  <div class="subnav">
-    <button class="subnavbtn">Data Processing<i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#bring">Autoparser</a>
-      <a href="#deliver">FHIR Implementation</a>
-
-    </div>
-  </div> 
-  <div class="subnav">
-    <button class="subnavbtn">Data Analysis<i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
-      <a href="#link1">Summary</a>
-      <a href="#link2">Research Answers</a>
-      <a href="#link3">Transformations</a>
-    </div>
+<div id="navbar">
+  <a href="index.html"> <!-- Wrap the logo with an anchor tag and specify the href -->
+    <img src="isaric_logo.png" id="logo" alt="Home" width="auto" height="140px">
+  </a>
+  <div id="navbar-right">
+    <a href="data_capture.html">Data Capture</a>
+    <a href="#contact">Data Processing</a>
+    <a href="#about">Data Analysis</a>
   </div>
-  <a href="#contact">Contact</a>
 </div>
 
-<div class="content_box">
-    <h2>Welcome to the ISARIC Data Platform</h2>
-    <p>The official repository for the ISARIC Data Platform, a collaborative and patient-oriented hub designed to drive global clinical studies in the face of severe infections and rapidly emerging public health threats.</p>
-  
-    <h3>Our Platform Serves Three Pivotal Roles:</h3>
-    <ul>
-      <li><strong>Data Capture:</strong> Ensuring the integrity and reliability of data from the outset, this segment is dedicated to the meticulous acquisition of clinical data.</li>
-      <li><strong>Data Processing:</strong> Focused on data transformation and preparation, this area is key to maintaining data quality and making it suitable for in-depth analysis.</li>
-      <li><strong>Data Analysis:</strong> Here, we delve into the processed data to unearth vital insights, employing state-of-the-art analytical techniques to inform decision-making and contribute to life-saving knowledge.</li>
-    </ul>
-  
-    <p>The ISARIC Data Platform is at the forefront of tackling critical health challenges. By fostering a collaborative environment, we support the development and execution of crucial research protocols.</p>
-  
-    <h3>Our Goal:</h3>
-    <p>Our goal is to maximize the availability of clinical information and generate new knowledge, thereby having a profound impact on public health and saving lives. This repository is the heart of our collaborative efforts, documenting and supporting the development of tools and methodologies that empower our mission.</p>
-  </div>
-  
-  
+<div style="margin-top:210px;padding:250px 250px ;font-size:20px">
+  <h2>Welcome to the ISARIC Data Platform</h2>
+  <p>The official repository for the ISARIC Data Platform, a collaborative and patient-oriented hub designed to drive global clinical studies in the face of severe infections and rapidly emerging public health threats.</p>
 
+  <h3>Our Platform Serves Three Pivotal Roles:</h3>
+  <ul>
+    <li><strong>Data Capture:</strong> Ensuring the integrity and reliability of data from the outset, this segment is dedicated to the meticulous acquisition of clinical data.</li>
+    <li><strong>Data Processing:</strong> Focused on data transformation and preparation, this area is key to maintaining data quality and making it suitable for in-depth analysis.</li>
+    <li><strong>Data Analysis:</strong> Here, we delve into the processed data to unearth vital insights, employing state-of-the-art analytical techniques to inform decision-making and contribute to life-saving knowledge.</li>
+  </ul>
+
+  <p>The ISARIC Data Platform is at the forefront of tackling critical health challenges. By fostering a collaborative environment, we support the development and execution of crucial research protocols.</p>
+
+  <h3>Our Goal:</h3>
+  <p>Our goal is to maximize the availability of clinical information and generate new knowledge, thereby having a profound impact on public health and saving lives. This repository is the heart of our collaborative efforts, documenting and supporting the development of tools and methodologies that empower our mission.</p>
+</div>
+
+<div class="footer">
+  <p>ISARIC Data Platform</p></div>
+
+
+
+<script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.height = "85px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.height = "140px";
+  }
+}
+</script>
 <div class="footer">
     <p>ISARIC Data Platform</p>
   </div>
-
 </body>
 </html>
