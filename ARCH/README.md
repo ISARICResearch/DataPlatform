@@ -26,7 +26,7 @@ The ARCH repository follows a structured organization to maintain different vers
 
    - **Clinical Characterization XML:** This XML file provides a recommended configuration and structure for clinical characterization studies. It includes information about users, events, project settings, and functionality, serving as a reference for setting up clinical characterization studies.
 
-   - **arch:** The "arch" file is a machine-readable CSV (Comma-Separated Values) file that forms the core of ARCH. It contains a comprehensive list of questions that can be asked in a CRF during outbreaks. Each question is defined with specific parameters, including variable names, coded answers, limits, types, skip logic, and more.
+   - **ARCH:** The "ARCH" file is a machine-readable CSV (Comma-Separated Values) file that forms the core of ARCH. It contains a comprehensive list of questions that can be asked in a CRF during outbreaks. Each question is defined with specific parameters, including variable names, coded answers, limits, types, skip logic, and more.
 
    - **Lists of Standardized Terms:** These files include predefined sets of standardized vocabulary used to describe and categorize various aspects of CRF answers. Standardized terms ensure consistency in data capture, covering items such as comorbidities, symptoms, and medications.
 
