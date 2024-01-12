@@ -44,8 +44,6 @@ In a centralized repository structure like ARCH, managing version identification
 
 - **Patch Version:** The patch version number represents bug fixes, branching patches, writing improvements, or small updates that address issues discovered in previous versions. These updates do not introduce new features or change existing functionality. Patch versions are typically used for corrections of branching logic errors and improvements in the formulation of questions.
 
-
-
 ## How to Use ARCH
 
 If you want to use ARCH for your research or study, follow these steps:
