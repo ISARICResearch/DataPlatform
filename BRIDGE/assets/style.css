@@ -1,0 +1,13 @@
+.ag-cell {
+    white-space: normal !important;
+}
+
+.form-separator-row  {
+    background-color: #E00047 !important;
+    font-size: 20px !important;
+}
+
+.section-separator-row  {
+    background-color: #00b2b0 !important;
+    font-size: 14px !important;
+}
