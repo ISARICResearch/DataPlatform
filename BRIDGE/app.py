@@ -12,7 +12,7 @@ import paperCRF
 import json
 import bridge_modals 
 from dash import callback_context
-from pdf2docx import Converter
+#from pdf2docx import Converter
 from datetime import datetime
 
 
