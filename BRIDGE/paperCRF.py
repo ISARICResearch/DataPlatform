@@ -8,6 +8,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from copy import deepcopy
 from reportlab.platypus import Spacer
+from io import BytesIO
 
 try:
 # Register the font
@@ -506,7 +507,7 @@ def generate_pdf(data_dictionary, output_pdf_path, version, db_name):
 
     doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
 
-
+'''
 def generate_completionguide(data_dictionary, output_pdf_path, version, db_name):
     data_dictionary=data_dictionary.copy()
     root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
@@ -546,11 +547,6 @@ def generate_completionguide(data_dictionary, output_pdf_path, version, db_name)
 
     elements.append(Paragraph("<br/><br/>"))  # Add some space
 
-
-    #doc = SimpleDocTemplate(output_pdf_path, pagesize=letter)
-    #elements = []
-
-    # Get the predefined styles
     styles = getSampleStyleSheet()
     
 
@@ -562,55 +558,56 @@ def generate_completionguide(data_dictionary, output_pdf_path, version, db_name)
         elements.append(Paragraph(row['Definition'], normal_style))  # Add some space
         elements.append(Paragraph(row['Completion Guideline'],normal_style))
         
-
-    # Grouping by 'Section Header' instead of 'Form Name'
-
-
-
-    '''for form_name in data_dictionary['Form'].drop_duplicates():
-
-        group = data_dictionary[data_dictionary['Form'] == form_name]
-
-        # Add form name as a title for each table
-        elements.append(Paragraph(form_name, header_style))
-        data = []
-        current_section = None
-
-        for index, row in group.iterrows():
-
-            # Add new section
-            if row['Section'] != current_section and pd.notna(row['Section']):
-                current_section = row['Section']
-                data.append([Paragraph(current_section, header_style)])
-                
-            if row['Type'] in ['radio', 'dropdown', 'checkbox']:
-                formatted_choices = format_choices(row['Answer Options'],row['Type'] )
-                data.append([Paragraph(row['Question'], normal_style),Paragraph(row['Definition'], normal_style),Paragraph(row['Completion Guideline'], normal_style)])
-            elif row['Validation'] == 'date_dmy':
-                date_str = """[<font color="lightgrey">_D_</font>][<font color="lightgrey">_D_</font>]/[<font color="lightgrey">_M_</font>][<font color="lightgrey">_M_</font>]/[_2_][_0_][<font color="lightgrey">_Y_</font>][<font color="lightgrey">_Y_</font>]"""
-                data.append([Paragraph(row['Question'], normal_style),Paragraph(row['Definition'], normal_style),Paragraph(row['Completion Guideline'], normal_style)]) # Placeholder for date input
-            else:
-                data.append([Paragraph(row['Question'], normal_style),Paragraph(row['Definition'], normal_style),Paragraph(row['Completion Guideline'], normal_style) ])  # Placeholder for text input
-
-        table = Table(data, colWidths=[inch,2*inch, 3*inch])
-        #table = Table(data)                
-        style = TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.lightgrey),
-            ('GRID', (0, 0), (-1, -1), 1, colors.black),
-            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-            ('SPAN', (0, 0), (-1, 0))
-        ])
-
-        for idx, _ in enumerate(data):
-            if len(data[idx]) == 1:  # it's a section
-                style.add('BACKGROUND', (0, idx), (-1, idx), colors.grey)
-                style.add('SPAN', (0, idx), (-1, idx))
-
-        table.setStyle(style)
-        elements.append(table)'''
-
-
     doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+'''
+
+from io import BytesIO
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
+import pandas as pd
+from copy import deepcopy
+
+def generate_completionguide(data_dictionary, version, db_name):
+    data_dictionary = data_dictionary.copy()
+    root = 'https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
+    icc_version_path = root + version
+    details = pd.read_csv(icc_version_path + '/paper_like_details.csv', encoding='latin-1')
+    
+    buffer = BytesIO()  # Use BytesIO object for in-memory PDF generation
+    doc = SimpleDocTemplate(buffer, pagesize=letter)
+    elements = []
+
+    # Get the predefined styles and configure them
+    styles = getSampleStyleSheet()
+    normal_style = deepcopy(styles['Normal'])
+    normal_style.fontSize = 8
+    normal_style.leading = 10
+    normal_style.fontName = 'DejaVuSans'
+
+    header_style = deepcopy(styles['Heading1'])
+    header_style.fontSize = 10
+    header_style.leading = 12
+    header_style.fontName = 'DejaVuSans-Bold'
+
+    # Assume 'header_footer' function is defined elsewhere
+    # and 'data_dictionary' processing is as before
+
+    # Process data_dictionary and add Paragraphs to elements
+    data_dictionary['Section'].replace('', pd.NA, inplace=True)
+    data_dictionary['Section'].fillna(method='ffill', inplace=True)
+
+    for index, row in data_dictionary.iterrows():
+        elements.append(Paragraph(row['Question'], header_style))
+        elements.append(Paragraph(row['Definition'], normal_style))
+        elements.append(Paragraph(row['Completion Guideline'], normal_style))
+
+    # Build the document
+    doc.build(elements)  # Removed the onFirstPage and onLaterPages for simplicity
+
+    # Move the cursor of the BytesIO object to the beginning
+    buffer.seek(0)
+    return buffer.getvalue()  # Return the PDF data
 
 
 

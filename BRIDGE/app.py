@@ -14,7 +14,8 @@ import bridge_modals
 from dash import callback_context
 #from pdf2docx import Converter
 from datetime import datetime
-
+import io
+from zipfile import ZipFile
 
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'])
@@ -317,11 +318,13 @@ app.layout = html.Div(
         preset_column,
         tree_column,
         main_content,
+        dcc.Download(id="download-dataframe-csv"),
+        dcc.Download(id='download-compGuide-pdf'),
         bridge_modals.variableInformation_modal(),
         dcc.Loading(id="loading-1",
                     type="default",
-                    children=html.Div(id="loading-output-1")
-    )
+                    children=html.Div(id="loading-output-1"),
+        )
     ]
 )
 
@@ -646,7 +649,7 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
     return dash.no_update
 
 @app.callback(
-    Output("loading-output-1", "children"),  
+    [Output("loading-output-1", "children"),Output("download-dataframe-csv", "data"),Output("download-compGuide-pdf", "data")]  ,
     [Input('crf_generate', 'n_clicks'),Input('selected_data-store','data')],  
     State('crf_name', 'value'),
     prevent_initial_call=True
@@ -657,20 +660,22 @@ def on_generate_click(n_clicks,json_data, crf_name):
     
     if n_clicks is None:
         # Return empty or initial state if button hasn't been clicked
-        return ""
+        return "", None, None
     # Return the text from 'crf_name' input field
     if json_data is None:
-        return 'No data available'
+        return 'No data available',None, None
     selected_variables_fromData= pd.read_json(json_data, orient='split')
 
     path='C:/Users/egarcia/OneDrive - Nexus365/Projects/CBCG/Outputs/'
     date=datetime.today().strftime('%Y-%m-%d')
-    '''
-    paperCRF.generate_completionguide(selected_variables_fromData,path+crf_name+'_Completion_Guide_'+date+'.pdf',currentVersion, crf_name)
+    
+    #paperCRF.generate_completionguide(selected_variables_fromData,path+crf_name+'_Completion_Guide_'+date+'.pdf',currentVersion, crf_name)
+    
     datadiccDisease=arch.generateCRF(selected_variables_fromData,crf_name)
-    datadiccDisease.to_csv(path+crf_name+'_'+date+'.csv',index=False, encoding='utf8')
-    paperCRF.generate_pdf(datadiccDisease,path+crf_name+'_'+date+'.pdf',currentVersion, crf_name)
-    '''
+    
+    #datadiccDisease.to_csv(path+crf_name+'_'+date+'.csv',index=False, encoding='utf8')
+    #paperCRF.generate_pdf(datadiccDisease,path+crf_name+'_'+date+'.pdf',currentVersion, crf_name)
+    
                
     '''# Create a PDF to Word converter
     cv = Converter('dataDiccs/'+crf_name+'_'+date+'.pdf')
@@ -681,10 +686,15 @@ def on_generate_click(n_clicks,json_data, crf_name):
     # Close the converter
     cv.close()'''
 
+    df=datadiccDisease.copy()
+    output = io.BytesIO()
+    df.to_csv(output, index=False, encoding='utf8')
+    output.seek(0)
+    pdf_data = paperCRF.generate_completionguide(selected_variables_fromData, currentVersion, crf_name)
 
 
-    return ""
+    return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf')
 
 if __name__ == "__main__":
-    #app.run_server(debug=True)
-    app.run_server(debug=True, host='0.0.0.0', port='8080')
+    app.run_server(debug=True)
+    #app.run_server(debug=True, host='0.0.0.0', port='8080')
