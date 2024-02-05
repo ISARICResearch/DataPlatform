@@ -10,20 +10,7 @@ from datetime import datetime
 
 
 def getARCHVersions():
-    '''g = Github(token)
-    repo = g.get_repo("EstebanGarciaG/ISARIC_CORE_CRF_test")
-    contents = repo.get_contents("")
-    files=[]
-    versions=[]
-    while contents:
-         file_content = contents.pop(0)
-         if file_content.type == "dir":
-             contents.extend(repo.get_contents(file_content.path))
-         else:
-             file=file_content.path
-             files.append(file)
-             versions.append(file.split('/')[1])'''
-    
+
     # GitHub API URL for the contents of the repository
     repo_name = "ISARICResearch/DataPlatform"
     path = "ARCH"
@@ -31,7 +18,7 @@ def getARCHVersions():
 
     # Make the request
     response = requests.get(url)
-
+    folder_names=[]
     # Check if the request was successful
     if response.status_code == 200:
         contents = response.json()
@@ -39,7 +26,6 @@ def getARCHVersions():
         
     else:
         print("Failed to retrieve data:", response.status_code)
-    
     
     versions=set(folder_names)
     parsed_versions = [tuple(map(int, version.split('ARCH')[1].split('.'))) for version in versions]
