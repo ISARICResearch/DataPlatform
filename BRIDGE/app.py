@@ -696,5 +696,5 @@ def on_generate_click(n_clicks,json_data, crf_name):
     return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf')
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
-    #app.run_server(debug=True, host='0.0.0.0', port='8080')
+    #app.run_server(debug=True)
+    app.run_server(debug=True, host='0.0.0.0', port='8080')
