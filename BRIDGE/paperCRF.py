@@ -9,9 +9,13 @@ from reportlab.pdfbase.ttfonts import TTFont
 from copy import deepcopy
 from reportlab.platypus import Spacer
 
+try:
 # Register the font
-pdfmetrics.registerFont(TTFont('DejaVuSans', 'assets/fonts/DejaVuSans.ttf'))
-pdfmetrics.registerFont(TTFont('DejaVuSans-Bold', 'assets/fonts/DejaVuSans-Bold.ttf'))
+    pdfmetrics.registerFont(TTFont('DejaVuSans', 'BRIDGE/assets/fonts/DejaVuSans.ttf'))
+    pdfmetrics.registerFont(TTFont('DejaVuSans-Bold', 'BRIDGE/assets/fonts/DejaVuSans-Bold.ttf'))
+except:
+    pdfmetrics.registerFont(TTFont('DejaVuSans', 'assets/fonts/DejaVuSans.ttf'))
+    pdfmetrics.registerFont(TTFont('DejaVuSans-Bold', 'assets/fonts/DejaVuSans-Bold.ttf'))
 line_placeholder='_' * 30
 
 def header_footer(canvas, doc):
