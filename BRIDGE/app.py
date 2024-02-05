@@ -15,10 +15,7 @@ from dash import callback_context
 from pdf2docx import Converter
 from datetime import datetime
 
-#BRIDGE - Biomedical Research Inquiry for Disease Guidance and Epidemiology
-#
-#BRIDGES - Biomedical Resource Interface for Data Gathering and Evaluation Systems
-#                                            Disease Guidance and Epidemiology Surveys
+
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'])
 
@@ -43,9 +40,10 @@ print(versions)
 
 # Navbar
 navbar = dbc.NavbarSimple(
-    brand="BRIDGE - BioResearch Integrated Data-tools GEnerator",
+    brand="BRIDGE - BioResearch Integrated Data tool GEnerator",
     brand_href="#",
-    color="#E00047",
+    #color="#E00047",
+    color="#BA0225",
     dark=True,
 )
 
