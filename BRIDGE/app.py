@@ -299,7 +299,8 @@ main_content = dbc.Container(
                                 dbc.Col(dbc.Button("Generate", color="primary", id='crf_generate'))
                             ],
                             style={"height": "10%"}  # Remaining height for input and button
-                        )
+                        ),
+                        dbc.Row(html.Div("BRIDGE is being developep by ISARIC. For inquiries, support, or collaboration, please [contact us](mailto:data@isaric.org)."))
                     ],
                     width=7  # 55% width
                 )
