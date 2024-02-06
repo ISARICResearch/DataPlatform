@@ -300,7 +300,7 @@ main_content = dbc.Container(
                             ],
                             style={"height": "10%"}  # Remaining height for input and button
                         ),
-                        dbc.Row(html.Div(["BRIDGE is being developed by ISARIC. For inquiries, support, or collaboration, please ",html.A("contact us", href="mailto:data@isaric.org"),"."]))
+                        dbc.Row(html.Div(["BRIDGE is being developed by ISARIC. For inquiries, support, or collaboration, please write to: ",html.A("data@isaric.org", href="mailto:data@isaric.org"),"."]))
                     ],
                     width=7  # 55% width
                 )
