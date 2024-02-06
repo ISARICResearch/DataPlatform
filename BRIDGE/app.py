@@ -158,23 +158,24 @@ settings_content = html.Div(
             )
         ], style={'margin-bottom': '20px'}),
 
-        # Paperlike Files checkboxes
-        '''html.Div([
-            html.Label("'Paperlike' Files", htmlFor="paperlike-files-checkboxes"),
-            dbc.Checklist(
-                id="paperlike-files-checkboxes",
-                options=[
-                    {'label': 'pdf', 'value': 'PDF'},
-                    {'label': 'word', 'value': 'Word'},
-                    # Add more papers as needed
-                ],
-                value=['paper1'],  # Default selected values
-                inline=True
-            )
-        ]),'''
+
+
     ],
     style={"padding": "2rem"}
 )
+'''html.Div([
+    html.Label("'Paperlike' Files", htmlFor="paperlike-files-checkboxes"),
+    dbc.Checklist(
+        id="paperlike-files-checkboxes",
+        options=[
+            {'label': 'pdf', 'value': 'PDF'},
+            {'label': 'word', 'value': 'Word'},
+            # Add more papers as needed
+        ],
+        value=['paper1'],  # Default selected values
+        inline=True
+    )
+]),'''
 
 settings_column = dbc.Fade(
     settings_content,
