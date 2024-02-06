@@ -39,23 +39,27 @@ initial_ulist_variable_choices =  json.dumps(ulist_variable_choices)
 
 print(versions)
 
-navbar = dbc.NavbarSimple(
-    children=[
-        html.A(
-            dbc.Row(
-                [
-                    dbc.Col(html.Img(src="/assets/icons/ISARIC_logo_wh.png", height="30px")),
-                    dbc.Col(dbc.NavbarBrand("BRIDGE - BioResearch Integrated Data tool GEnerator", className="ml-2")),
-                ],
-                align="center",
-                no_gutters=True,
+navbar = dbc.Navbar(
+    dbc.Container(
+        [
+            html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src="/assets/ISARIC_logo_wh.png", height="60px")),
+                        dbc.Col(dbc.NavbarBrand("BRIDGE - BioResearch Integrated Data tool GEnerator", className="ms-2")),
+                    ],
+                    align="center",
+                    className="g-0",
+                ),
+                href="https://isaric.org/",
+                style={"textDecoration": "none"},
             ),
-            href="#",
-        ),
-    ],
+            dbc.NavbarToggler(id="navbar-toggler", n_clicks=0),
+        ]
+    ),
     color="#BA0225",
     dark=True,
-    fluid=True, # Set to True to make the navbar expand to fit the width of its parent
 )
 
 # Sidebar with icons
@@ -71,7 +75,7 @@ sidebar = html.Div(
     ],
     style={
         "position": "fixed",
-        "top": "4rem",  # Height of the navbar
+        "top": "5rem",  # Height of the navbar
         "left": 0,
         "bottom": 0,
         "width": "4rem",
@@ -123,7 +127,7 @@ preset_column = dbc.Fade(
     is_in=False,  # Initially hidden
     style={
         "position": "fixed",
-        "top": "4rem",
+        "top": "5rem",
         "left": "4rem",
         "bottom": 0,
         "width": "20rem",
@@ -193,7 +197,7 @@ settings_column = dbc.Fade(
     is_in=False,  # Initially hidden
     style={
         "position": "fixed",
-        "top": "4rem",
+        "top": "5rem",
         "left": "4rem",
         "bottom": 0,
         "width": "20rem",
@@ -211,7 +215,7 @@ tree_items = html.Div(
         data=tree_items_data),id='tree_items_container',
     style={
         'overflow-y': 'auto',  # Vertical scrollbar when needed
-        'height': '75vh',     # Fixed height
+        'height': '100%',     # Fixed height
         'width': '100%' ,       # Fixed width, or you can specify a value in px
         'white-space': 'normal',  # Allow text to wrap
         'overflow-x': 'hidden',     # Hide overflowed content
@@ -227,7 +231,7 @@ tree_column = dbc.Fade(
     is_in=False,  # Initially hidden
     style={
         "position": "fixed",
-        "top": "4rem",
+        "top": "5rem",
         "left": "4rem",
         "bottom": 0,
         "width": "30rem",
