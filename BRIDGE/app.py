@@ -39,13 +39,23 @@ initial_ulist_variable_choices =  json.dumps(ulist_variable_choices)
 
 print(versions)
 
-# Navbar
 navbar = dbc.NavbarSimple(
-    brand="BRIDGE - BioResearch Integrated Data tool GEnerator",
-    brand_href="#",
-    #color="#E00047",
+    children=[
+        html.A(
+            dbc.Row(
+                [
+                    dbc.Col(html.Img(src="/assets/icons/ISARIC_logo_wh.png", height="30px")),
+                    dbc.Col(dbc.NavbarBrand("BRIDGE - BioResearch Integrated Data tool GEnerator", className="ml-2")),
+                ],
+                align="center",
+                no_gutters=True,
+            ),
+            href="#",
+        ),
+    ],
     color="#BA0225",
     dark=True,
+    fluid=True, # Set to True to make the navbar expand to fit the width of its parent
 )
 
 # Sidebar with icons
