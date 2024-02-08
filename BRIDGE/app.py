@@ -19,6 +19,7 @@ from zipfile import ZipFile
 
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'])
+app.title ='BRIDGE'
 
 versions,recentVersion=arch.getARCHVersions()
 currentVersion=recentVersion

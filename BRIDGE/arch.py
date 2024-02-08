@@ -109,7 +109,7 @@ def getDependencies(datadicc):
 
 def getTreeItems(datadicc,version):
     version=version.replace('ICC','ARCH')
-    include_not_show=['otherl3','otherl2','route','route2','site','agent','agent2','warn','warn2','warn3','units','add','type','vol','site']
+    include_not_show=['otherl3','otherl2','route','route2','site','agent','agent2','warn','warn2','warn3','units','add','type','vol','site','txt']
 
     dependencies=getDependencies(datadicc) 
     datadicc = pd.merge(datadicc,dependencies[['Variable','Dependencies']],on = 'Variable')
@@ -186,7 +186,7 @@ def getTreeItems(datadicc,version):
     return tree
 
 include_not_show=['otherl2','otherl3','route','route2','site','agent','agent2','warn','warn2','warn3','units','add','type','vol','site','0item','0otherl2',
-                  '0addi','1item','1otherl2','1addi','2item','2otherl2','2addi','3item','3otherl2','3addi','4item','4otherl2','4addi']
+                  '0addi','1item','1otherl2','1addi','2item','2otherl2','2addi','3item','3otherl2','3addi','4item','4otherl2','4addi','txt']
 
 def extract_parenthesis_content(text):
     match = re.search(r'\(([^)]+)\)', text)
