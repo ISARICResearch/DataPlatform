@@ -590,7 +590,8 @@ def update_input(data):
     prevent_initial_call=True
 )
 def update_output(*args):
-    checked_values = args[:-1]
+    checked_values = args
+    #checked_values = args[:-1]
     #visibility_data = args[-1]    
     formatted_output = []
     for key, values in zip(grouped_presets.keys(), checked_values):
