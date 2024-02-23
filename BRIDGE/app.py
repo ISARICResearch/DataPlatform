@@ -337,6 +337,7 @@ app.layout = html.Div(
         main_content,
         dcc.Download(id="download-dataframe-csv"),
         dcc.Download(id='download-compGuide-pdf'),
+        dcc.Download(id='download-projectxml-pdf'),
         bridge_modals.variableInformation_modal(),
         dcc.Loading(id="loading-1",
                     type="default",
@@ -667,7 +668,10 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
     return dash.no_update
 
 @app.callback(
-    [Output("loading-output-1", "children"),Output("download-dataframe-csv", "data"),Output("download-compGuide-pdf", "data")]  ,
+    [Output("loading-output-1", "children"),
+     Output("download-dataframe-csv", "data"),
+     Output("download-compGuide-pdf", "data"),
+     Output("download-projectxml-pdf","data")]  ,
     [Input('crf_generate', 'n_clicks'),Input('selected_data-store','data')],  
     State('crf_name', 'value'),
     prevent_initial_call=True
@@ -678,10 +682,10 @@ def on_generate_click(n_clicks,json_data, crf_name):
     
     if n_clicks is None:
         # Return empty or initial state if button hasn't been clicked
-        return "", None, None
+        return "", None, None, None
     # Return the text from 'crf_name' input field
     if json_data is None:
-        return 'No data available',None, None
+        return 'No data available',None, None, None
     selected_variables_fromData= pd.read_json(json_data, orient='split')
 
     path='C:/Users/egarcia/OneDrive - Nexus365/Projects/CBCG/Outputs/'
@@ -710,8 +714,15 @@ def on_generate_click(n_clicks,json_data, crf_name):
     output.seek(0)
     pdf_data = paperCRF.generate_completionguide(selected_variables_fromData, currentVersion, crf_name)
 
+    
+    file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
+    file_path = 'assets/config_files/'+file_name
+    # Open the XML file and read its content
+    with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
+        content = file.read()
 
-    return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf')
+
+    return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf'),dcc.send_bytes(content, file_name)
 
 if __name__ == "__main__":
     #app.run_server(debug=True)
