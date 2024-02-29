@@ -8,6 +8,34 @@ from datetime import datetime
 #ARC - Analysis and Research Compendium 
 
 
+def getResearchQuestionTypes(datadicc):
+    caseDefiningFeatures=[["presentation","SIGNS AND SYMPTOMS ON ADMISSION: first data, from onset of this acute illness to day of presentation or admission"],
+                          ["daily","ASSESSMENT"],
+                          ["daily","SIGNS AND SYMPTOMS: Record the value furthest from normal range between 00:00 to 24:00 on day of assessment"],
+                          ["daily","VITAL SIGNS & ASSESSMENTS: Record the value furthest from normal range between 00:00 to 24:00 on day of assessment."],
+                          ["daily","LABORATORY RESULTS: Record the value furthest from normal range between 00:00 to 24:00 on day of assessment. In general, do not report results that have been rejected by the clinical team (e.g. haemolysed sample). Unless otherwise specified, if there are multiple measurements please report the measure furthest from from the normal physiological or laboratory range between 00:00 and 24:00 hours on day of assessment. If any individual test was not performed indicate 'No' or if the result is unavailable, please leave the data field blank."]
+    ]
+
+    conditions = []
+    for form, section in caseDefiningFeatures:
+        condition = (datadicc['Form'] == form) & (datadicc['Section'] == section)
+        conditions.append(datadicc.loc[condition])
+
+    # Use pd.concat to combine all filtered DataFrames
+    caseDefiningData = pd.concat(conditions, ignore_index=True)
+
+
+    OptionGroup=["Patient Outcome","Case Defining Features","Clinical Features","Risk Factors: Demographics",
+                "Risk Factors: Socioeconomic","Risk Factors: Comorbidities","Treatment/Intevention"]
+
+
+    return caseDefiningData[['Variable','Form','Section','Question']]
+
+    
+
+
+     
+
 
 def getARCHVersions():
 

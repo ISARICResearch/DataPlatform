@@ -13,3 +13,34 @@
     font-size: 14px !important;
     color: #FFFFFF !important; 
 }
+
+/* restyle radio items */
+.radio-group .form-check {
+    padding-left: 0;
+  }
+  
+  .radio-group .btn-group > .form-check:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .radio-group .btn-group > .form-check:not(:first-child) > .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+
+.grid-green-row {
+    background-color: #66c2a5 !important;
+}
+
+.grid-blue-row {
+    background-color: #119dff !important;
+}
+
+.row-dragging-grid-to-grid-container {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}

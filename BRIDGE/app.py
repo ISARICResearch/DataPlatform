@@ -16,9 +16,10 @@ from dash import callback_context
 from datetime import datetime
 import io
 from zipfile import ZipFile
+import re
+import random
 
-
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'],suppress_callback_exceptions=True)
 app.title ='BRIDGE'
 
 versions,recentVersion=arch.getARCHVersions()
@@ -72,6 +73,7 @@ sidebar = html.Div(
 
         dbc.NavLink(html.Img(src="/assets/icons/Settings_off.png", style={'width': '40px' },id='settings_icon'), id="toggle-settings-1", n_clicks=0),
         dbc.NavLink(html.Img(src="/assets/icons/preset_off.png", style={'width': '40px'},id='preset_icon'), id="toggle-settings-2", n_clicks=0),
+        dbc.NavLink(html.Img(src="/assets/icons/question_off.png", style={'width': '40px'},id='question_icon'), id="toggle-question", n_clicks=0),
 
     ],
     style={
@@ -339,6 +341,7 @@ app.layout = html.Div(
         dcc.Download(id='download-compGuide-pdf'),
         dcc.Download(id='download-projectxml-pdf'),
         bridge_modals.variableInformation_modal(),
+        bridge_modals.researchQuestions_modal(),
         dcc.Loading(id="loading-1",
                     type="default",
                     children=html.Div(id="loading-output-1"),
@@ -497,6 +500,11 @@ def display_checked(checked,current_datadicc_saved):
 
     return column_defs, row_data,  selected_variables.to_json(date_format='iso', orient='split')
 
+@app.callback(Output('rq_modal', 'is_open'),
+              [Input("toggle-question", "n_clicks")],
+              prevent_initial_call=True)
+def research_question(n_question):
+    return True
 
 @app.callback([
                Output('modal', 'is_open'),
@@ -724,6 +732,400 @@ def on_generate_click(n_clicks,json_data, crf_name):
 
     return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf'),dcc.send_bytes(content, file_name)
 
+
+@app.callback(
+    Output('row2_options', 'children'),
+    [Input('row1_radios', 'value')]
+)
+def update_row2_options(selected_value):
+    if selected_value == "Characterisation":
+        options = [
+            {"label": "What are the case defining features?", "value": "CD_Features"},
+            {"label": "What is the spectrum of clinical features in this disease?", "value": "Spectrum_Clinical_Features"},
+        ]
+    elif selected_value == "Risk/Prognosis":
+        options = [
+            {"label": "What are the clinical features occurring in those with patient outcome?", "value": "Clinical_Features_Patient_Outcome"},
+            {"label": "What are the risk factors for patient outcome?", "value": "Risk_Factors_Patient_Outcome"},
+        ]
+    elif selected_value == "Clinical Management":
+        options = [
+            {"label": "What treatment/intervention are received by those with patient outcome?", "value": "Treatment_Intervention_Patient_Outcome"},
+            {"label":"What proportion of patients with clinical feature are receiving treatment/intervention?", "value": "Clinical_Features_Treatment_Intervention"},
+            {"label":"What proportion of patient outcome recieved treatment/intervention?", "value": "Patient_Outcome_Treatment_Intervention"},
+            {"label":"What duration of treatment/intervention is being used in patient outcome?", "value": "Duration_Treatment_Intervention_Patient_Outcome"},
+
+        ]
+    else:
+        options = []
+
+
+    question_options=html.Div(
+            [
+                dbc.RadioItems(
+                    id="row2_radios",
+                    className="btn-group",
+                    inputClassName="btn-check",
+                    labelClassName="btn btn-outline-primary",
+                    labelCheckedClassName="active",
+                    options=options,
+                    #value=options[0]['value'] if options else None,
+                ),
+                html.Div(id="rq_questions_div"),
+            ],
+            className="radio-group",
+        )
+
+    return question_options
+
+
+
+
+
+def init_grid(dataframe,id_grid):
+    # Define the new column definitions
+    columnDefs = [
+        #{'field': 'Form', "checkboxSelection": True},
+        {'field': 'Form'},
+        {'field': 'Section'},
+        {'field': 'Question'},
+    ]
+
+    # Convert the DataFrame to a dictionary in a format suitable for Dash AgGrid
+    # Use `records` to get a list of dict, each representing a row in the DataFrame
+    rowData = dataframe.to_dict('records')
+
+    return dag.AgGrid(
+        id=id_grid,
+        rowData=rowData,
+        columnDefs=columnDefs,
+        defaultColDef={'resizable': True},
+        columnSize="sizeToFit",
+        dashGridOptions={
+            "rowDragManaged": True,
+            "rowDragEntireRow": True,
+            "rowDragMultiRow": True,
+            "rowSelection": "multiple",
+            "suppressMoveWhenRowDragging": True
+        },
+        # Since the rowClassRules were based on color, you might want to remove or modify this part
+        # You can define new rules based on 'form', 'section', or 'label' if needed
+        rowClassRules={},
+        getRowId="params.data.id",  # Ensure your DataFrame includes an 'id' column for this to work
+    )
+
+
+def createFeatureSelection(id_so, title, feat_options):
+    # This function creates a feature selection component with dynamic IDs.
+    return html.Div([
+        html.Div(id={'type': 'feature_title', 'index': id_so}, children=title, style={"cursor": "pointer"}),
+        dbc.Fade(
+            html.Div([
+                dcc.Checklist(
+                    id={'type': 'feature_selectall', 'index': id_so},
+                    options=[{'label': 'Select all', 'value': 'all'}],
+                    value=['all']
+                ),
+                dcc.Checklist(
+                    id={'type': 'feature_checkboxes', 'index': id_so},
+                    options=feat_options,
+                    value=[option['value'] for option in feat_options],
+                    style={'overflowY': 'auto', 'maxHeight': '100px'}
+                )
+            ]),
+            id={'type': 'feature_fade', 'index': id_so},
+            is_in=False,
+            appear=False,
+        )
+    ])
+
+def feature_text(current_datadicc,selected_variables):
+        if (selected_variables is None):
+            return ''
+        else:
+            text = ''
+            selected_features = current_datadicc.loc[current_datadicc['Variable'].isin(selected_variables['Variable'])]
+            for sec in selected_features['Section'].unique():
+                # Add section title in bold and a new line
+                text += f"\n\n**{sec}**\n"
+                for label in selected_features['Question'].loc[selected_features['Section'] == sec]:
+                    # Add each label as a bullet point with a new line
+                    text += f"  - {label}\n"  
+            return text      
+def feature_accordion(features,id_feat,selected):
+    feat_accordion_items = []
+    cont=0
+
+    for sec in features['Section'].unique():
+        if  selected is None:
+            selection=[]  
+        else:
+            selection=selected['Variable'].loc[selected['Section']==sec]      
+        # For each group, create a checklist
+        checklist = dbc.Checklist(
+            #options=[{"label": value, "value": value} for value in features['Question'].loc[features['Section']==sec]],
+            options=[{"label": row['Question'], "value": row['Variable']} for _, row in features.loc[features['Section'] == sec].iterrows()],
+            value=selection,
+            id=id_feat+'_'+f'checklist-{str(cont)}',
+            switch=True,
+        )
+        cont+=1
+        # Create an accordion item with the checklist
+        feat_accordion_items.append(
+            dbc.AccordionItem(
+                title=sec.split(":")[0],
+                #children=checklist
+                children=html.Div(checklist, style={'height': '100px', 'overflowY': 'auto'})
+            )
+        )
+    return dbc.Accordion(feat_accordion_items)
+
+def paralel_elements(features,id_feat,current_datadicc,selected_variables):
+
+
+    text=feature_text(current_datadicc,selected_variables)
+    accord=feature_accordion(features,id_feat,selected=selected_variables)
+    
+    pararel_features=html.Div([
+        # First column with the title and the Available Columns table
+        html.Div([
+            html.H5('Available Features', style={'textAlign': 'center'}),
+            accord
+            
+        ], style={'width': '49%', 'display': 'inline-block', 'verticalAlign': 'top'}),
+        
+        # Second column with the buttons
+        html.Div( style={'width': '1%', 'display': 'inline-block', 'textAlign': 'center'}),
+        
+        # Third column with the title and the Display Columns table
+        html.Div([
+            html.H5('Selected Features', style={'textAlign': 'center'}),
+                dcc.Markdown(id=id_feat+'_text-content', children=text, style={'height': '300px', 'overflowY': 'scroll', 'border': '1px solid #ddd', 'padding': '10px', 'color': 'black'}),
+    
+        ], style={'width': '50%', 'display': 'inline-block', 'verticalAlign': 'top'}),
+    ], style={'width': '100%', 'display': 'flex'})   
+    return pararel_features
+
+
+
+@app.callback(
+    [Output('row3_tabs', 'children'),Output('selected_question','children')],
+    [Input('row2_radios', 'value')],
+    [State('selected_data-store','data')],
+)
+def update_row3_content(selected_value,json_data):
+    caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
+
+    research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv')
+
+    group_elements=[]
+    for tq_opGroup in research_question_elements['Option Group'].unique():
+        all_elements=[]
+        for rq_element in research_question_elements['Relavent variable names on ARC'].loc[research_question_elements['Option Group']==tq_opGroup]:
+            if type(rq_element)==str:
+                for rq_aux in rq_element.split(';'):
+                    #print(rq_element)
+                    all_elements.append(rq_aux.strip())
+        group_elements.append([tq_opGroup,all_elements])
+
+    group_elements=pd.DataFrame(data=group_elements,columns=['Group Option','Variables'])
+
+
+    if json_data is None:
+        data = {
+            'id': [1, 2, 3],
+            'Form': ['Form A', 'Form B', 'Form C'],
+            'Section': ['Section 1', 'Section 2', 'Section 3'],
+            'Label': ['Label 1', 'Label 2', 'Label 3'],
+        }
+        selected_variables_fromData = None
+        #accord=feature_accordion(caseDefiningVariables,'clinic_feat')
+        #text=''
+    else:
+        selected_variables_fromData= pd.read_json(json_data, orient='split')
+        selected_variables_fromData=selected_variables_fromData[['Variable','Form','Section','Question']]
+        #selected_variables_caseDefining=selected_variables_fromData.loc[selected_variables_fromData['Variable'].isin(caseDefiningVariables['Variable'])]
+        #accord=feature_accordion(caseDefiningVariables,'clinic_feat',selected=selected_variables_caseDefining)
+        #text=feature_text(current_datadicc,selected_variables_caseDefining)    
+
+    #grid_display = init_grid(pd.DataFrame(data),'selected_features_grid')
+    tabs_content = []
+    selected_question=''
+
+
+    
+
+    #feature_selector=createFeatureSelection('feature_selector',"Case Defining Features",caseDefiningVariables['Question'])
+    if selected_value == "CD_Features":
+        OptionGroup=["Case Defining Features"]
+        #caseDefiningVariables = current_datadicc.loc[current_datadicc['Variable']==]
+        caseDefiningVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_features=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(caseDefiningVariables.iloc[0]))],'case_feat',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Features", children=[html.P(" "),paralel_elements_features]))
+        selected_question="What are the [case defining features]?"
+        
+    elif selected_value == "Spectrum_Clinical_Features":
+        OptionGroup=["Clinical Features"] 
+        clinicalVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_features=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(clinicalVariables.iloc[0]))],'clinic_feat',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Clinical Features", children=[html.P(" "),paralel_elements_features]))
+        selected_question="What is the spectrum of [clinical features] in this disease?"
+               
+    elif selected_value == "Clinical_Features_Patient_Outcome":
+        OptionGroup=["Clinical Features"] 
+        clinicalVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_features=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(clinicalVariables.iloc[0]))],'clinic_feat',current_datadicc,selected_variables_fromData)
+        OptionGroup=["Patient Outcome"] 
+        outcomeVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_outcomes=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(outcomeVariables.iloc[0]))],'outcome',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Clinical Features", children=[html.P(" "),paralel_elements_features]))
+        tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))        
+        selected_question="What are the [clinical features] occuring in those with [patient outcome]?"
+        
+    elif selected_value == "Risk_Factors_Patient_Outcome":
+        tabs_content.extend([
+            dbc.Tab(label="Risk Factors", children=[html.P("Content for Risk Factors")]),
+            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")])
+        ])
+        selected_question="What are the [risk factors] for [patient outcome]?"
+        OptionGroup=["Patient Outcome","Risk Factors: Demographics",
+                    "Risk Factors: Socioeconomic","Risk Factors: Comorbidities"]         
+    elif selected_value=="Treatment_Intervention_Patient_Outcome":
+        tabs_content.extend([
+            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventions")]),
+            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")])
+        ])
+        selected_question="What [treatment/intervention] are received by those with  [patient outcome]?" 
+        OptionGroup=["Patient Outcome","Treatment/Intevention"]                 
+    elif selected_value=="Clinical_Features_Treatment_Intervention":
+        tabs_content.extend([
+            dbc.Tab(label="Clinical Features", children=[html.P("Content for Clinical Features")]),
+            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventionse")])
+        ])
+        selected_question="What proportion of patients with [clinical feature] are receiving [treatment/intervention]?"  
+        OptionGroup=["Clinical Features","Treatment/Intevention"]            
+    elif selected_value=="Patient_Outcome_Treatment_Intervention":
+        tabs_content.extend([
+            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")]),
+            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventionse")])
+        ])  
+        selected_question="What proportion of [patient outcome] recieved [treatment/intervention]?"      
+        OptionGroup=["Patient Outcome","Treatment/Intevention"] 
+    elif selected_value=="Duration_Treatment_Intervention_Patient_Outcome":
+        tabs_content.extend([
+            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventionse")]),
+            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")])                                                    
+                                                                
+        ])      
+        selected_question="What duration of [treatment/intervention] is being used in [patient outcome]?"  
+        OptionGroup=["Patient Outcome","Treatment/Intevention"] 
+    
+    parts = re.split(r'(\[.*?\])', selected_question)  # Split by text inside brackets, keeping the brackets
+
+    styled_parts = []
+    for part in parts:
+        if part.startswith('[') and part.endswith(']'):
+            # Text inside brackets, apply red color
+            styled_parts.append(html.Span(part, style={'color': '#BA0225'}))
+        else:
+            # Regular text, no additional styling needed
+            styled_parts.append(html.Span(part))
+    # Add more conditions as necessary for other options
+
+    return tabs_content,styled_parts
+
+
+
+@app.callback(
+    Output('case_feat_text-content', 'children'),
+    #[Input('clinic_feat_checklist-0', 'value')],
+    [Input(f'case_feat_checklist-{key}', 'value') for key in range(4)],
+    #[State('selected_data-store','data')],
+    prevent_initial_call=True
+)
+def update_Researh_questions_grid(*args):
+    checked_values = args
+    text = ''
+    all_checked=[]
+    for cck_v in checked_values:
+        for element in cck_v:
+            all_checked.append(element)
+    selected_features = current_datadicc.loc[current_datadicc['Variable'].isin(all_checked)]
+    for sec in selected_features['Section'].unique():
+        # Add section title in bold and a new line
+        text += f"\n\n**{sec}**\n"
+        for label in selected_features['Question'].loc[selected_features['Section'] == sec]:
+            # Add each label as a bullet point with a new line
+            text += f"  - {label}\n"
+    return text
+
+
+
+@app.callback(
+    Output('clinic_feat_text-content', 'children'),
+    [Input(f'clinic_feat_checklist-{key}', 'value') for key in range(8)],
+    prevent_initial_call=True
+)
+def update_ClenicalFeat_questions_grid(*args):
+    checked_values = args
+    text = ''
+    all_checked=[]
+    for cck_v in checked_values:
+        for element in cck_v:
+            all_checked.append(element)
+    selected_features = current_datadicc.loc[current_datadicc['Variable'].isin(all_checked)]
+    for sec in selected_features['Section'].unique():
+        # Add section title in bold and a new line
+        text += f"\n\n**{sec}**\n"
+        for label in selected_features['Question'].loc[selected_features['Section'] == sec]:
+            # Add each label as a bullet point with a new line
+            text += f"  - {label}\n"
+    return text
+
+
+@app.callback(
+    Output('outcome_text-content', 'children'),
+    [Input(f'outcome_checklist-{key}', 'value') for key in range(4)],
+    prevent_initial_call=True
+)
+def update_outcome_questions_grid(*args):
+    checked_values = args
+    text = ''
+    all_checked=[]
+    for cck_v in checked_values:
+        for element in cck_v:
+            all_checked.append(element)
+    selected_features = current_datadicc.loc[current_datadicc['Variable'].isin(all_checked)]
+    for sec in selected_features['Section'].unique():
+        # Add section title in bold and a new line
+        text += f"\n\n**{sec}**\n"
+        for label in selected_features['Question'].loc[selected_features['Section'] == sec]:
+            # Add each label as a bullet point with a new line
+            text += f"  - {label}\n"
+    return text
+
+
+@app.callback(
+    [Output('rq_modal', 'is_open',allow_duplicate=True), Output('row3_tabs', 'children',allow_duplicate=True),
+     Output('row1_radios','value'),Output('row2_radios', 'value')],
+    [Input('rq_modal_submit', 'n_clicks'), Input('rq_modal_cancel', 'n_clicks')],
+    prevent_initial_call=True
+)
+def on_rq_modal_button_click(submit_n_clicks, cancel_n_clicks):
+    ctx = callback_context
+    if not ctx.triggered:
+        return dash.no_update
+
+    button_id = ctx.triggered[0]['prop_id'].split('.')[0]
+
+    if button_id == 'rq_modal_submit' :
+        return False, [],[],[]
+    elif button_id == 'rq_modal_cancel':
+        # Close the modal and clear its content
+        return False, [],[],[]
+    else:
+        return dash.no_update
+
 if __name__ == "__main__":
-    #app.run_server(debug=True)
-    app.run_server(debug=True, host='0.0.0.0', port='8080')
+    app.run_server(debug=True)
+    #app.run_server(debug=True, host='0.0.0.0', port='8080')
