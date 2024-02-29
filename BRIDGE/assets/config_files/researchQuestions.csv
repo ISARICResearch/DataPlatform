@@ -1,0 +1,79 @@
+Option Group,Options,Relavent variable names on ARC
+Patient Outcome,Discharged alive,outco_outcome
+Patient Outcome,Death,outco_outcome
+Patient Outcome,Death or Palliative discharge,outco_outcome
+Patient Outcome,Severe COVID-19,inter_icu; inter_o2support_type; inter_inotropesv
+Patient Outcome,Severe Mpox,
+Patient Outcome,Severe Dengue,outco_denguediag_class; outco_denguediag_compl; compl_shock; compl_severebleed
+Patient Outcome,Severe Nipah,inter_icu; inter_o2support_type; inter_inotropesv; inter_rtt; asse_neurocomp_type
+Case Defining Features,Signs & Symptoms Presentation,"adsym_fever; adsym_restlessne; adsym_fatigue; adsym_weight; adsym_anosmia; adsym_ageusia; adsym_lymph; adsym_oedema; adsym_cough; adsym_sorethroat; adsym_catarrh; adsym_rhinorrhoe
+adsym_wheezing; adsym_shortbreat; adsym_chestindrw; adsym_chestpain; adsym_anorec; adsym_abdpain; adsym_diarrhoea; adsym_consti; adsym_vomit; adsym_vomit2d; adsym_nausea; adsym_anorexia; adsym_parotitis; adsym_exsal; adsym_orchitis; adsym_urine; adsym_haemorrhag
+adsym_haemorrhag_yn; adsym_haemorrhag_site; adsym_haemorrhag_oth; adsym_jaund; adsym_liverenl; adsym_myalgia; adsym_arthralgia; adsym_headache; adsym_neckstiff; adsym_photoph; adsym_retroorbit; adsym_convulsion; adsym_seizconv; adsym_seizconvty; adsym_confusion; adsym_encephalitis; adsym_neurodist; adsym_seizures; adsym_neurologic; adsym_neurologic_other; adsym_ocular; adsym_ocularspec; adsym_nystagm; adsym_ptosis; adsym_pruritus; adsym_dta; adsym_skinrash; adsym_unlisted; "
+Case Defining Features,Signs & Symptoms Daily,"sympt_fever; sympt_restlessne; sympt_fatigue; sympt_weight; sympt_anosmia; sympt_ageusia; sympt_lymph; sympt_oedema; sympt_cough; sympt_sorethroat; sympt_catarrh; sympt_rhinorrhoe
+sympt_wheezing; sympt_shortbreat; sympt_chestindrw; sympt_chestpain; sympt_anorec; sympt_abdpain; sympt_diarrhoea; sympt_consti; sympt_vomit; sympt_vomit2d; sympt_nausea; sympt_anorexia; sympt_parotitis; sympt_exsal; sympt_orchitis; sympt_urine; sympt_haemorrhag
+sympt_haemorrhag_yn; sympt_haemorrhag_site; sympt_haemorrhag_oth; sympt_jaund; sympt_liverenl; sympt_myalgia; sympt_arthralgia; sympt_headache; sympt_neckstiff; sympt_photoph; sympt_retroorbit; sympt_convulsion; sympt_seizconv; sympt_seizconvty; sympt_confusion; sympt_encephalitis; sympt_neurodist; sympt_seizures; sympt_neurologic; sympt_neurologic_other; sympt_ocular; sympt_ocularspec; sympt_nystagm; sympt_ptosis; sympt_pruritus; sympt_dta; sympt_skinrash; sympt_unlisted"
+Case Defining Features,Laboratory Results,"daily_datalab; labs_haemo_gdl; labs_haemo_gl; labs_wbccount; labs_lymphocyte_109l; labs_neutrophil_109l; labs_hematocrit_pcnt; labs_platelets_109l; labs_aptt; labs_aptr
+labs_prothrombin_sec; labs_tqinr; labs_altsgpt; labs_bilirubin_umoll; labs_bilirubin_mgdl
+labs_astsgot; labs_glucose_mmoll; labs_ggt; labs_ureanitro_mmoll; labs_ureanitro_mgdl
+labs_lactate_mmoll; labs_creatinine_umoll; labs_creatinine_mgdl; labs_hba1c; labs_sodium_mmoll; labs_potassium_mmoll; labs_procalcito_ngml; labs_crp_mgl; labs_ldh_ul
+labs_creatineki_ul; labs_tropi_ngl; labs_tropi_ngml; labs_ddimer_mgl; labs_ferritin_ngml
+labs_il6_pgml; labs_fibrinogen_gl; labs_fibrinogen_mgdl; labs_albumin_gl; labs_protein_gl
+labs_paco2_mmhg; labs_paco2_kpa; labs_ph; labs_hco3_mmoll; labs_hco3_meql; labs_baseexcess"
+Case Defining Features,Vitals & Assessments,daily_datavital; vital_highesttem_f; vital_hr; vital_rr; vital_systolicbp; vital_diastolicbp; vital_spo2; vital_fio2low; vital_fio2spo2_02110; vital_fio2spo2_pcnt; vital_capillaryr; vital_avpu; vital_gcs; vital_rass; vital_svrbld; vital_svrbldloc; vital_svrbldloco; vital_urineflow
+Clinical Features,Signs & Symptoms,"adsym_fever; adsym_restlessne; adsym_fatigue; adsym_weight; adsym_anosmia; adsym_ageusia; adsym_lymph; adsym_oedema; adsym_cough; adsym_sorethroat; adsym_catarrh; adsym_rhinorrhoe
+adsym_wheezing; adsym_shortbreat; adsym_chestindrw; adsym_chestpain; adsym_anorec; adsym_abdpain; adsym_diarrhoea; adsym_consti; adsym_vomit; adsym_vomit2d; adsym_nausea; adsym_anorexia; adsym_parotitis; adsym_exsal; adsym_orchitis; adsym_urine; adsym_haemorrhag
+adsym_haemorrhag_yn; adsym_haemorrhag_site; adsym_haemorrhag_oth; adsym_jaund; adsym_liverenl; adsym_myalgia; adsym_arthralgia; adsym_headache; adsym_neckstiff; adsym_photoph; adsym_retroorbit; adsym_convulsion; adsym_seizconv; adsym_seizconvty; adsym_confusion; adsym_encephalitis; adsym_neurodist; adsym_seizures; adsym_neurologic; adsym_neurologic_other; adsym_ocular; adsym_ocularspec; adsym_nystagm; adsym_ptosis; adsym_pruritus; adsym_dta; adsym_skinrash; adsym_unlisted; "
+Clinical Features,Signs & Symptoms Daily,"sympt_fever; sympt_restlessne; sympt_fatigue; sympt_weight; sympt_anosmia; sympt_ageusia; sympt_lymph; sympt_oedema; sympt_cough; sympt_sorethroat; sympt_catarrh; sympt_rhinorrhoe
+sympt_wheezing; sympt_shortbreat; sympt_chestindrw; sympt_chestpain; sympt_anorec; sympt_abdpain; sympt_diarrhoea; sympt_consti; sympt_vomit; sympt_vomit2d; sympt_nausea; sympt_anorexia; sympt_parotitis; sympt_exsal; sympt_orchitis; sympt_urine; sympt_haemorrhag
+sympt_haemorrhag_yn; sympt_haemorrhag_site; sympt_haemorrhag_oth; sympt_jaund; sympt_liverenl; sympt_myalgia; sympt_arthralgia; sympt_headache; sympt_neckstiff; sympt_photoph; sympt_retroorbit; sympt_convulsion; sympt_seizconv; sympt_seizconvty; sympt_confusion; sympt_encephalitis; sympt_neurodist; sympt_seizures; sympt_neurologic; sympt_neurologic_other; sympt_ocular; sympt_ocularspec; sympt_nystagm; sympt_ptosis; sympt_pruritus; sympt_dta; sympt_skinrash; sympt_unlisted"
+Clinical Features,Laboratory Results,"daily_datalab; labs_haemo_gdl; labs_haemo_gl; labs_wbccount; labs_lymphocyte_109l; labs_neutrophil_109l; labs_hematocrit_pcnt; labs_platelets_109l; labs_aptt; labs_aptr
+labs_prothrombin_sec; labs_tqinr; labs_altsgpt; labs_bilirubin_umoll; labs_bilirubin_mgdl
+labs_astsgot; labs_glucose_mmoll; labs_ggt; labs_ureanitro_mmoll; labs_ureanitro_mgdl
+labs_lactate_mmoll; labs_creatinine_umoll; labs_creatinine_mgdl; labs_hba1c; labs_sodium_mmoll; labs_potassium_mmoll; labs_procalcito_ngml; labs_crp_mgl; labs_ldh_ul
+labs_creatineki_ul; labs_tropi_ngl; labs_tropi_ngml; labs_ddimer_mgl; labs_ferritin_ngml
+labs_il6_pgml; labs_fibrinogen_gl; labs_fibrinogen_mgdl; labs_albumin_gl; labs_protein_gl
+labs_paco2_mmhg; labs_paco2_kpa; labs_ph; labs_hco3_mmoll; labs_hco3_meql; labs_baseexcess"
+Clinical Features,Vitals & Assessments,daily_datavital; vital_highesttem_f; vital_hr; vital_rr; vital_systolicbp; vital_diastolicbp; vital_spo2; vital_fio2low; vital_fio2spo2_02110; vital_fio2spo2_pcnt; vital_capillaryr; vital_avpu; vital_gcs; vital_rass; vital_svrbld; vital_svrbldloc; vital_svrbldloco; vital_urineflow
+Clinical Features,Complications,"compl_viralpneum; compl_bacpneumo; compl_pneumothor; compl_pleuraleff; compl_copneumoni; compl_bronchioli; compl_myocardial; compl_cardiacisc; compl_endocardit; compl_cardiomyop; compl_chf; compl_strokecva; compl_afm
+compl_severeneuro; compl_cellulitis; compl_cellulitis_yn; compl_bacteraemi; compl_thrombemb; compl_thrombemb_yn; compl_thrombemb_pe; compl_thrombemb_dvt; compl_thrombemb_oth; compl_thrombemb_spec; compl_anaemia; compl_rhabdomyol; compl_ascites; compl_pancreatit; compl_hyperglyce; compl_hypoglycem; compl_shock; compl_reshock; compl_reshockep; compl_severebleed; compl_severebleed_yn; compl_severebleed_site; compl_severebleed_oth; compl_pleurascite; compl_seizure; compl_focalneuro; compl_meningitis; compl_sepsis; compl_coagulatio; compl_othorgan; compl_othorganspec; compl_ards; 
+compl_cardiarrhy; compl_cardiarrest; compl_myocarditi; compl_acuterenal; compl_severeliver; compl_acutehepat; compl_liverfailure; compl_jaundice
+compl_hepaticenc; compl_eschar; compl_liverdysfu; compl_inr; compl_unlisted"
+Clinical Features,Key Treatments,medi_antibioagent; medi_antiviralagent; medi_corticost; medi_inotropesvasopressor; inter_suppleo2; inter_o2support_type; inter_o2therapyd; inter_highestfio; inter_nivent
+Clinical Features,Outcome: death or palliative,outco_outcome
+Clinical Features,Outcome: discharged,outco_outcome
+Risk Factors: Demographics,Infants,demog_birthdate; demog_age; demog_ageunits
+Risk Factors: Demographics,Children,demog_birthdate; demog_age; demog_ageunits
+Risk Factors: Demographics,Persons under <18 years of age,demog_birthdate; demog_age; demog_ageunits
+Risk Factors: Demographics,Adults ,demog_birthdate; demog_age; demog_ageunits
+Risk Factors: Demographics,Older adults,demog_birthdate; demog_age; demog_ageunits
+Risk Factors: Demographics,Males,demog_sex
+Risk Factors: Demographics,Females,demog_sex
+Risk Factors: Demographics,Pregnancy-related,preg_pregnant
+Risk Factors: Demographics,,preg_postpartum
+Risk Factors: Socioeconomic,Educational attainment,NOT YET IN ARC
+Risk Factors: Socioeconomic,Healthcare Occupation,demog_healthcare
+Risk Factors: Socioeconomic,Occupation Location,demog_occupation; demog_occupation_oth
+Risk Factors: Socioeconomic,Residence,demog_residence; demog_residence_oth
+Risk Factors: Comorbidities,ANY comorbidity,comor_chrcardiac; comor_hypertensi; comor_chrpulmona; comor_asthma; comor_chrkidney; comor_obesity; comor_liverdisea; comor_hepbc; comor_asplenia; comor_chrneurolo; comor_malignantn; comor_chrhematol; comor_sti; comor_cpox; comor_shingles; comor_rheumatolo; comor_aids; comor_diabetes; comor_dementia; comor_tuberculos; comor_malnutriti; comor_smoking; comor_strokecva; comor_unlisted
+Risk Factors: Comorbidities,Immunocompromised State,comor_asplenia; comor_aids; comor_malignantn; drug7_immunusupp; drug14_immunusupp; drug21_immunusupp
+Risk Factors: Comorbidities,AIDS/HIV,comor_aids | test_hiv
+Risk Factors: Comorbidities,Chronic pulmonary disease (not asthma),comor_chrpulmona
+Risk Factors: Comorbidities,Chronic cardiac disease (not hypertension),comor_chrcardiac
+Risk Factors: Comorbidities,Vaccine status,vacci_epi; vacci_covid19_yn; vacci_covid19_date; vacci_influenza_yn; vacci_influenza_date; vacci_dengue; vacci_dengue_yn; vacci_varic; vacci_jev
+Treatment/Intevention,Antibiotic,medi_antibioagent
+Treatment/Intevention,Antibiotic duration,medi_antibioagent; medi_medenddate; medi_numdays; medi_frequency; medi_dose; medi_units; medi_numdoses; medi_standreg; medi_standreg_reas
+Treatment/Intevention,Antiviral,medi_antiviralagent
+Treatment/Intevention,Antiviral duration,medi_antiviralagent; medi_medstartdate medi_medenddate; medi_numdays; medi_frequency; medi_dose; medi_units; medi_numdoses; medi_standreg; medi_standreg_reas
+Treatment/Intevention,Corticosteroid,medi_corticost
+Treatment/Intevention,Corticosteroid duration,medi_corticost; medi_medstartdate medi_medenddate; medi_numdays; medi_frequency; medi_dose; medi_units; medi_numdoses; medi_standreg; medi_standreg_reas
+Treatment/Intevention,Inotropes/Vasopressors,medi_inotropesvasopressor | inter_inotropesv
+Treatment/Intevention,Inotropes/Vasopressors duration,medi_inotropesvasopressor | inter_inotropesv; inter_inotropesv_dur
+Treatment/Intevention,Supplemental Oxygen,inter_suppleo2; inter_o2support_type; inter_o2therapyd; inter_highestfio
+Treatment/Intevention,NIV,inter_suppleo2; inter_o2support_type; inter_o2therapyd; inter_highestfio; inter_nivent
+Treatment/Intevention,Invasive ventilation,inter_suppleo2; inter_o2support_type; inter_o2therapyd; inter_highestfio; inter_nivent
+Treatment/Intevention,ECLS/ECMO,inter_suppleo2; inter_o2support_type
+Treatment/Intevention,ECLS/ECMO duration,inter_suppleo2; inter_o2support_type; inter_o2therapyd
+Treatment/Intevention,Admission to ICU,inter_icu
+Treatment/Intevention,ICU Admission duration,inter_icu; inter_icu_date; inter_icureadm; inter_icuadminda; inter_icudur
+Treatment/Intevention,Renal Replacement Therapy or Dialysis,inter_rtt
+Treatment/Intevention,Duration of RRT/Dialysis,inter_rtt; inter_rtt_dur
