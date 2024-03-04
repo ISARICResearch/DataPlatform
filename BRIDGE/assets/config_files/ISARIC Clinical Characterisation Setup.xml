@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="ML_icddrb4" AsOfDateTime="2024-02-29T16:50:22" CreationDateTime="2024-02-29T16:50:22" SourceSystem="REDCap" SourceSystemVersion="13.7.17">
-<Study OID="Project.MLicddrb4">
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="MLtest" AsOfDateTime="2024-03-04T15:58:51" CreationDateTime="2024-03-04T15:58:51" SourceSystem="REDCap" SourceSystemVersion="13.7.17">
+<Study OID="Project.MLtest">
 <GlobalVariables>
-	<StudyName>ML_icddrb4</StudyName>
-	<StudyDescription>This file contains the metadata, events, and data for REDCap project "ML_icddrb4".</StudyDescription>
-	<ProtocolName>ML_icddrb4</ProtocolName>
+	<StudyName>MLtest</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "MLtest".</StudyDescription>
+	<ProtocolName>MLtest</ProtocolName>
 	<redcap:RecordAutonumberingEnabled>0</redcap:RecordAutonumberingEnabled>
 	<redcap:CustomRecordLabel></redcap:CustomRecordLabel>
 	<redcap:SecondaryUniqueField></redcap:SecondaryUniqueField>
@@ -32,6 +32,7 @@ NA, Not applicable</redcap:MissingDataCodes>
 	<redcap:ProtectedEmailModeTrigger>ALL</redcap:ProtectedEmailModeTrigger>
 	<redcap:ProtectedEmailModeLogo></redcap:ProtectedEmailModeLogo>
 	<redcap:RepeatingInstrumentsAndEvents>
+		<redcap:RepeatingEvent redcap:UniqueEventName="daily_arm_1"/>
 		<redcap:RepeatingInstruments>
 			<redcap:RepeatingInstrument redcap:UniqueEventName="outcome__end_of_st_arm_1" redcap:RepeatInstrument="outcome_medication" redcap:CustomLabel=""/>
 		</redcap:RepeatingInstruments>
@@ -50,7 +51,7 @@ NA, Not applicable</redcap:MissingDataCodes>
 		<redcap:FormDisplayLogicConditions control_condition="[patient_tier]=&#039;2&#039;" forms_events=":"/>
 	</redcap:FormDisplayLogicConditionsGroup>
 </GlobalVariables>
-<MetaDataVersion OID="Metadata.MLicddrb4_2024-02-29_1650" Name="ML_icddrb4" redcap:RecordIdField="subjid">
+<MetaDataVersion OID="Metadata.MLtest_2024-03-04_1558" Name="MLtest" redcap:RecordIdField="subjid">
 	<Protocol>
 		<StudyEventRef StudyEventOID="Event.initial_assessment_arm_1" OrderNumber="1" Mandatory="No"/>
 		<StudyEventRef StudyEventOID="Event.daily_arm_1" OrderNumber="2" Mandatory="No"/>
@@ -157,6 +158,6 @@ NA, Not applicable</redcap:MissingDataCodes>
 	</CodeList>
 </MetaDataVersion>
 </Study>
-<ClinicalData StudyOID="Project.MLicddrb4" MetaDataVersionOID="Metadata.MLicddrb4_2024-02-29_1650">
+<ClinicalData StudyOID="Project.MLtest" MetaDataVersionOID="Metadata.MLtest_2024-03-04_1558">
 </ClinicalData>
 </ODM>
