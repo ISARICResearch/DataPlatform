@@ -556,10 +556,11 @@ def getUserListContent(current_datadicc,version,user_checked_options=None,ulist_
                     print(row['List']+f": Failed to add to lists of choices due to {e}.")
                 cont_lo+=1
             l2_choices = l2_choices+ '88, ' +'Other' 
+            
             ulist_variable_choices.append([row['Variable'],ulist_variable_choices_aux])
             
             #row['Type']='radio'
-            row['Answer Options']=l1_choices
+            row['Answer Options']=l1_choices+ '88, ' +'Other' 
 
             dropdown_row = row.copy()   
             other_row = row.copy()    

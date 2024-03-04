@@ -634,12 +634,13 @@ def update_output(*args):
     return tree_items
 
 @app.callback(
-    [Output('modal', 'is_open', allow_duplicate=True), Output('current_datadicc-store','data'),Output('ulist_variable_choices-store','data') ],
+    [Output('modal', 'is_open', allow_duplicate=True), Output('current_datadicc-store','data'),Output('ulist_variable_choices-store','data'),
+     Output('tree_items_container','children',allow_duplicate=True) ],
     [Input('modal_submit', 'n_clicks'), Input('modal_cancel', 'n_clicks'), Input('current_datadicc-store','data')], 
-    [State('modal_title', 'children'),State('options-checklist','value')], 
+    [State('modal_title', 'children'),State('options-checklist','value'),State('input', 'checked')], 
     prevent_initial_call=True
 )
-def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_saved,question,checked_options):
+def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_saved,question,checked_options,checked):
     ctx = callback_context
     current_datadicc=pd.read_json(current_datadicc_saved, orient='split')
 
@@ -665,13 +666,35 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
             current_datadicc=arch.addTransformedRows(current_datadicc,arch_ulistSubmit,arch.getVariableOrder(current_datadicc))
 
             print(list_options_checked)
-            return False, current_datadicc.to_json(date_format='iso', orient='split'),json.dumps(ulist_variable_choicesSubmit)
+            checked.append(variable_submited)
+            tree_items = html.Div(
+                dash_treeview_antd.TreeView(
+                    id='input',
+                    multiple=False,
+                    checkable=True,
+                    checked= current_datadicc['Variable'].loc[current_datadicc['Variable'].isin(checked)],
+                    expanded=current_datadicc['Variable'].loc[current_datadicc['Variable'].isin(checked)],
+                    data=tree_items_data),id='tree_items_container',
+                style={
+                    'overflow-y': 'auto',  # Vertical scrollbar when needed
+                    'height': '75vh',     # Fixed height
+                    'width': '100%' ,       # Fixed width, or you can specify a value in px
+                    'white-space': 'normal',  # Allow text to wrap
+                    'overflow-x': 'hidden',     # Hide overflowed content
+                    'text-overflow': 'ellipsis',  # Indicate more content with an ellipsis
+                    #'display': visibility_data['display']
+                    #'display': 'none'
+                }
+            )            
+            return False, current_datadicc.to_json(date_format='iso', orient='split'),json.dumps(ulist_variable_choicesSubmit),tree_items
         else:
-            return False, dash.no_update, dash.no_update
+            return False, dash.no_update, dash.no_update, dash.no_update
+        
+    
 
     elif button_id == 'modal_cancel':
         # Just close the modal without doing anything else
-        return False, dash.no_update, dash.no_update
+        return False, dash.no_update, dash.no_update, dash.no_update
 
     return dash.no_update
 
@@ -839,7 +862,9 @@ def createFeatureSelection(id_so, title, feat_options):
         )
     ])
 
-def feature_text(current_datadicc,selected_variables):
+def feature_text(current_datadicc,selected_variables,features):
+        selected_variables=selected_variables.copy()
+        selected_variables=selected_variables.loc[selected_variables['Variable'].isin(features['Variable'])]
         if (selected_variables is None):
             return ''
         else:
@@ -883,7 +908,7 @@ def feature_accordion(features,id_feat,selected):
 def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 
 
-    text=feature_text(current_datadicc,selected_variables)
+    text=feature_text(current_datadicc,selected_variables,features)
     accord=feature_accordion(features,id_feat,selected=selected_variables)
     
     pararel_features=html.Div([
@@ -983,42 +1008,70 @@ def update_row3_content(selected_value,json_data):
         selected_question="What are the [clinical features] occuring in those with [patient outcome]?"
         
     elif selected_value == "Risk_Factors_Patient_Outcome":
-        tabs_content.extend([
-            dbc.Tab(label="Risk Factors", children=[html.P("Content for Risk Factors")]),
-            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")])
-        ])
+        OptionGroup=["Risk Factors: Demographics",
+                    "Risk Factors: Socioeconomic","Risk Factors: Comorbidities"]    
+        riskVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        allRiskVarr=[]
+        for rv in riskVariables:
+            allRiskVarr+=list(rv)
+        paralel_elements_risk=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(allRiskVarr)],'risk',current_datadicc,selected_variables_fromData)
+        OptionGroup=["Patient Outcome"] 
+        outcomeVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_outcomes=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(outcomeVariables.iloc[0]))],'outcome',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Risk Factors", children=[html.P(" "),paralel_elements_risk]))
+        tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))   
         selected_question="What are the [risk factors] for [patient outcome]?"
-        OptionGroup=["Patient Outcome","Risk Factors: Demographics",
-                    "Risk Factors: Socioeconomic","Risk Factors: Comorbidities"]         
+     
     elif selected_value=="Treatment_Intervention_Patient_Outcome":
-        tabs_content.extend([
-            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventions")]),
-            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")])
-        ])
-        selected_question="What [treatment/intervention] are received by those with  [patient outcome]?" 
-        OptionGroup=["Patient Outcome","Treatment/Intevention"]                 
+
+        OptionGroup=["Treatment/Intevention"] 
+        TreatmentsVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_treatments=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(TreatmentsVariables.iloc[0]))],'treatment',current_datadicc,selected_variables_fromData)
+        OptionGroup=["Patient Outcome"] 
+        outcomeVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_outcomes=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(outcomeVariables.iloc[0]))],'outcome',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Treatments/Interventions", children=[html.P(" "),paralel_elements_treatments]))
+        tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))            
+
+
+        selected_question="What [treatment/intervention] are received by those with  [patient outcome]?"                
     elif selected_value=="Clinical_Features_Treatment_Intervention":
-        tabs_content.extend([
-            dbc.Tab(label="Clinical Features", children=[html.P("Content for Clinical Features")]),
-            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventionse")])
-        ])
+
         selected_question="What proportion of patients with [clinical feature] are receiving [treatment/intervention]?"  
-        OptionGroup=["Clinical Features","Treatment/Intevention"]            
+         
+        OptionGroup=["Clinical Features"] 
+        clinicalVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_features=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(clinicalVariables.iloc[0]))],'clinic_feat',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Clinical Features", children=[html.P(" "),paralel_elements_features]))
+        OptionGroup=["Treatment/Intevention"] 
+        TreatmentsVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_treatments=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(TreatmentsVariables.iloc[0]))],'treatment',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Treatments/Interventions", children=[html.P(" "),paralel_elements_treatments]))
+
     elif selected_value=="Patient_Outcome_Treatment_Intervention":
-        tabs_content.extend([
-            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")]),
-            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventionse")])
-        ])  
+        OptionGroup=["Treatment/Intevention"] 
+        TreatmentsVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_treatments=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(TreatmentsVariables.iloc[0]))],'treatment',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Treatments/Interventions", children=[html.P(" "),paralel_elements_treatments]))
+
+        OptionGroup=["Patient Outcome"] 
+        outcomeVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_outcomes=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(outcomeVariables.iloc[0]))],'outcome',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))        
+
         selected_question="What proportion of [patient outcome] recieved [treatment/intervention]?"      
-        OptionGroup=["Patient Outcome","Treatment/Intevention"] 
     elif selected_value=="Duration_Treatment_Intervention_Patient_Outcome":
-        tabs_content.extend([
-            dbc.Tab(label="Treatments/Interventions", children=[html.P("Content for Treatments/Interventionse")]),
-            dbc.Tab(label="Patient Outcome", children=[html.P("Content for Patient Outcome")])                                                    
-                                                                
-        ])      
+        OptionGroup=["Treatment/Intevention"] 
+        TreatmentsVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_treatments=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(TreatmentsVariables.iloc[0]))],'treatment',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Treatments/Interventions", children=[html.P(" "),paralel_elements_treatments]))
+
+        OptionGroup=["Patient Outcome"] 
+        outcomeVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
+        paralel_elements_outcomes=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(outcomeVariables.iloc[0]))],'outcome',current_datadicc,selected_variables_fromData)
+        tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))  
         selected_question="What duration of [treatment/intervention] is being used in [patient outcome]?"  
-        OptionGroup=["Patient Outcome","Treatment/Intevention"] 
+
     
     parts = re.split(r'(\[.*?\])', selected_question)  # Split by text inside brackets, keeping the brackets
 
@@ -1104,6 +1157,48 @@ def update_outcome_questions_grid(*args):
             text += f"  - {label}\n"
     return text
 
+@app.callback(
+    Output('risk_text-content', 'children'),
+    [Input(f'risk_checklist-{key}', 'value') for key in range(7)],
+    prevent_initial_call=True
+)
+def update_risk_questions_grid(*args):
+    checked_values = args
+    text = ''
+    all_checked=[]
+    for cck_v in checked_values:
+        for element in cck_v:
+            all_checked.append(element)
+    selected_features = current_datadicc.loc[current_datadicc['Variable'].isin(all_checked)]
+    for sec in selected_features['Section'].unique():
+        # Add section title in bold and a new line
+        text += f"\n\n**{sec}**\n"
+        for label in selected_features['Question'].loc[selected_features['Section'] == sec]:
+            # Add each label as a bullet point with a new line
+            text += f"  - {label}\n"
+    return text
+
+
+@app.callback(
+    Output('treatment_text-content', 'children'),
+    [Input(f'treatment_checklist-{key}', 'value') for key in range(2)],
+    prevent_initial_call=True
+)
+def update_risk_questions_grid(*args):
+    checked_values = args
+    text = ''
+    all_checked=[]
+    for cck_v in checked_values:
+        for element in cck_v:
+            all_checked.append(element)
+    selected_features = current_datadicc.loc[current_datadicc['Variable'].isin(all_checked)]
+    for sec in selected_features['Section'].unique():
+        # Add section title in bold and a new line
+        text += f"\n\n**{sec}**\n"
+        for label in selected_features['Question'].loc[selected_features['Section'] == sec]:
+            # Add each label as a bullet point with a new line
+            text += f"  - {label}\n"
+    return text
 
 @app.callback(
     [Output('rq_modal', 'is_open',allow_duplicate=True), Output('row3_tabs', 'children',allow_duplicate=True),
