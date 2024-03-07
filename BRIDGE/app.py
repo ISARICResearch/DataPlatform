@@ -35,9 +35,16 @@ current_datadicc=arch.addTransformedRows(current_datadicc,arch_lists,arch.getVar
 
 #User List content Transformation
 arch_ulist,ulist_variable_choices=arch.getUserListContent(current_datadicc,currentVersion)
+
+
+
 current_datadicc=arch.addTransformedRows(current_datadicc,arch_ulist,arch.getVariableOrder(current_datadicc))
+arch_multilist,multilist_variable_choices=arch.getMultuListContent(current_datadicc,currentVersion)
+
+current_datadicc=arch.addTransformedRows(current_datadicc,arch_multilist,arch.getVariableOrder(current_datadicc))
 initial_current_datadicc =  current_datadicc.to_json(date_format='iso', orient='split')
 initial_ulist_variable_choices =  json.dumps(ulist_variable_choices)
+initial_multilist_variable_choices =  json.dumps(multilist_variable_choices)
 
 print(versions)
 
@@ -331,6 +338,7 @@ app.layout = html.Div(
     [
         dcc.Store(id='current_datadicc-store',data=initial_current_datadicc),
         dcc.Store(id='ulist_variable_choices-store',data=initial_ulist_variable_choices),
+        dcc.Store(id='multilist_variable_choices-store',data=initial_multilist_variable_choices),
         navbar,
         sidebar,
         settings_column,
@@ -471,7 +479,7 @@ def display_checked(checked,current_datadicc_saved):
                 last_section = row['Section']
 
             # Process the actual row
-            if row['Type'] in ['radio', 'dropdown', 'checkbox','list','user_list']:
+            if row['Type'] in ['radio', 'dropdown', 'checkbox','list','user_list','multi_list']:
                 formatted_choices = paperCRF.format_choices(row['Answer Options'], row['Type'])
                 row['Answer Options'] = formatted_choices
             elif row['Validation'] == 'date_dmy':
@@ -517,9 +525,13 @@ def research_question(n_question):
                Output('options-checklist','value'),
                Output('options-list-group','children')],
               [Input('input', 'selected')],
-              [State('ulist_variable_choices-store','data'),State('modal', 'is_open')])
-def display_selected(selected,ulist_variable_choices_saved,is_open):
-    datatatata=json.loads(ulist_variable_choices_saved)
+              [State('ulist_variable_choices-store','data'),State('multilist_variable_choices-store','data'),State('modal', 'is_open')])
+def display_selected(selected,ulist_variable_choices_saved,multilist_variable_choices_saved,is_open):
+    dict1 = json.loads(ulist_variable_choices_saved)
+    dict2 = json.loads(multilist_variable_choices_saved)
+    datatatata = dict1+dict2
+
+    #datatatata=json.loads(ulist_variable_choices_saved)
     if (selected is not None):
         if len(selected)>0:
             if selected[0] in list(current_datadicc['Variable']):
@@ -611,7 +623,7 @@ def update_output(*args):
     for ps in formatted_output:
         checked_key = 'preset_' + ps[0] + '_' + ps[1]
         if checked_key in current_datadicc:
-            checked = checked+list(current_datadicc['Variable'].loc[current_datadicc[checked_key]==1])
+            checked = checked+list(current_datadicc['Variable'].loc[current_datadicc[checked_key].notnull()])
     tree_items = html.Div(
         dash_treeview_antd.TreeView(
             id='input',
@@ -635,6 +647,7 @@ def update_output(*args):
 
 @app.callback(
     [Output('modal', 'is_open', allow_duplicate=True), Output('current_datadicc-store','data'),Output('ulist_variable_choices-store','data'),
+     Output('multilist_variable_choices-store','data'),
      Output('tree_items_container','children',allow_duplicate=True) ],
     [Input('modal_submit', 'n_clicks'), Input('modal_cancel', 'n_clicks'), Input('current_datadicc-store','data')], 
     [State('modal_title', 'children'),State('options-checklist','value'),State('input', 'checked')], 
@@ -654,7 +667,8 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
         #return False, f"Processed value: {question.split('[')[1][:-1]}"  # Closes modal and updates output
         variable_submited = question.split('[')[1][:-1]
         ulist_variables = [i[0] for i in ulist_variable_choices]
-        if variable_submited in ulist_variables:
+        multilist_variables = [i[0] for i in multilist_variable_choices]
+        if (variable_submited in ulist_variables) | (variable_submited in multilist_variables) :
             list_options_checked=[]
             for lo in checked_options:
                 list_options_checked.append(lo.split('_'))
@@ -664,6 +678,10 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
             #User List content Transformation
             arch_ulistSubmit,ulist_variable_choicesSubmit=arch.getUserListContent(current_datadicc,currentVersion,list_options_checked,variable_submited)
             current_datadicc=arch.addTransformedRows(current_datadicc,arch_ulistSubmit,arch.getVariableOrder(current_datadicc))
+            
+            arch_multilistSubmit,multilist_variable_choicesSubmit=arch.getMultuListContent(current_datadicc,currentVersion,list_options_checked,variable_submited)
+            current_datadicc=arch.addTransformedRows(current_datadicc,arch_multilistSubmit,arch.getVariableOrder(current_datadicc))
+
 
             print(list_options_checked)
             checked.append(variable_submited)
@@ -686,9 +704,9 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
                     #'display': 'none'
                 }
             )            
-            return False, current_datadicc.to_json(date_format='iso', orient='split'),json.dumps(ulist_variable_choicesSubmit),tree_items
+            return False, current_datadicc.to_json(date_format='iso', orient='split'),json.dumps(ulist_variable_choicesSubmit), json.dumps(multilist_variable_choicesSubmit),tree_items
         else:
-            return False, dash.no_update, dash.no_update, dash.no_update
+            return False, dash.no_update, dash.no_update, dash.no_update, dash.no_update
         
     
 
@@ -1222,5 +1240,5 @@ def on_rq_modal_button_click(submit_n_clicks, cancel_n_clicks):
         return dash.no_update
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
-    #app.run_server(debug=True, host='0.0.0.0', port='8080')
+    #app.run_server(debug=True)
+    app.run_server(debug=True, host='0.0.0.0', port='8080')

@@ -290,7 +290,9 @@ def format_choices(choices_str, field_type, threshold=65):
     elif field_type=='list':
         symbol="○ "
     elif field_type=='user_list':
-        symbol="○ "            
+        symbol="○ " 
+    elif field_type=='multi_list':
+        symbol=  "□ "         
     elif field_type == 'checkbox' :
         symbol = "□ "
     elif field_type=='dropdown':
@@ -610,7 +612,7 @@ def generate_completionguide(data_dictionary, version, db_name):
     return buffer.getvalue()  # Return the PDF data
 
 
-
+'''
 
 def format_choices(choices_str, field_type, threshold=65):
     """
@@ -636,5 +638,4 @@ def format_choices(choices_str, field_type, threshold=65):
         combined_choices = line_placeholder
     if len(combined_choices) > threshold:
         combined_choices = "\n".join(choices).strip()
-    return combined_choices
-
+    return combined_choices'''
