@@ -55,7 +55,7 @@ navbar = dbc.Navbar(
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src="/assets/ISARIC_logo_wh.png", height="60px")),
+                        dbc.Col(html.Img(src="/BRIDGE/assets/ISARIC_logo_wh.png", height="60px")),
                         dbc.Col(dbc.NavbarBrand("BRIDGE - BioResearch Integrated Data tool GEnerator", className="ms-2")),
                     ],
                     align="center",
@@ -765,7 +765,7 @@ def on_generate_click(n_clicks,json_data, crf_name):
 
     
     file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
-    file_path = 'assets/config_files/'+file_name
+    file_path = 'BRIDGE/assets/config_files/'+file_name
     # Open the XML file and read its content
     with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
         content = file.read()
