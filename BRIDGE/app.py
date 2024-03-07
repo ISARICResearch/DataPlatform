@@ -959,7 +959,7 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 def update_row3_content(selected_value,json_data):
     caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
 
-    research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv')
+    research_question_elements=pd.read_csv('/BRIDGE/assets/config_files/researchQuestions.csv')
 
     group_elements=[]
     for tq_opGroup in research_question_elements['Option Group'].unique():
