@@ -55,7 +55,7 @@ presentation,DEMOGRAPHICS,demog_height_in,number,Height (in),,number,0,98,,,,,"I
 presentation,DEMOGRAPHICS,demog_weight,,Weight (select units),,,,,,,,Actual or closest estimate to weight at time of admission.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 presentation,DEMOGRAPHICS,demog_weight_kg,number,Weight (kg),,number,0,800,,,,,Indicate the patient's weight in kilograms (kg).,,,,1,1,1,,1,1,1,1,,1,1,1,,,,,,,,,,,,,,,
 presentation,DEMOGRAPHICS,demog_weight_lb,number,Weight (lb),,number,0,1763,,,,,Indicate the patient's weight in pounds (lb).,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-presentation,DEMOGRAPHICS,demog_country,user_list,Country,,,,,demographics_Country,,,,Indicate the country of enrolment,,,,,1,,,,,,1,,,,,,,,,,,,,,,,,,1,
+presentation,DEMOGRAPHICS,demog_country,user_list,Country,,,,,demographics_Country,,,,Indicate the country of enrolment,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,1,
 presentation,DEMOGRAPHICS,demog_postcode,text,Post code,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,
 presentation,DEMOGRAPHICS,demog_nhc,text,National health care number,,,,,,,,,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,
 presentation,DEMOGRAPHICS,demog_race,checkbox,Race (select all that apply),"1, Arab | 2, Black | 3, East Asian | 4, South Asian | 5, South-East Asian | 6, West Asian | 7, Latin American | 8, White | 9, Aboriginal/First Nations/Indigenous | 88, Other | 99, Unknown",,,,,,,,Enter all that apply of the following choices.,,,,1,1,1,,,,1,1,1,1,1,1,,,,,,,,,,,,,1,,
