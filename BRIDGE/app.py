@@ -1240,5 +1240,5 @@ def on_rq_modal_button_click(submit_n_clicks, cancel_n_clicks):
         return dash.no_update
 
 if __name__ == "__main__":
-    #app.run_server(debug=True)
-    app.run_server(debug=True, host='0.0.0.0', port='8080')
+    app.run_server(debug=True)
+    #app.run_server(debug=True, host='0.0.0.0', port='8080')
