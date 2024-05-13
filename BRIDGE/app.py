@@ -55,7 +55,7 @@ navbar = dbc.Navbar(
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src="/BRIDGE/assets/ISARIC_logo_wh.png", height="60px")),
+                        dbc.Col(html.Img(src="assets/ISARIC_logo_wh.png", height="60px")),
                         dbc.Col(dbc.NavbarBrand("BRIDGE - BioResearch Integrated Data tool GEnerator", className="ms-2")),
                     ],
                     align="center",
@@ -713,9 +713,9 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
 
     elif button_id == 'modal_cancel':
         # Just close the modal without doing anything else
-        return False, dash.no_update, dash.no_update, dash.no_update
+        return False, dash.no_update, dash.no_update, dash.no_update,dash.no_update
 
-    return dash.no_update
+    return dash.no_update, dash.no_update, dash.no_update, dash.no_update,dash.no_update
 
 @app.callback(
     [Output("loading-output-1", "children"),
@@ -767,8 +767,8 @@ def on_generate_click(n_clicks,json_data, crf_name):
 
     
     file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
-    #file_path = 'BRIDGE/assets/config_files/'+file_name
-    file_path = 'assets/config_files/'+file_name# Change this for deploy
+    file_path = 'BRIDGE/assets/config_files/'+file_name
+    #file_path = 'assets/config_files/'+file_name# Change this for deploy
     # Open the XML file and read its content
     with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
         content = file.read()
@@ -964,8 +964,8 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 def update_row3_content(selected_value,json_data):
     caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
 
-    #research_question_elements=pd.read_csv('/BRIDGE/assets/config_files/researchQuestions.csv')
-    research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') #Change this for deploy
+    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')
+    #research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') #Change this for deploy
 
     group_elements=[]
     for tq_opGroup in research_question_elements['Option Group'].unique():
@@ -1246,5 +1246,5 @@ def on_rq_modal_button_click(submit_n_clicks, cancel_n_clicks):
         return dash.no_update
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
-    #app.run_server(debug=True, host='0.0.0.0', port='8080')
+    #app.run_server(debug=True)
+    app.run_server(debug=True, host='0.0.0.0', port='8080')#change for deploy

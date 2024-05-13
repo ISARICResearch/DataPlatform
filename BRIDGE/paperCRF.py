@@ -24,10 +24,12 @@ def header_footer(canvas, doc):
 
 
     # Draw the first logo
-    canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  # adjust the width and height accordingly
+    #canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  # adjust the width and height accordingly
+    canvas.drawInlineImage("BRIDGE/assets/ISARIC_logo.png", 50, 730, width=69, height=30)  #change for deploy
     
     # For the second logo, make sure it's positioned after the first logo + some spacing
-    canvas.drawInlineImage("assets/who_logo.png", 130, 730, width=98, height=30)  # adjust the width and height
+    #canvas.drawInlineImage("assets/who_logo.png", 130, 730, width=98, height=30)  # adjust the width and height
+    #canvas.drawInlineImage("BRIDGE/assets/who_logo.png", 130, 730, width=98, height=30)  #modify for deploy
     
     # Now, for the text, ensure it's positioned after the second logo + some spacing
     text_x_position = 270  # 160 + 100 + 10
