@@ -24,10 +24,12 @@ def header_footer(canvas, doc):
 
 
     # Draw the first logo
-    canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  # adjust the width and height accordingly
+    #canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  # adjust the width and height accordingly
+    canvas.drawInlineImage("BRIDGE/assets/ISARIC_logo.png", 50, 730, width=69, height=30)  #change for deploy
     
     # For the second logo, make sure it's positioned after the first logo + some spacing
-    canvas.drawInlineImage("assets/who_logo.png", 130, 730, width=98, height=30)  # adjust the width and height
+    #canvas.drawInlineImage("assets/who_logo.png", 130, 730, width=98, height=30)  # adjust the width and height
+    #canvas.drawInlineImage("BRIDGE/assets/who_logo.png", 130, 730, width=98, height=30)  #modify for deploy
     
     # Now, for the text, ensure it's positioned after the second logo + some spacing
     text_x_position = 270  # 160 + 100 + 10
@@ -81,13 +83,16 @@ def create_table(data):
     table.setStyle(style)
     return table
 
-def generate_pdf(data_dictionary, output_pdf_path, version, db_name):
+def generate_pdf(data_dictionary, version, db_name):
     
     root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
     icc_version_path = root+version
     details = pd.read_csv(icc_version_path+'/paper_like_details.csv', encoding='latin-1')
+
+        
+    buffer = BytesIO()  # Use BytesIO object for in-memory PDF generation
+    doc = SimpleDocTemplate(buffer, pagesize=letter)
     
-    doc = SimpleDocTemplate(output_pdf_path, pagesize=letter)
     elements = []
 
     # Get the predefined styles
@@ -278,8 +283,11 @@ def generate_pdf(data_dictionary, output_pdf_path, version, db_name):
 
 
     doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+    buffer.seek(0)
+    return buffer.getvalue()  # Return the PDF data
 
 line_placeholder='_' * 30
+
 def format_choices(choices_str, field_type, threshold=65):
     """
     Format the choices string. If the combined length exceeds the threshold, use line breaks instead of commas.
@@ -311,13 +319,13 @@ def format_choices(choices_str, field_type, threshold=65):
 
 line_placeholder='_' * 30
 
-def generate_pdf(data_dictionary, output_pdf_path, version, db_name):
+def generate_pdf(data_dictionary, version, db_name):
     
     root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
     icc_version_path = root+version
     details = pd.read_csv(icc_version_path+'/paper_like_details.csv', encoding='latin-1')
-    
-    doc = SimpleDocTemplate(output_pdf_path, pagesize=letter)
+    buffer = BytesIO()  # Use BytesIO object for in-memory PDF generation
+    doc = SimpleDocTemplate(buffer, pagesize=letter)
     elements = []
 
     # Get the predefined styles
@@ -508,6 +516,8 @@ def generate_pdf(data_dictionary, output_pdf_path, version, db_name):
 
 
     doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+    buffer.seek(0)
+    return buffer.getvalue()
 
 '''
 def generate_completionguide(data_dictionary, output_pdf_path, version, db_name):
@@ -563,12 +573,7 @@ def generate_completionguide(data_dictionary, output_pdf_path, version, db_name)
     doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
 '''
 
-from io import BytesIO
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph
-from reportlab.lib.styles import getSampleStyleSheet
-import pandas as pd
-from copy import deepcopy
+
 
 def generate_completionguide(data_dictionary, version, db_name):
     data_dictionary = data_dictionary.copy()
