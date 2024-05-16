@@ -1,10 +1,11 @@
 Disease,Code,Library,Selected
-Avian influenza A H7N9/ H5N1/ H5N8/ H7N7 ,NEW CODE (609444009 | Influenza A virus subtype H7N9 (organism) |772827006 | Influenza A virus subtype H5N1 (organism) |715346008 | Influenza A virus subtype H7N7 (organism) |708527000 | Influenza A virus subtype H5N8 (organism) |,,
+Avian influenza A H7N9/ H5N1/ H5N8/ H7N7 ,NEW CODE (609444009 | Influenza A virus subtype H7N9 (organism) |772827006 | Influenza A virus subtype H5N1 (organism) |715346008 | Influenza A virus subtype H7N7 (organism) |708527000 | Influenza A virus subtype H5N8 (organism) |,,1
+Undefined influenza,155559006,SNOMED,1
 COVID-19 (SARS-CoV-2) ,840539006,SNOMED,
-Dengue ,38362002,SNOMED,1
-Mpox ,359814004,SNOMED,1
+Dengue ,38362002,SNOMED,
+Mpox ,359814004,SNOMED,
 Severe Acute paediatric hepatitis ,37871000 | Acute hepatitis (disorder) |24484000 | Severe (severity modifier) (qualifier value) |255398004 | Childhood (qualifier value) |,SNOMED,
-Nipah ,406597005,SNOMED,1
+Nipah ,406597005,SNOMED,
 JE ,52947006,SNOMED,
 HSV ,88594005,SNOMED,
 Andes virus infection (hantavirus),359761005,SNOMED,
