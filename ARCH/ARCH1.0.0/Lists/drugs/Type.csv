@@ -3,9 +3,9 @@ Analgesic ,373265006 |Analgesic (substance)|,SNOMED,
 Antibiotic ,255631004 |Antibiotic (product)|,SNOMED,1
 Anticoagulant,372862008 |Anticoagulant (substance)|,SNOMED,1
 Antifungal ,373219008 |Substance with antifungal mechanism of action (substance)|,SNOMED,1
-Antipruritic ,312067003 |Local antipruritic agent (product)|,SNOMED,1
+Antipruritic ,312067003 |Local antipruritic agent (product)|,SNOMED,
 Antiviral ,372701006,SNOMED,1
-Convalescent plasma ,1179779000,SNOMED,1
+Convalescent plasma ,1179779000,SNOMED,
 Corticosteroid ,116566001,SNOMED,1
 Inotropes / vasopressor ,373213009 |Inotropic agent (substance)|870406003 |Vasopressor (substance)|,SNOMED,1
 Topical antibiotic  ,255631004 |Antibiotic (product)| 6064005 |Topical route (qualifier value)|,SNOMED,
