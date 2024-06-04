@@ -9,6 +9,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 from copy import deepcopy
 from reportlab.platypus import Spacer
 from io import BytesIO
+from functools import partial
+from datetime import datetime
+
 
 try:
 # Register the font
@@ -19,9 +22,13 @@ except:
     pdfmetrics.registerFont(TTFont('DejaVuSans-Bold', 'assets/fonts/DejaVuSans-Bold.ttf'))
 line_placeholder='_' * 30
 
-def header_footer(canvas, doc):
+def header_footer(canvas, doc,title):
     # Add two logos in the header
+    # Get the current date
+    current_date = datetime.now()
 
+    # Format the date as required
+    formatted_date = current_date.strftime("%d%b%y").upper()
 
     # Draw the first logo
     #canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  # adjust the width and height accordingly
@@ -38,7 +45,7 @@ def header_footer(canvas, doc):
     # Footer content
 
     canvas.setFont("DejaVuSans", 8)
-    canvas.drawString(inch, 0.95 * inch, "ISARIC CORE CASE REPORT FORM ")
+    canvas.drawString(inch, 0.95 * inch, "ISARIC "+title.upper()+" CASE REPORT FORM "+formatted_date.upper())
     canvas.setFont("DejaVuSans", 6)
     canvas.drawString(inch, 0.75 * inch, "Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License by ISARIC on behalf of Oxford University.")
 
@@ -122,6 +129,7 @@ def generate_pdf(data_dictionary, version, db_name):
     
     # Add title and design description from the details DataFrame
     title_text = details[details['Paper-like section'] == 'Title']['Text'].values[0]
+    title_text = title_text.replace('CORE', db_name).upper()
     elements.append(Paragraph(title_text, title_style))
     elements.append(Paragraph("<br/><br/>"))  # Add some space
 
@@ -282,7 +290,9 @@ def generate_pdf(data_dictionary, version, db_name):
         elements.append(table)
 
 
-    doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+    #doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+    header_footer_partial = partial(header_footer, title=db_name)
+    doc.build(elements, onFirstPage=header_footer_partial, onLaterPages=header_footer_partial)
     buffer.seek(0)
     return buffer.getvalue()  # Return the PDF data
 
@@ -355,6 +365,7 @@ def generate_pdf(data_dictionary, version, db_name):
     
     # Add title and design description from the details DataFrame
     title_text = details[details['Paper-like section'] == 'Title']['Text'].values[0]
+    title_text = title_text.replace('CORE', db_name).upper()
     elements.append(Paragraph(title_text, title_style))
     elements.append(Paragraph("<br/><br/>"))  # Add some space
 
@@ -515,7 +526,9 @@ def generate_pdf(data_dictionary, version, db_name):
         elements.append(table)
 
 
-    doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+    #doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
+    header_footer_partial = partial(header_footer, title=db_name)
+    doc.build(elements, onFirstPage=header_footer_partial, onLaterPages=header_footer_partial)
     buffer.seek(0)
     return buffer.getvalue()
 
