@@ -1,12 +1,12 @@
 Condition,Code,Library,Code,Library,Selected
-Abdominal pain,R10.9,ICD10,21522001,SNOMED,1
+Abdominal pain,R10.9,ICD10,21522001,SNOMED,
 Alopecia (Nonscarring hair loss),L65.9,ICD10,56317004,SNOMED,
 Altered consciousness / Confusion (Disorientation),R41.0,ICD10,62476001 |Disorientated (finding)|,SNOMED,
-Anorexia,R63.0,ICD10,79890006,SNOMED,1
+Anorexia,R63.0,ICD10,79890006,SNOMED,
 Apnoea,R06.81,ICD10,1023001,SNOMED,
 Cardiac arrhythmia,I49.9,ICD10,698247007,SNOMED,
 Ascites,R18.8,ICD10,389026000,SNOMED,
-Bleeding (Haemorrhage),R58,ICD10,131148009,SNOMED,1
+Bleeding (Haemorrhage),R58,ICD10,131148009,SNOMED,
 Bruising (Spontaneous ecchymoses),R23.3,ICD10,308492005,SNOMED,
 Can't feel one side of the body or face (Hemiplegia),I69.959,ICD10,20022000,SNOMED,
 Can't fully move or control movement (Paralytic syndrome),G83.9,ICD10,44695005,SNOMED,
@@ -28,7 +28,7 @@ Erectile dysfunction,N52.9,ICD10,860914002,SNOMED,
 Fecal incontinence,R15,ICD10,72042002,SNOMED,
 Fainting / blackouts (Syncope and collapse),R55,ICD10,309585006,SNOMED,
 Malaise and fatigue,R53,ICD10,271795006,SNOMED,
-Fever,R50.9,ICD10,386661006,SNOMED,
+Fever,R50.9,ICD10,386661006,SNOMED,1
 Gastrointestinal bleeding (Gastrointestinal hemorrhage),K92.2,ICD10,74474003,SNOMED,
 Headache,R51,ICD10,25064002,SNOMED,
 Hepatomegaly,R16.0,ICD10,80515008,SNOMED,
@@ -47,6 +47,7 @@ Loss of appetite (Anorexia),R63.0,ICD10,79890006,SNOMED,
 Loss of smell (Anosmia),R43.0,ICD10,44169009,SNOMED,
 Loss of taste (Parageusia),R43.2,ICD10,271801002,SNOMED,
 Lymphadenitis,I88,ICD10,19471005,SNOMED,
+Mucosal lesion,,,427752005,SNOMED,1
 Mouth ulcers (Recurrent oral aphthae),K12.0,ICD10,26284000,SNOMED,
 Muscle aches (Myalgia),M79.1,ICD10,68962001,SNOMED,
 Muscle weakness,M62.81,ICD10,26544005,SNOMED,
@@ -66,7 +67,7 @@ Disorders of nose and nasal sinuses,J34,ICD10,89488007,SNOMED,
 Convulsions,R56.9,ICD10,91175000 ,SNOMED,
 Shortness of breath (Dyspnea),R06.0,ICD10,267036007,SNOMED,
 Nasal congestion,R09.81,ICD10,68235000  ,SNOMED,
-Skin rash,R21,ICD10,271807003,SNOMED,
+Skin rash,R21,ICD10,271807003,SNOMED,1
 Changes in skin texture,R23.4,ICD10,274672009,SNOMED,
 Sneezing,R06.7,ICD10,162367006,SNOMED,
 Sore throat (Pain in throat),R07.0,ICD10,267102003,SNOMED,
