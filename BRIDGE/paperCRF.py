@@ -47,7 +47,7 @@ def header_footer(canvas, doc,title):
     canvas.setFont("DejaVuSans", 8)
     canvas.drawString(inch, 0.95 * inch, "ISARIC "+title.upper()+" CASE REPORT FORM "+formatted_date.upper())
     canvas.setFont("DejaVuSans", 6)
-    canvas.drawString(inch, 0.75 * inch, "Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License by ISARIC on behalf of Oxford University.")
+    canvas.drawString(inch, 0.75 * inch, "Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License by ISARIC on behalf of the University of Oxford.")
 
 '''def format_choices(choices_str, field_type, threshold=65):
     """
@@ -91,6 +91,10 @@ def create_table(data):
     return table
 
 def generate_pdf(data_dictionary, version, db_name):
+
+    data_dictionary = data_dictionary[~data_dictionary['Field Label'].str.startswith(('>', '->'))]
+    
+    
     
     root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
     icc_version_path = root+version
@@ -253,12 +257,12 @@ def generate_pdf(data_dictionary, version, db_name):
         group = data_dictionary[data_dictionary['Form Name'] == form_name]
 
         # Add form name as a title for each table
-        elements.append(Paragraph(form_name, header_style))
+        elements.append(Paragraph(form_name.upper(), header_style))
         data = []
         current_section = None
 
         for index, row in group.iterrows():
-
+    
             # Add new section
             if row['Section Header'] != current_section and pd.notna(row['Section Header']):
                 current_section = row['Section Header']
@@ -288,6 +292,7 @@ def generate_pdf(data_dictionary, version, db_name):
 
         table.setStyle(style)
         elements.append(table)
+        elements.append(PageBreak())
 
 
     #doc.build(elements, onFirstPage=header_footer, onLaterPages=header_footer)
@@ -328,7 +333,7 @@ def format_choices(choices_str, field_type, threshold=65):
 
 
 line_placeholder='_' * 30
-
+'''
 def generate_pdf(data_dictionary, version, db_name):
     
     root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
@@ -531,6 +536,7 @@ def generate_pdf(data_dictionary, version, db_name):
     doc.build(elements, onFirstPage=header_footer_partial, onLaterPages=header_footer_partial)
     buffer.seek(0)
     return buffer.getvalue()
+'''
 
 '''
 def generate_completionguide(data_dictionary, output_pdf_path, version, db_name):

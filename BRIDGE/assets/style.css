@@ -44,3 +44,38 @@
     align-items: center;
     column-gap: 20px;
 }
+
+.homeheader-section {
+    background-color: #BA0225 !important;
+    color: white;
+    padding: 5rem 0;
+}
+
+.home-button {
+    background-color: #BA0225; /* Button background color */
+    color: white; /* Button text color */
+    border: 2px solid #BA0225; /* Button border color */
+    font-size: 1.25rem; /* Adjust font size as needed */
+    padding: 10px 20px; /* Optional: Adjust padding for better appearance */
+}
+
+.home-button:hover {
+    background-color: #ffffea; /* Button background color on hover */
+    color: #BA0225; /* Button text color on hover */
+    border: 2px solid #ffffea; /* Button border color on hover */
+}
+
+.card-body-fixed {
+    height: 350px;  /* Adjust the height as needed */
+    overflow-y: auto;  /* Adds a scroll bar if content overflows */
+}
+
+.card-tools-fixed {
+    height: 480px;  /* Adjust the height as needed */
+    overflow-y: auto;  /* Adds a scroll bar if content overflows */
+}
+
+.img-logo {
+    width: 100px;
+    height: 100px;
+ }

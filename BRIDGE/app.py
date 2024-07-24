@@ -27,11 +27,17 @@ currentVersion=recentVersion
 current_datadicc,presets=arch.getARCH(recentVersion)
 current_datadicc[['Sec', 'vari', 'mod']] = current_datadicc['Variable'].str.split('_', n=2, expand=True)
 current_datadicc[['Sec_name', 'Expla']] = current_datadicc['Section'].str.split(r'[(|:]', n=1, expand=True)
+
+for i in current_datadicc:
+    print('#####################')
+    print(i)
+
 tree_items_data=arch.getTreeItems(current_datadicc,recentVersion)
 
 #List content Transformation
 arch_lists,list_variable_choices=arch.getListContent(current_datadicc,currentVersion)
 current_datadicc=arch.addTransformedRows(current_datadicc,arch_lists,arch.getVariableOrder(current_datadicc))
+
 
 #User List content Transformation
 arch_ulist,ulist_variable_choices=arch.getUserListContent(current_datadicc,currentVersion)
@@ -71,6 +77,29 @@ navbar = dbc.Navbar(
     dark=True,
 )
 
+navbar_big = dbc.Navbar(
+    dbc.Container(
+        [
+            html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src="assets/ISARIC_logo_wh.png", height="100px")),
+                        dbc.Col(dbc.NavbarBrand("BRIDGE - BioResearch Integrated Data tool GEnerator", className="ms-2")),
+                    ],
+                    align="center",
+                    className="g-0",
+                ),
+                href="https://isaric.org/",
+                style={"textDecoration": "none"},
+            ),
+            dbc.NavbarToggler(id="navbar-toggler", n_clicks=0),
+        ]
+    ),
+    color="#BA0225",
+    dark=True,
+)
+
 # Sidebar with icons
 sidebar = html.Div(
     [
@@ -80,7 +109,7 @@ sidebar = html.Div(
 
         dbc.NavLink(html.Img(src="/assets/icons/Settings_off.png", style={'width': '40px' },id='settings_icon'), id="toggle-settings-1", n_clicks=0),
         dbc.NavLink(html.Img(src="/assets/icons/preset_off.png", style={'width': '40px'},id='preset_icon'), id="toggle-settings-2", n_clicks=0),
-        dbc.NavLink(html.Img(src="/assets/icons/question_off.png", style={'width': '40px'},id='question_icon'), id="toggle-question", n_clicks=0),
+        #dbc.NavLink(html.Img(src="/assets/icons/question_off.png", style={'width': '40px'},id='question_icon'), id="toggle-question", n_clicks=0),
 
     ],
     style={
@@ -126,7 +155,7 @@ for key, values in grouped_presets.items():
     )
 preset_accordion = dbc.Accordion(accordion_items)
 preset_content= html.Div(
-    [html.H3("Pre-sets", id="settings-text-1"),
+    [html.H3("Templates", id="settings-text-1"),
      preset_accordion
      ],style={"padding": "2rem"}
 )
@@ -155,7 +184,7 @@ settings_content = html.Div(
         html.Div([
             dbc.InputGroup([
                 dbc.DropdownMenu(
-                    label="ARCH Version",
+                    label="ARC Version",
                     children=arch_versions_items,
                     id="dropdown-arch-version-menu"
                 ),
@@ -172,9 +201,11 @@ settings_content = html.Div(
             dbc.Checklist(
                 id="output-files-checkboxes",
                 options=[
-                    {'label': 'Completion Guide', 'value': 'completion_guide'},
-                    {'label': 'REDCap Data Dictionary', 'value': 'redcap_csv'},
                     {'label': 'ISARIC Clinical Characterization XML', 'value': 'redcap_xml'},
+                    {'label': 'REDCap Data Dictionary', 'value': 'redcap_csv'},
+                    {'label': 'Paper-like CRF', 'value': 'paper_like'},
+                    #{'label': 'Completion Guide', 'value': 'completion_guide'},
+                    
                     # Add more files as needed
                 ],
                 value=['file1'],  # Default selected values
@@ -336,15 +367,18 @@ main_content = dbc.Container(
 )
 app.layout = html.Div(
     [
+        dcc.Store(id='show-home', data=True),  # Store to manage which page to display
         dcc.Store(id='current_datadicc-store',data=initial_current_datadicc),
         dcc.Store(id='ulist_variable_choices-store',data=initial_ulist_variable_choices),
         dcc.Store(id='multilist_variable_choices-store',data=initial_multilist_variable_choices),
-        navbar,
-        sidebar,
-        settings_column,
-        preset_column,
-        tree_column,
-        main_content,
+        #navbar,
+        #sidebar,
+        #settings_column,
+        #preset_column,
+        #tree_column,
+        #main_content,
+        dcc.Location(id='url', refresh=False),
+        html.Div(id='page-content'),
         dcc.Download(id="download-dataframe-csv"),
         dcc.Download(id='download-compGuide-pdf'),
         dcc.Download(id='download-projectxml-pdf'),
@@ -354,9 +388,211 @@ app.layout = html.Div(
         dcc.Loading(id="loading-1",
                     type="default",
                     children=html.Div(id="loading-output-1"),
-        )
+        ),
+        dcc.Store(id='selected-version-store'),
+        dcc.Store(id='selected_data-store')
     ]
 )
+
+
+
+#################################
+#######HOME PAGE##################
+def home_page():
+    return html.Div([
+        navbar_big,
+        # First Section: Big Slogan and Button
+        html.Section([
+            dbc.Row([
+                dbc.Col([
+                    html.Div([
+                        html.H1("BRIDGE: Tailoring Case Reports for Every Outbreak", className="display-4", style={'font-weight': 'bold', 'color': 'white'}),
+                        html.P("ISARIC BRIDGE streamlines the CRF creation process, generating data dictionaries and XML for REDCap, along with paper-like CRFs and completion guides.", style={'color': 'white'}),
+                        dbc.Button("Create a CRF",  className="home-button", id='start-button'),
+                        html.A("Visit GitHub",  target="_blank",href="https://github.com/ISARICResearch", style={'display': 'block', 'margin-top': '10px', 'color': 'white'})
+                    ], style={'padding': '2rem'})
+                ], md=6, style={'display': 'flex', 'align-items': 'center', 'background-color': '#475160'}),
+                dbc.Col([
+                    html.Img(src="/assets/home_main.png", style={'width': '100%'})
+                ], md=6)
+            ])
+        ], style={'padding': '0', 'margin': '0', 'background-color': '#475160'}),
+
+        html.Section([
+            dbc.Row([
+                dbc.Col([
+                    html.H4("Accelerating Outbreak Research Response", className="mb-3"),
+                    html.P("BRIDGE automates the creation of Case Report Forms (CRFs) for specific diseases and research contexts. It generates the necessary data dictionary and XML to create a REDCap database for data capture in the ARC structure. Learn more in our ", style={"font-size": "20px", "display": "inline"}),
+                    html.A("guide for getting started.", href="https://isaricresearch.github.io/Training/", target="_blank", style={"font-size": "20px", "display": "inline"})
+                ], md=9)
+            ], className="my-5"),
+
+        ], className="container"),
+        
+
+        html.Section([
+            dbc.Row([
+                dbc.Col([
+                    dbc.Card([
+
+                        dbc.CardBody([
+                            html.H4("Choose", className="card-title"),
+                            html.P([
+                                "BRIDGE uses the machine-readable library ",
+                                html.A("ARC", href="https://example.com", target="_blank"),
+                                " and allows the user to choose the questions they want to include in the CRF. ",
+                                "BRIDGE presents ARC as a tree structure with different levels: ARC version, forms, sections, and questions. Users navigate through this tree and select the questions they want to include in the CRF.",
+                                html.Br(),
+                                html.Br(),
+                                "Additionally, users can start with one of our Presets, which are pre-selected groups of questions. They can click on the Pre-sets tab and select those they want to include in the CRF. All selected questions can be customized."
+                            ], className="card-text")
+                        ], className="card-body-fixed"),
+                        dbc.CardImg(src="/assets/card1.png", bottom=True, className="card-img-small"),
+                    ], className="mb-3")
+                ], md=4),
+                dbc.Col([
+                    dbc.Card([
+
+                        dbc.CardBody([
+                            html.H4("Customize", className="card-title"),
+                            html.P([
+                                "BRIDGE allows customization of CRFs from chosen questions, as well as selection of measurement units and answer options where pertinent. ",
+                                "Users click the relevant question, and a checkable list appears with options for the site or disease being researched.",
+                                html.Br(),
+                                html.Br(),
+                                "This feature ensures that the CRF is tailored to specific needs, enhancing the precision and relevance of the data collected."
+                            ], className="card-text")
+                        ], className="card-body-fixed"),
+                        dbc.CardImg(src="/assets/card2.png", bottom=True, className="card-img-small"),
+                    ], className="mb-3")
+                ], md=4),
+                dbc.Col([
+                    dbc.Card([
+
+                        dbc.CardBody([
+                            html.H4("Capture", className="card-title"),
+                            html.P([
+                                "BRIDGE generates files for creating databases within REDCap, including the data dictionary and XML needed to create a REDCap database for capturing data in the ARC structure. ",
+                                "It also produces paper-like versions of the CRFs and completion guides. ",
+                                html.Br(),
+                                html.Br(),
+                                "Once users are satisfied with their selections, they can name the CRF and click on generate to finalize the process, ensuring a seamless transition to data collection."
+                            ], className="card-text")
+                        ], className="card-body-fixed"),
+                        dbc.CardImg(src="/assets/card3.png", bottom=True, className="card-img-small"),
+                    ], className="mb-3")
+                ], md=4),
+
+            ], className="my-5")
+        ], className="container"),
+
+
+
+
+
+        # Fourth Section: Other Tools
+        # Section showcasing other tools
+        html.Section([
+            html.Div([
+                html.H3("Take a Look at Our Other Tools", className="text-center my-4"),
+                dbc.Row([
+                    dbc.Col([
+                        dbc.Card([
+                            dbc.CardImg(src="/assets/logos/arc_logo.png", top=True),
+                            dbc.CardBody([
+                                html.H4("Analysis and Research Compendium (ARC)", className="card-title"),
+                                html.P([
+                                    "ARC is a comprehensive machine-readable document in CSV format, designed for use in Clinical Report Forms (CRFs) during disease outbreaks. ",
+                                    "It includes a library of questions covering demographics, comorbidities, symptoms, medications, and outcomes. ",
+                                    "Each question is based on a standardized schema, has specific definitions mapped to controlled terminologies, and has built-in quality control. ",
+                                    "ARC is openly accessible, with version control via GitHub ensuring document integrity and collaboration."
+                                ], className="card-text"),
+                                html.A("Find Out More",  target="_blank",href="https://github.com/ISARICResearch/DataPlatform/tree/main/ARCH", style={'display': 'block', 'margin-top': '10px', 'color': '#BA0225'})
+                            ], className="card-tools-fixed")
+                        ])
+                    ], md=3),
+                    dbc.Col([
+                        dbc.Card([
+                            dbc.CardImg(src="/assets/logos/fhirflat_logo.png", top=True),
+                            dbc.CardBody([
+                                html.H4("FHIRflat", className="card-title"),
+                                html.P([
+                                    "FHIRflat is a versatile library designed to transform FHIR resources in NDJSON or native Python dictionaries into a flat structure, which can be easily written to a Parquet file. ",
+                                    "This facilitates reproducible analytical pipelines (RAP) by converting raw data into the FHIR R5 standard with ISARIC-specific extensions. ",
+                                    "Typically, FHIR resources are stored in databases served by specialized FHIR servers. However, for RAP development, which demands reproducibility and data snapshots, a flat file format is more practical. ",
+                                    
+                                ], className="card-text")
+,
+                                html.A("Find Out More",  target="_blank",href="https://fhirflat.readthedocs.io/en/latest/", style={'display': 'block', 'margin-top': '10px', 'color': '#BA0225'})
+                            ], className="card-tools-fixed")
+                        ])
+                    ], md=3),
+                    
+                    dbc.Col([
+                        dbc.Card([
+                            dbc.CardImg(src="/assets/logos/polyflame_logo.png", top=True),
+                            dbc.CardBody([
+                                html.H4("Polymorphic FLexible Analytics and Modelling Engine (PolyFLAME)", className="card-title"),
+                                html.P([
+                                    "PolyFLAME processes and transforms data using the FHIRflat library. ",
+                                    "Once input data is brought into FHIRflat, it is represented as a (optionally zipped) folder of FHIR resources, with a parquet file corresponding to each resource: patient.parquet, encounter.parquet, and so on. ",
+                                    "PolyFLAME is an easy-to-use library that can be utilized in Jupyter notebooks and other downstream code to query answers to common research questions in a reproducible analytical pipeline (RAP). "
+                                ], className="card-text"),
+                                html.A("Find Out More",  target="_blank",href="https://polyflame.readthedocs.io/en/latest/index.html", style={'display': 'block', 'margin-top': '10px', 'color': '#BA0225'})
+                            ], className="card-tools-fixed"),
+                            
+                        ])
+                    ], md=3),
+                    dbc.Col([
+                        dbc.Card([
+                            dbc.CardImg(src="/assets/logos/vertex_logo.png", top=True),
+                            dbc.CardBody([
+                                html.H4("Visual Evidence & Research Tool for Exploration (VERTEX)", className="card-title"),
+                                html.P([
+                                    "VERTEX is a web-based application designed to present graphs and tables based on relevant research questions that need quick answers during an outbreak. ",
+                                    "VERTEX uses reproducible analytical pipelines, currently focusing on identifying the spectrum of clinical features in a disease and determining risk factors for patient outcomes. ",
+                                    "New questions will be added by the ISARIC team and the wider scientific community, enabling the creation and sharing of new pipelines. ",
+                                    "Users can download the code for ARC-structured data visualization through VERTEX."
+                                ], className="card-text"),
+                                html.A("Find Out More",  target="_blank",href="https://github.com/ISARICResearch/VERTEX", style={'display': 'block', 'margin-top': '10px', 'color': '#BA0225'})
+                            ], className="card-tools-fixed")
+                        ])
+                    ], md=3)
+                ], className="my-5")
+            ], className="container")
+        ], className="py-5"),
+
+    ])
+def main_app():
+    return html.Div([
+        navbar,
+        sidebar,
+        settings_column,
+        preset_column,
+        tree_column,
+        main_content,
+    ])
+
+@app.callback(Output('page-content', 'children'),
+      Input('url', 'pathname'))
+def display_page(pathname):
+    if pathname == '/':
+        return home_page()
+    else:
+        return main_app()
+
+@app.callback(Output('url', 'pathname'),
+      Input('start-button', 'n_clicks'))
+def start_app(n_clicks):
+    if n_clicks is None:
+        return '/'
+    else:
+        return '/main'
+
+
+
+
+#################################
 
 @app.callback(
     [Output("presets-column", "is_in"), 
@@ -730,6 +966,13 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
 def on_generate_click(n_clicks,json_data, crf_name):
 
     #global selected_variables
+
+    ctx = dash.callback_context
+    # Check which input triggered the callback
+    if not ctx.triggered:
+        trigger_id = 'No clicks yet'
+    else:
+        trigger_id = ctx.triggered[0]['prop_id'].split('.')[0]
     
     if n_clicks is None:
         # Return empty or initial state if button hasn't been clicked
@@ -737,46 +980,58 @@ def on_generate_click(n_clicks,json_data, crf_name):
     # Return the text from 'crf_name' input field
     if json_data is None:
         return 'No data available',None, None, None,None
-    selected_variables_fromData= pd.read_json(json_data, orient='split')
-
-
-    date=datetime.today().strftime('%Y-%m-%d')
+    if trigger_id == 'crf_generate':
+        selected_variables_fromData= pd.read_json(json_data, orient='split')
     
-    #paperCRF.generate_completionguide(selected_variables_fromData,path+crf_name+'_Completion_Guide_'+date+'.pdf',currentVersion, crf_name)
     
-    datadiccDisease=arch.generateCRF(selected_variables_fromData,crf_name)
+        date=datetime.today().strftime('%Y-%m-%d')
+        
+        #paperCRF.generate_completionguide(selected_variables_fromData,path+crf_name+'_Completion_Guide_'+date+'.pdf',currentVersion, crf_name)
+        
+        datadiccDisease=arch.generateCRF(selected_variables_fromData,crf_name)
     
-    #datadiccDisease.to_csv(path+crf_name+'_'+date+'.csv',index=False, encoding='utf8')
-    pdf_crf=paperCRF.generate_pdf(datadiccDisease,currentVersion, crf_name)
+        print('#############################')
+        print('#############################')
+        print('#############################')
+        print('#############################')
+        print('#############################')
+        print('#############################')
+        for cosa in datadiccDisease.columns:
+            print(cosa)
+        
+        #datadiccDisease.to_csv(path+crf_name+'_'+date+'.csv',index=False, encoding='utf8')
+        pdf_crf=paperCRF.generate_pdf(datadiccDisease,currentVersion, crf_name)
+        
+                   
+        '''# Create a PDF to Word converter
+        cv = Converter('dataDiccs/'+crf_name+'_'+date+'.pdf')
     
-               
-    '''# Create a PDF to Word converter
-    cv = Converter('dataDiccs/'+crf_name+'_'+date+'.pdf')
-
-    # Convert all pages of the PDF to a Word document
-    cv.convert('dataDiccs/'+crf_name+'_'+date+'.docx')
-
-    # Close the converter
-    cv.close()'''
-
-    df=datadiccDisease.copy()
-    output = io.BytesIO()
-    df.to_csv(output, index=False, encoding='utf8')
-    output.seek(0)
-    pdf_data = paperCRF.generate_completionguide(selected_variables_fromData, currentVersion, crf_name)
-
+        # Convert all pages of the PDF to a Word document
+        cv.convert('dataDiccs/'+crf_name+'_'+date+'.docx')
     
-    file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
-    file_path = 'BRIDGE/assets/config_files/'+file_name
-    #file_path = 'assets/config_files/'+file_name# Change this for deploy
-    # Open the XML file and read its content
-    with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
-        content = file.read()
-
-
-    return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),\
-        dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf'),\
-            dcc.send_bytes(content, file_name),dcc.send_bytes(pdf_crf, crf_name+'_paperlike_'+date+'.pdf')
+        # Close the converter
+        cv.close()'''
+    
+        df=datadiccDisease.copy()
+        output = io.BytesIO()
+        df.to_csv(output, index=False, encoding='utf8')
+        output.seek(0)
+        pdf_data = paperCRF.generate_completionguide(selected_variables_fromData, currentVersion, crf_name)
+    
+        
+        file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
+        file_path = 'BRIDGE/assets/config_files/'+file_name
+        #file_path = 'assets/config_files/'+file_name# Change this for deploy
+        # Open the XML file and read its content
+        with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
+            content = file.read()
+    
+    
+        return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),\
+            dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf'),\
+                dcc.send_bytes(content, file_name),dcc.send_bytes(pdf_crf, crf_name+'_paperlike_'+date+'.pdf')
+    else:
+        return "", None, None, None,None
 
 
 @app.callback(
