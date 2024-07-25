@@ -22,6 +22,8 @@ import random
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'],suppress_callback_exceptions=True)
 app.title ='BRIDGE'
 
+modified_list=[]
+
 versions,recentVersion=arch.getARCHVersions()
 currentVersion=recentVersion
 current_datadicc,presets=arch.getARCH(recentVersion)
@@ -40,7 +42,7 @@ current_datadicc=arch.addTransformedRows(current_datadicc,arch_lists,arch.getVar
 
 
 #User List content Transformation
-arch_ulist,ulist_variable_choices=arch.getUserListContent(current_datadicc,currentVersion)
+arch_ulist,ulist_variable_choices=arch.getUserListContent(current_datadicc,currentVersion,modified_list)
 
 
 
@@ -887,10 +889,15 @@ def update_output(*args):
      Output('multilist_variable_choices-store','data'),
      Output('tree_items_container','children',allow_duplicate=True) ],
     [Input('modal_submit', 'n_clicks'), Input('modal_cancel', 'n_clicks'), Input('current_datadicc-store','data')], 
-    [State('modal_title', 'children'),State('options-checklist','value'),State('input', 'checked')], 
+    [State('modal_title', 'children'),State('options-checklist','value'),State('input', 'checked'),State('ulist_variable_choices-store','data'),State('multilist_variable_choices-store','data')], 
+    
     prevent_initial_call=True
 )
-def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_saved,question,checked_options,checked):
+def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_saved,question,checked_options,checked,ulist_variable_choices_saved,multilist_variable_choices_saved):
+
+    dict1 = json.loads(ulist_variable_choices_saved)
+    dict2 = json.loads(multilist_variable_choices_saved)
+
     ctx = callback_context
     current_datadicc=pd.read_json(current_datadicc_saved, orient='split')
 
@@ -903,6 +910,7 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
 
         #return False, f"Processed value: {question.split('[')[1][:-1]}"  # Closes modal and updates output
         variable_submited = question.split('[')[1][:-1]
+        modified_list.append(variable_submited)
         ulist_variables = [i[0] for i in ulist_variable_choices]
         multilist_variables = [i[0] for i in multilist_variable_choices]
         if (variable_submited in ulist_variables) | (variable_submited in multilist_variables) :
@@ -913,7 +921,8 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
             list_options_checked=pd.DataFrame(data=list_options_checked,columns=['cod','Option'])
 
             #User List content Transformation
-            arch_ulistSubmit,ulist_variable_choicesSubmit=arch.getUserListContent(current_datadicc,currentVersion,list_options_checked,variable_submited)
+            arch_ulistSubmit,ulist_variable_choicesSubmit=arch.getUserListContent(current_datadicc,currentVersion,modified_list,list_options_checked,variable_submited)
+            #Este ulist_variable_choicesSubmit multilist_variable_choicesSubmit
             current_datadicc=arch.addTransformedRows(current_datadicc,arch_ulistSubmit,arch.getVariableOrder(current_datadicc))
             
             arch_multilistSubmit,multilist_variable_choicesSubmit=arch.getMultuListContent(current_datadicc,currentVersion,list_options_checked,variable_submited)
