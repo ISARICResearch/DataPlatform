@@ -100,7 +100,7 @@ def variableInformation_modal():
                     ),
 
                     html.H5("Completion Guide:"), 
-                    html.P("Your completion guide text here", id='completion-guide-text')
+                    html.P("Completion guide text here", id='completion-guide-text')
                 ]
             ),
             dbc.ModalFooter(

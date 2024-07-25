@@ -1219,8 +1219,8 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 def update_row3_content(selected_value,json_data):
     caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
 
-    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')
-    #research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') #Change this for deploy
+    #research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')
+    research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') #Change this for deploy
 
     group_elements=[]
     for tq_opGroup in research_question_elements['Option Group'].unique():
@@ -1501,5 +1501,5 @@ def on_rq_modal_button_click(submit_n_clicks, cancel_n_clicks):
         return dash.no_update
 
 if __name__ == "__main__":
-    #app.run_server(debug=True)
-    app.run_server(debug=True, host='0.0.0.0', port='8080')#change for deploy
+    app.run_server(debug=True)
+    #app.run_server(debug=True, host='0.0.0.0', port='8080')#change for deploy
