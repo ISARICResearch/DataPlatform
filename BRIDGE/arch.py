@@ -494,7 +494,9 @@ def getListContent(current_datadicc,version):
 
 
 
-def getUserListContent(current_datadicc,version,user_checked_options=None,ulist_var_name=None):
+#HERE CHECK already modified variables x182#
+
+def getUserListContent(current_datadicc,version,mod_list,user_checked_options=None,ulist_var_name=None):
     level2_answers=[]
     all_rows_lists=[]
     #datadiccDisease_lists = current_datadicc.loc[(((current_datadicc['Type']=='list') |(current_datadicc['Type']=='user_list') )&
