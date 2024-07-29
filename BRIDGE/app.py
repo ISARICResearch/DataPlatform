@@ -926,16 +926,21 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
             for var_select in dict1:
                 if (var_select[0]==variable_submited):
                     select_answer_options=''
+                    NOT_select_answer_options=''
                     for option_var_select in (var_select[1]):
                         if (option_var_select[1] in (list(list_options_checked['Option']))):
                             new_submited_options.append([option_var_select[0],option_var_select[1],1])
                             select_answer_options+=str(option_var_select[0])+', ' +str(option_var_select[1]) +' | '
                         else:
                             new_submited_options.append([option_var_select[0],option_var_select[1],0])
+                            NOT_select_answer_options+=str(option_var_select[0])+', ' +str(option_var_select[1]) +' | '
                     new_submited_line.append([var_select,new_submited_options])
                     dict1[position][1]=new_submited_line[0][1]
                     #current_datadicc['Answer Options'].loc[current_datadicc['Variable']==variable_submited].iloc[0]=select_answer_options+'88, Other'
                     current_datadicc.loc[current_datadicc['Variable'] == variable_submited, 'Answer Options'] = select_answer_options + '88, Other'
+                    if  variable_submited+'_otherl2' in list(current_datadicc['Variable']):
+                        current_datadicc.loc[current_datadicc['Variable'] == variable_submited+'_otherl2', 'Answer Options'] = NOT_select_answer_options + '88, Other'
+
                 position+=1
             ulist_variable_choicesSubmit=dict1
 
@@ -946,16 +951,20 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
             for var_select_multi_check in dict2:
                 if (var_select_multi_check[0]==variable_submited):
                     select_answer_options_multi_check=''
+                    NOT_select_answer_options_multi_check=''
                     for option_var_select_multi_check in (var_select_multi_check[1]):
                         if (option_var_select_multi_check[1] in (list(list_options_checked['Option']))):
                             new_submited_options_multi_check.append([option_var_select_multi_check[0],option_var_select_multi_check[1],1])
                             select_answer_options_multi_check+=str(option_var_select_multi_check[0])+', ' +str(option_var_select_multi_check[1]) +' | '
                         else:
                             new_submited_options_multi_check.append([option_var_select_multi_check[0],option_var_select_multi_check[1],0])
+                            NOT_select_answer_options_multi_check+=str(option_var_select_multi_check[0])+', ' +str(option_var_select_multi_check[1]) +' | '
                     new_submited_line_multi_check.append([var_select_multi_check,new_submited_options_multi_check])
                     dict2[position_multi_check][1]=new_submited_line_multi_check[0][1]
                     #current_datadicc['Answer Options'].loc[current_datadicc['Variable']==variable_submited].iloc[0]=select_answer_options+'88, Other'
                     current_datadicc.loc[current_datadicc['Variable'] == variable_submited, 'Answer Options'] = select_answer_options_multi_check + '88, Other'
+                    if  variable_submited+'_otherl2' in list(current_datadicc['Variable']):
+                        current_datadicc.loc[current_datadicc['Variable'] == variable_submited+'_otherl2', 'Answer Options'] = NOT_select_answer_options_multi_check + '88, Other'                    
                 position_multi_check+=1
             multilist_variable_choicesSubmit=dict2
 
@@ -1268,8 +1277,8 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 def update_row3_content(selected_value,json_data):
     caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
 
-    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')
-    #research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') #Change this for deploy
+    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')#change for deploy
+    #research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') 
 
     group_elements=[]
     for tq_opGroup in research_question_elements['Option Group'].unique():
