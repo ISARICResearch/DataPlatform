@@ -1,5 +1,5 @@
 Drugs                                                , Code     , Library ,Selected,Preset_H5NX
-Analgesic ,373265006 |Analgesic (substance)|,SNOMED,,
+Analgesic ,373265006 |Analgesic (substance)|,SNOMED,1,
 Antibiotic ,255631004 |Antibiotic (product)|,SNOMED,1,1
 Anticoagulant,372862008 |Anticoagulant (substance)|,SNOMED,,1
 Antifungal ,373219008 |Substance with antifungal mechanism of action (substance)|,SNOMED,1,1
