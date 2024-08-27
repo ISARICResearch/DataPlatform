@@ -18,6 +18,7 @@ import io
 from zipfile import ZipFile
 import re
 import random
+from urllib.parse import parse_qs, urlparse
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'],suppress_callback_exceptions=True)
 app.title ='BRIDGE'
@@ -380,6 +381,7 @@ app.layout = html.Div(
         #tree_column,
         #main_content,
         dcc.Location(id='url', refresh=False),
+        #html.H1(id='titleURL'),
         html.Div(id='page-content'),
         dcc.Download(id="download-dataframe-csv"),
         dcc.Download(id='download-compGuide-pdf'),
@@ -591,8 +593,38 @@ def start_app(n_clicks):
     else:
         return '/main'
 
+####################
+# get URL parameter
+####################
+@app.callback(
+    [Output(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
+    [Input('url', 'href')]
+)
+def update_output_based_on_url(href):
+    if href is None:
+        return   [[] for _ in grouped_presets.keys()]
+    
+    # Parse the URL to extract the parameters
+    parsed_url = urlparse(href)
+    params = parse_qs(parsed_url.query)
+    
+    # Accessing the 'param' parameter
+    param_value = params.get('param', [''])[0]  # Default to an empty string if the parameter is not present
+
+    # Example: Split param_value by underscore
+    group, value = param_value.split('_') if '_' in param_value else (None, None)
+
+    # Prepare the outputs
+    checklist_values = {key: [] for key in grouped_presets.keys()}
+
+    if group in grouped_presets and value in grouped_presets[group]:
+        checklist_values[group] = [value]
+
+    # Return title and checklist values
+    return [checklist_values[key] for key in grouped_presets.keys()]
 
 
+  
 
 #################################
 
@@ -844,12 +876,17 @@ def update_input(data):
 
 
 @app.callback(
-    Output('tree_items_container','children'),
+    [Output('tree_items_container','children'),Output('current_datadicc-store','data',allow_duplicate=True),
+     Output('ulist_variable_choices-store','data',allow_duplicate=True),Output('multilist_variable_choices-store','data',allow_duplicate=True)],
     [Input(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
     #[State('visibility-store', 'data')],
     prevent_initial_call=True
 )
 def update_output(*args):
+
+    templa_answer_opt_dict1=[]
+    templa_answer_opt_dict2=[]
+
     checked_values = args
     #checked_values = args[:-1]
     #visibility_data = args[-1]    
@@ -863,6 +900,76 @@ def update_output(*args):
         checked_key = 'preset_' + ps[0] + '_' + ps[1]
         if checked_key in current_datadicc:
             checked = checked+list(current_datadicc['Variable'].loc[current_datadicc[checked_key].notnull()])
+
+        ##########Modificacion para template options in userlist
+        template_ulist_var=current_datadicc.loc[current_datadicc['Type'].isin(['user_list','multi_list'])]
+        template_ulist_lists=template_ulist_var['List']
+        
+        root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
+        #for t_u_list in template_ulist_lists:
+        for index_tem_ul,row_tem_ul in template_ulist_var.iterrows():
+            print(row_tem_ul['Variable'])
+            dict1_options=[]
+            dict2_options=[]
+            t_u_list = row_tem_ul['List']
+            list_path = root+currentVersion+'/Lists/'+t_u_list.replace('_','/')+'.csv'
+            try:
+                list_options = pd.read_csv(list_path,encoding='latin1') 
+            
+            except Exception as e:
+                print(f"Failed to fetch remote file due to: {e}. Attempting to read from local file.")
+                continue
+            
+            
+            #template_list_options=list_options.loc[list_options[checked_key]==1]
+            list_options=list_options.sort_values(by=list_options.columns[0],ascending=True)
+            cont_lo=1
+            select_answer_options=''
+
+            NOT_select_answer_options=''
+            for index, row in list_options.iterrows():
+                if cont_lo == 88:
+                    cont_lo=89
+                elif cont_lo == 99:
+                    cont_lo =100
+                
+                
+                if checked_key in list_options.columns:
+                    selected_column=checked_key
+                else:
+                    selected_column='Selected'
+
+                if (row[selected_column]==1 ):
+                    if row_tem_ul['Type']=='user_list':
+                        dict1_options.append([str(cont_lo),str(row[list_options.columns[0]]),1])
+                    elif row_tem_ul['Type']=='multi_list':
+                        dict2_options.append([str(cont_lo),str(row[list_options.columns[0]]),1])
+                    select_answer_options+=str(cont_lo)+', ' +str(row[list_options.columns[0]]) +' | '
+                else:
+                    if row_tem_ul['Type']=='user_list':
+                        dict1_options.append([str(cont_lo),str(row[list_options.columns[0]]),0])
+                    elif row_tem_ul['Type']=='multi_list':
+                        dict2_options.append([str(cont_lo),str(row[list_options.columns[0]]),0])                        
+                    NOT_select_answer_options+=str(cont_lo)+', ' +str(row[list_options.columns[0]]) +' | '
+                cont_lo+=1     
+            current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable'], 'Answer Options'] = select_answer_options + '88, Other'
+            if  row_tem_ul['Variable']+'_otherl2' in list(current_datadicc['Variable']):
+                current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable']+'_otherl2', 'Answer Options'] = NOT_select_answer_options + '88, Other'
+        
+        
+
+
+            if row_tem_ul['Type']=='user_list':
+                templa_answer_opt_dict1.append([row_tem_ul['Variable'],dict1_options] )
+            elif row_tem_ul['Type']=='multi_list':     
+                templa_answer_opt_dict2.append([row_tem_ul['Variable'],dict2_options]   )      
+
+            ##Aqui, tengo que revisar los y actualizar cada option del current data dict
+        
+            
+
+
+
     tree_items = html.Div(
         dash_treeview_antd.TreeView(
             id='input',
@@ -882,7 +989,11 @@ def update_output(*args):
             #'display': 'none'
         }
     )
-    return tree_items
+
+    #Check all list 
+
+
+    return tree_items,current_datadicc.to_json(date_format='iso', orient='split'),json.dumps(templa_answer_opt_dict1), json.dumps(templa_answer_opt_dict2)
 
 @app.callback(
     [Output('modal', 'is_open', allow_duplicate=True), Output('current_datadicc-store','data'),Output('ulist_variable_choices-store','data'),
@@ -1078,8 +1189,8 @@ def on_generate_click(n_clicks,json_data, crf_name):
     
         
         file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
-        file_path = 'BRIDGE/assets/config_files/'+file_name
-        #file_path = 'assets/config_files/'+file_name# Change this for deploy
+        #file_path = 'BRIDGE/assets/config_files/'+file_name
+        file_path = 'assets/config_files/'+file_name# Change this for deploy
         # Open the XML file and read its content
         with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
             content = file.read()
@@ -1277,8 +1388,8 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 def update_row3_content(selected_value,json_data):
     caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
 
-    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')#change for deploy
-    #research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') 
+    #research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')#change for deploy
+    research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') 
 
     group_elements=[]
     for tq_opGroup in research_question_elements['Option Group'].unique():
@@ -1559,5 +1670,5 @@ def on_rq_modal_button_click(submit_n_clicks, cancel_n_clicks):
         return dash.no_update
 
 if __name__ == "__main__":
-    #app.run_server(debug=True)
-    app.run_server(debug=True, host='0.0.0.0', port='8080')#change for deploy
+    app.run_server(debug=True)
+    #app.run_server(debug=True, host='0.0.0.0', port='8080')#change for deploy
