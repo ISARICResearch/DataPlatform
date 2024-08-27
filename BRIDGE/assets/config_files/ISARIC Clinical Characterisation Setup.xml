@@ -33,18 +33,24 @@ NA, Not applicable</redcap:MissingDataCodes>
 	<redcap:ProtectedEmailModeLogo></redcap:ProtectedEmailModeLogo>
 	<redcap:RepeatingInstrumentsAndEvents>
 		<redcap:RepeatingEvent redcap:UniqueEventName="daily_arm_1"/>
+		<redcap:RepeatingEvent redcap:UniqueEventName="follow_up_arm_1"/>
 		<redcap:RepeatingInstruments>
-			<redcap:RepeatingInstrument redcap:UniqueEventName="outcome__end_of_st_arm_1" redcap:RepeatInstrument="outcome_medication" redcap:CustomLabel=""/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="summary_medication_arm_1" redcap:RepeatInstrument="research_samples" redcap:CustomLabel=""/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="summary_medication_arm_1" redcap:RepeatInstrument="medication" redcap:CustomLabel=""/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="summary_medication_arm_1" redcap:RepeatInstrument="pathogen_testing" redcap:CustomLabel=""/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="outcome__end_of_st_arm_1" redcap:RepeatInstrument="research_samples" redcap:CustomLabel=""/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="outcome__end_of_st_arm_1" redcap:RepeatInstrument="medication" redcap:CustomLabel=""/>
+			<redcap:RepeatingInstrument redcap:UniqueEventName="outcome__end_of_st_arm_1" redcap:RepeatInstrument="pathogen_testing" redcap:CustomLabel=""/>
 		</redcap:RepeatingInstruments>
 	</redcap:RepeatingInstrumentsAndEvents>
 	<redcap:UserRolesGroup>
-		<redcap:UserRoles role_name="Analysis + API export" unique_role_name="U-682JAHCW98" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" data_import_tool="0" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" api_export="1" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="0" data_quality_design="1" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
-		<redcap:UserRoles role_name="Data Entry" unique_role_name="U-668HFXMXR4" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="0" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
-		<redcap:UserRoles role_name="Data Entry + Import" unique_role_name="U-8384FNEE3T" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" data_import_tool="1" data_comparison_tool="0" data_logging="0" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="0" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
-		<redcap:UserRoles role_name="Data Entry + MobileApp" unique_role_name="U-421HRDKMN9" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" api_export="0" api_import="0" mobile_app="1" mobile_app_download_data="1" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="0" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
-		<redcap:UserRoles role_name="Monitor" unique_role_name="U-2737AAF3D7" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" data_import_tool="0" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="1" data_quality_design="1" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
-		<redcap:UserRoles role_name="Project Manager" unique_role_name="U-671KHWFWC9" lock_record="1" lock_record_multiform="1" lock_record_customize="1" data_export_tool="" data_export_instruments="[inclusion_criteria,1][pre_admission_medication,1][critical_care_module,1][follow_up_self_assessment_survey,1][follow_up_self_assessment_survey_long_term,1][data_platform_terms_of_submission,1][onset_and_admission,1][admission_signs_and_symptoms,1][vaccinations,1][daily_form,1][treatment,1][infectious_respiratory_disease_diagnosis,1][infectious_respiratory_disease_pathogen_testing,1][pregnancy_module,1][admission,1][pathogen_testing,1][outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" data_import_tool="1" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="1" data_access_groups="1" graphical="1" reports="1" design="1" alerts="1" calendar="1" data_entry="[inclusion_criteria,1][pre_admission_medication,1][critical_care_module,1][follow_up_self_assessment_survey,1][follow_up_self_assessment_survey_long_term,1][data_platform_terms_of_submission,1][onset_and_admission,1][admission_signs_and_symptoms,1][vaccinations,1][daily_form,1][treatment,1][infectious_respiratory_disease_diagnosis,1][infectious_respiratory_disease_pathogen_testing,1][pregnancy_module,1][admission,1][pathogen_testing,1][outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" api_export="1" api_import="1" mobile_app="1" mobile_app_download_data="1" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="1" data_quality_execute="1" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="1"/>
-		<redcap:UserRoles role_name="Read only" unique_role_name="U-352ET7W43K" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="0" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="0" design="0" alerts="0" calendar="1" data_entry="[outcome_pathogen_testing,1][outcome_assessment,1][form_1,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1][daily,1][outcome_medication,1][outcome,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="0" data_quality_design="0" data_quality_execute="0" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
+		<redcap:UserRoles role_name="Analysis + API export" unique_role_name="U-682JAHCW98" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" data_import_tool="0" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" api_export="1" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="0" data_quality_design="1" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
+		<redcap:UserRoles role_name="Data Entry" unique_role_name="U-668HFXMXR4" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="0" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
+		<redcap:UserRoles role_name="Data Entry + Import" unique_role_name="U-8384FNEE3T" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" data_import_tool="1" data_comparison_tool="0" data_logging="0" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="0" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
+		<redcap:UserRoles role_name="Data Entry + MobileApp" unique_role_name="U-421HRDKMN9" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" api_export="0" api_import="0" mobile_app="1" mobile_app_download_data="1" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="0" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
+		<redcap:UserRoles role_name="Monitor" unique_role_name="U-2737AAF3D7" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" data_import_tool="0" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="1" design="0" alerts="0" calendar="1" data_entry="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="1" data_quality_design="1" data_quality_execute="1" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
+		<redcap:UserRoles role_name="Project Manager" unique_role_name="U-671KHWFWC9" lock_record="1" lock_record_multiform="1" lock_record_customize="1" data_export_tool="" data_export_instruments="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" data_import_tool="1" data_comparison_tool="1" data_logging="1" file_repository="1" double_data="0" user_rights="1" data_access_groups="1" graphical="1" reports="1" design="1" alerts="1" calendar="1" data_entry="[presentation,1][daily,1][research_samples,1][medication,1][pathogen_testing,1][outcome,1][withdrawal,1][follow_up,1]" api_export="1" api_import="1" mobile_app="1" mobile_app_download_data="1" record_create="1" record_rename="1" record_delete="1" dts="0" participants="1" data_quality_design="1" data_quality_execute="1" data_quality_resolution="1" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="1"/>
+		<redcap:UserRoles role_name="Read only" unique_role_name="U-352ET7W43K" lock_record="0" lock_record_multiform="0" lock_record_customize="0" data_export_tool="" data_export_instruments="[presentation,0][daily,0][research_samples,0][medication,0][pathogen_testing,0][outcome,0][withdrawal,0][follow_up,0]" data_import_tool="0" data_comparison_tool="0" data_logging="0" file_repository="0" double_data="0" user_rights="0" data_access_groups="0" graphical="1" reports="0" design="0" alerts="0" calendar="1" data_entry="[presentation,0][daily,0][research_samples,0][medication,0][pathogen_testing,0][outcome,0][withdrawal,0][follow_up,0]" api_export="0" api_import="0" mobile_app="0" mobile_app_download_data="0" record_create="0" record_rename="0" record_delete="0" dts="0" participants="0" data_quality_design="0" data_quality_execute="0" data_quality_resolution="0" random_setup="0" random_dashboard="0" random_perform="0" realtime_webservice_mapping="0" realtime_webservice_adjudicate="0" external_module_config="" mycap_participants="0"/>
 	</redcap:UserRolesGroup>
 	<redcap:FormDisplayLogicConditionsGroup>
 		<redcap:FormDisplayLogicConditions control_condition="[patient_tier]=&#039;1&#039; or [patient_tier]=&#039;2&#039;" forms_events=":"/>
@@ -55,7 +61,9 @@ NA, Not applicable</redcap:MissingDataCodes>
 	<Protocol>
 		<StudyEventRef StudyEventOID="Event.initial_assessment_arm_1" OrderNumber="1" Mandatory="No"/>
 		<StudyEventRef StudyEventOID="Event.daily_arm_1" OrderNumber="2" Mandatory="No"/>
-		<StudyEventRef StudyEventOID="Event.outcome__end_of_st_arm_1" OrderNumber="3" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.summary_medication_arm_1" OrderNumber="3" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.outcome__end_of_st_arm_1" OrderNumber="4" Mandatory="No"/>
+		<StudyEventRef StudyEventOID="Event.follow_up_arm_1" OrderNumber="5" Mandatory="No"/>
 	</Protocol>
 	<StudyEventDef OID="Event.initial_assessment_arm_1" Name="Initial Assessment / Admission" Type="Common" Repeating="No" redcap:EventName="Initial Assessment / Admission" redcap:CustomEventLabel="" redcap:UniqueEventName="initial_assessment_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="1" redcap:OffsetMin="0" redcap:OffsetMax="0">
 		<FormRef FormOID="Form.presentation" OrderNumber="1" Mandatory="No" redcap:FormName="presentation"/>
@@ -64,9 +72,17 @@ NA, Not applicable</redcap:MissingDataCodes>
 	<StudyEventDef OID="Event.daily_arm_1" Name="Daily" Type="Common" Repeating="No" redcap:EventName="Daily" redcap:CustomEventLabel="" redcap:UniqueEventName="daily_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="2" redcap:OffsetMin="0" redcap:OffsetMax="0">
 		<FormRef FormOID="Form.daily" OrderNumber="1" Mandatory="No" redcap:FormName="daily"/>
 	</StudyEventDef>
-	<StudyEventDef OID="Event.outcome__end_of_st_arm_1" Name="Outcome / End of study" Type="Common" Repeating="No" redcap:EventName="Outcome / End of study" redcap:CustomEventLabel="" redcap:UniqueEventName="outcome__end_of_st_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="3" redcap:OffsetMin="0" redcap:OffsetMax="0">
-		<FormRef FormOID="Form.outcome_medication" OrderNumber="1" Mandatory="No" redcap:FormName="outcome_medication"/>
-		<FormRef FormOID="Form.outcome" OrderNumber="2" Mandatory="No" redcap:FormName="outcome"/>
+	<StudyEventDef OID="Event.summary_medication_arm_1" Name="Medication / Testing" Type="Common" Repeating="No" redcap:EventName="Summary: Medication / Testing" redcap:CustomEventLabel="" redcap:UniqueEventName="summary_medication_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="3" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.research_samples" OrderNumber="1" Mandatory="No" redcap:FormName="research_samples"/>
+		<FormRef FormOID="Form.medication" OrderNumber="2" Mandatory="No" redcap:FormName="medication"/>
+		<FormRef FormOID="Form.pathogen_testing" OrderNumber="3" Mandatory="No" redcap:FormName="pathogen_testing"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.outcome__end_of_st_arm_1" Name="Outcome / End of study" Type="Common" Repeating="No" redcap:EventName="Outcome / End of study" redcap:CustomEventLabel="" redcap:UniqueEventName="outcome__end_of_st_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="4" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.outcome" OrderNumber="1" Mandatory="No" redcap:FormName="outcome"/>
+		<FormRef FormOID="Form.withdrawal" OrderNumber="2" Mandatory="No" redcap:FormName="withdrawal"/>
+	</StudyEventDef>
+	<StudyEventDef OID="Event.follow_up_arm_1" Name="Follow Up" Type="Common" Repeating="No" redcap:EventName="Follow Up" redcap:CustomEventLabel="" redcap:UniqueEventName="follow_up_arm_1" redcap:ArmNum="1" redcap:ArmName="Arm 1" redcap:DayOffset="5" redcap:OffsetMin="0" redcap:OffsetMax="0">
+		<FormRef FormOID="Form.follow_up" OrderNumber="1" Mandatory="No" redcap:FormName="follow_up"/>
 	</StudyEventDef>
 	<FormDef OID="Form.presentation" Name="Presentation" Repeating="No" redcap:FormName="presentation">
 		<ItemGroupRef ItemGroupOID="presentation.subjid" Mandatory="No"/>
@@ -76,13 +92,29 @@ NA, Not applicable</redcap:MissingDataCodes>
 		<ItemGroupRef ItemGroupOID="daily.placeholder" Mandatory="No"/>
 		<ItemGroupRef ItemGroupOID="daily.daily_complete" Mandatory="No"/>
 	</FormDef>
-	<FormDef OID="Form.outcome_medication" Name="Outcome Medication" Repeating="No" redcap:FormName="outcome_medication">
-		<ItemGroupRef ItemGroupOID="outcome_medication.placeholder2" Mandatory="No"/>
-		<ItemGroupRef ItemGroupOID="outcome_medication.outcome_medication_complete" Mandatory="No"/>
+	<FormDef OID="Form.research_samples" Name="Research Samples" Repeating="No" redcap:FormName="research_samples">
+		<ItemGroupRef ItemGroupOID="research_samples.placeholder2" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="research_samples.research_samples_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.medication" Name="Medication" Repeating="No" redcap:FormName="medication">
+		<ItemGroupRef ItemGroupOID="medication.placeholder3" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="medication.medication_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.pathogen_testing" Name="Pathogen Testing" Repeating="No" redcap:FormName="pathogen_testing">
+		<ItemGroupRef ItemGroupOID="pathogen_testing.placeholder4" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="pathogen_testing.pathogen_testing_complete" Mandatory="No"/>
 	</FormDef>
 	<FormDef OID="Form.outcome" Name="Outcome" Repeating="No" redcap:FormName="outcome">
-		<ItemGroupRef ItemGroupOID="outcome.placeholder3" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="outcome.placeholder5" Mandatory="No"/>
 		<ItemGroupRef ItemGroupOID="outcome.outcome_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.withdrawal" Name="Withdrawal" Repeating="No" redcap:FormName="withdrawal">
+		<ItemGroupRef ItemGroupOID="withdrawal.placeholder6" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="withdrawal.withdrawal_complete" Mandatory="No"/>
+	</FormDef>
+	<FormDef OID="Form.follow_up" Name="Follow Up" Repeating="No" redcap:FormName="follow_up">
+		<ItemGroupRef ItemGroupOID="follow_up.placeholder7" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="follow_up.follow_up_complete" Mandatory="No"/>
 	</FormDef>
 	<ItemGroupDef OID="presentation.subjid" Name="Presentation" Repeating="No">
 		<ItemRef ItemOID="subjid" Mandatory="No" redcap:Variable="subjid"/>
@@ -96,17 +128,41 @@ NA, Not applicable</redcap:MissingDataCodes>
 	<ItemGroupDef OID="daily.daily_complete" Name="Form Status" Repeating="No">
 		<ItemRef ItemOID="daily_complete" Mandatory="No" redcap:Variable="daily_complete"/>
 	</ItemGroupDef>
-	<ItemGroupDef OID="outcome_medication.placeholder2" Name="Outcome Medication" Repeating="No">
+	<ItemGroupDef OID="research_samples.placeholder2" Name="Research Samples" Repeating="No">
 		<ItemRef ItemOID="placeholder2" Mandatory="No" redcap:Variable="placeholder2"/>
 	</ItemGroupDef>
-	<ItemGroupDef OID="outcome_medication.outcome_medication_complete" Name="Form Status" Repeating="No">
-		<ItemRef ItemOID="outcome_medication_complete" Mandatory="No" redcap:Variable="outcome_medication_complete"/>
+	<ItemGroupDef OID="research_samples.research_samples_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="research_samples_complete" Mandatory="No" redcap:Variable="research_samples_complete"/>
 	</ItemGroupDef>
-	<ItemGroupDef OID="outcome.placeholder3" Name="Outcome" Repeating="No">
+	<ItemGroupDef OID="medication.placeholder3" Name="Outcome Medication" Repeating="No">
 		<ItemRef ItemOID="placeholder3" Mandatory="No" redcap:Variable="placeholder3"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="medication.medication_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="medication_complete" Mandatory="No" redcap:Variable="medication_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="pathogen_testing.placeholder4" Name="Pathogen Testing" Repeating="No">
+		<ItemRef ItemOID="placeholder4" Mandatory="No" redcap:Variable="placeholder4"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="pathogen_testing.pathogen_testing_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="pathogen_testing_complete" Mandatory="No" redcap:Variable="pathogen_testing_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="outcome.placeholder5" Name="Outcome" Repeating="No">
+		<ItemRef ItemOID="placeholder5" Mandatory="No" redcap:Variable="placeholder5"/>
 	</ItemGroupDef>
 	<ItemGroupDef OID="outcome.outcome_complete" Name="Form Status" Repeating="No">
 		<ItemRef ItemOID="outcome_complete" Mandatory="No" redcap:Variable="outcome_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="withdrawal.placeholder6" Name="Withdrawal" Repeating="No">
+		<ItemRef ItemOID="placeholder6" Mandatory="No" redcap:Variable="placeholder6"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="withdrawal.withdrawal_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="withdrawal_complete" Mandatory="No" redcap:Variable="withdrawal_complete"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="follow_up.placeholder7" Name="Follow Up" Repeating="No">
+		<ItemRef ItemOID="placeholder7" Mandatory="No" redcap:Variable="placeholder7"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="follow_up.follow_up_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="follow_up_complete" Mandatory="No" redcap:Variable="follow_up_complete"/>
 	</ItemGroupDef>
 	<ItemDef OID="subjid" Name="subjid" DataType="text" Length="999" redcap:Variable="subjid" redcap:FieldType="text">
 		<Question><TranslatedText>Participant Identification Number (PIN):</TranslatedText></Question>
@@ -118,23 +174,51 @@ NA, Not applicable</redcap:MissingDataCodes>
 	<ItemDef OID="placeholder" Name="placeholder" DataType="text" Length="999" redcap:Variable="placeholder" redcap:FieldType="text">
 		<Question><TranslatedText>placeholder</TranslatedText></Question>
 	</ItemDef>
-	<ItemDef OID="daily_complete" Name="daily_complete" DataType="text" Length="1" redcap:Variable="daily_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
-		<Question><TranslatedText>Complete?</TranslatedText></Question>
-		<CodeListRef CodeListOID="daily_complete.choices"/>
-	</ItemDef>
 	<ItemDef OID="placeholder2" Name="placeholder2" DataType="text" Length="999" redcap:Variable="placeholder2" redcap:FieldType="text">
 		<Question><TranslatedText>placeholder</TranslatedText></Question>
-	</ItemDef>
-	<ItemDef OID="outcome_medication_complete" Name="outcome_medication_complete" DataType="text" Length="1" redcap:Variable="outcome_medication_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
-		<Question><TranslatedText>Complete?</TranslatedText></Question>
-		<CodeListRef CodeListOID="outcome_medication_complete.choices"/>
 	</ItemDef>
 	<ItemDef OID="placeholder3" Name="placeholder3" DataType="text" Length="999" redcap:Variable="placeholder3" redcap:FieldType="text">
 		<Question><TranslatedText>placeholder</TranslatedText></Question>
 	</ItemDef>
+	<ItemDef OID="placeholder4" Name="placeholder4" DataType="text" Length="999" redcap:Variable="placeholder4" redcap:FieldType="text">
+		<Question><TranslatedText>placeholder</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="placeholder5" Name="placeholder5" DataType="text" Length="999" redcap:Variable="placeholder5" redcap:FieldType="text">
+		<Question><TranslatedText>placeholder</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="placeholder6" Name="placeholder6" DataType="text" Length="999" redcap:Variable="placeholder6" redcap:FieldType="text">
+		<Question><TranslatedText>placeholder</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="placeholder7" Name="placeholder7" DataType="text" Length="999" redcap:Variable="placeholder7" redcap:FieldType="text">
+		<Question><TranslatedText>placeholder</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="daily_complete" Name="daily_complete" DataType="text" Length="1" redcap:Variable="daily_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="daily_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="research_samples_complete" Name="research_samples_complete" DataType="text" Length="1" redcap:Variable="research_samples_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="research_samples_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="medication_complete" Name="medication_complete" DataType="text" Length="1" redcap:Variable="medication_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="medication_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="pathogen_testing_complete" Name="mpathogen_testing_complete" DataType="text" Length="1" redcap:Variable="pathogen_testing_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="pathogen_testing_complete.choices"/>
+	</ItemDef>
 	<ItemDef OID="outcome_complete" Name="outcome_complete" DataType="text" Length="1" redcap:Variable="outcome_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
 		<Question><TranslatedText>Complete?</TranslatedText></Question>
 		<CodeListRef CodeListOID="outcome_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="withdrawal_complete" Name="withdrawal_complete" DataType="text" Length="1" redcap:Variable="withdrawal_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="withdrawal_complete.choices"/>
+	</ItemDef>
+	<ItemDef OID="follow_up_complete" Name="follow_up_complete" DataType="text" Length="1" redcap:Variable="follow_up_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="follow_up_complete.choices"/>
 	</ItemDef>
 	<CodeList OID="presentation_complete.choices" Name="presentation_complete" DataType="text" redcap:Variable="presentation_complete">
 		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
@@ -146,12 +230,32 @@ NA, Not applicable</redcap:MissingDataCodes>
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
 	</CodeList>
-	<CodeList OID="outcome_medication_complete.choices" Name="outcome_medication_complete" DataType="text" redcap:Variable="outcome_medication_complete">
+	<CodeList OID="research_samples_complete.choices" Name="research_samples_complete" DataType="text" redcap:Variable="research_samples_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="medication_complete.choices" Name="medication_complete" DataType="text" redcap:Variable="medication_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="pathogen_testing_complete.choices" Name="pathogen_testing_complete" DataType="text" redcap:Variable="pathogen_testing_complete">
 		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
 	</CodeList>
 	<CodeList OID="outcome_complete.choices" Name="outcome_complete" DataType="text" redcap:Variable="outcome_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="withdrawal_complete.choices" Name="withdrawal_complete" DataType="text" redcap:Variable="withdrawal_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="follow_up_complete.choices" Name="follow_up_complete" DataType="text" redcap:Variable="follow_up_complete">
 		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
 		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
