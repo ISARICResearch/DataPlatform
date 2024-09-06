@@ -190,12 +190,12 @@ presentation,CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current ill
 presentation,CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current illness and is ongoing,comor_unlisted,list,Other relevant comorbidity(s),"1, Yes | 0, No | 99, Unknown",,,,conditions_Comorbidities,,Other,This refers to a comorbid condition(s) not listed above. ,"Indicate 'Yes', if this is condition(s) existed prior to admission with this current illness and remains an active medical condition. ",SNOMED,"398192003, Co-morbid conditions (finding)",,,risk_factor_comor,1,1,1,1,1,1,,,1,1,,1,,1,,,,,,,,,,,1,,
 presentation,CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current illness and is ongoing,comor_vuln,radio,Clinically extremely vulnerable,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,risk_factor_comor,,,,,,,,,,1,,1,,,,,,,,,,,,,,,
 presentation,CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current illness and is ongoing,comor_cancer,radio,"People with specific cancers:
-ÃƒÆ’Ã¢â‚¬Å¡ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ people with cancer who are undergoing active chemotherapy
-ÃƒÆ’Ã¢â‚¬Å¡ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ people with lung cancer who are undergoing radical radiotherapy
-ÃƒÆ’Ã¢â‚¬Å¡ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ people with cancers of the blood or bone marrow such as leukaemia, lymphoma or myeloma who are at any stage of treatment
-ÃƒÆ’Ã¢â‚¬Å¡ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ people having immunotherapy or other continuing antibody treatments for cancer
-ÃƒÆ’Ã¢â‚¬Å¡ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ people having other targeted cancer treatments which can affect the immune system, such as protein kinase inhibitors or PARP inhibitors
-ÃƒÆ’Ã¢â‚¬Å¡ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ people who have had bone marrow or stem cell transplants in the last 6 months, or who are still taking immunosuppression drugs","1, Yes | 0, No | 99, Unknown",,,,,[comor_vuln]='1',,,,,,,,risk_factor_comor,,,,,,,,,,1,,1,,,,,,,,,,,,,,,
+people with cancer who are undergoing active chemotherapy
+people with lung cancer who are undergoing radical radiotherapy
+people with cancers of the blood or bone marrow such as leukaemia, lymphoma or myeloma who are at any stage of treatment
+people having immunotherapy or other continuing antibody treatments for cancer
+people having other targeted cancer treatments which can affect the immune system, such as protein kinase inhibitors or PARP inhibitors
+people who have had bone marrow or stem cell transplants in the last 6 months, or who are still taking immunosuppression drugs","1, Yes | 0, No | 99, Unknown",,,,,[comor_vuln]='1',,,,,,,,risk_factor_comor,,,,,,,,,,1,,1,,,,,,,,,,,,,,,
 presentation,CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current illness and is ongoing,comor_copd,radio,"People with severe respiratory conditions including all cystic fibrosis, severe asthma requiring daily oral steroid or injectable maintenance therapy and severe chronic obstructive pulmonary requiring oxygen (COPD):","1, Yes | 0, No | 99, Unknown",,,,,[comor_vuln]='1',,,,,,,,risk_factor_comor,,,,,,,,,,1,,,,,,,,,,,,,,,,,
 presentation,CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current illness and is ongoing,comor_scid,radio,"People with rare diseases and inborn errors of metabolism that significantly increase the risk of infections (such as Severe combined immunodeficiency (SCID), homozygous sickle cell):","1, Yes | 0, No | 99, Unknown",,,,,[comor_vuln]='1',,,,,,,,risk_factor_comor,,,,,,,,,,1,,,,,,,,,,,,,,,,,
 presentation,CO-MORBIDITIES AND RISK FACTORS: Existing prior to this current illness and is ongoing,comor_immuno,radio,People on immunosuppression therapies sufficient to significantly increase risk of infection: ,"1, Yes | 0, No | 99, Unknown",,,,,[comor_vuln]='1',,,,,,,,risk_factor_comor,,,,,,,,,,1,,1,,,,,,,,,,,,,,,
