@@ -2,22 +2,10 @@
   "files": {
     "BRIDGE/app.py": [
       {
-        "id": "2613b2ed-21c9-43d0-b24a-922e24c3535e",
-        "line": 19,
-        "version": 1397,
-        "index": 460
-      },
-      {
-        "id": "5703f6b9-4646-4ddc-8862-fae5ac676431",
-        "line": 64,
-        "version": 1397,
-        "index": 2330
-      },
-      {
-        "id": "28e9a430-e769-42cd-9a72-61bdde6e58cb",
-        "line": 950,
-        "version": 1397,
-        "index": 42416
+        "id": "3facd993-5550-4d56-87ca-6e76c873a1a9",
+        "line": 1416,
+        "version": 1499,
+        "index": 64159
       }
     ]
   }

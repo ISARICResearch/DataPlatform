@@ -64,7 +64,7 @@ navbar = dbc.Navbar(
                 # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src="assets/ISARIC_logo_wh.png", height="60px")),
+                        dbc.Col(html.Img(src="/assets/ISARIC_logo_wh.png", height="60px")),
                         dbc.Col(dbc.NavbarBrand("BRIDGE - BioResearch Integrated Data tool GEnerator", className="ms-2")),
                     ],
                     align="center",
@@ -370,7 +370,7 @@ main_content = dbc.Container(
 )
 app.layout = html.Div(
     [
-        dcc.Store(id='show-home', data=True),  # Store to manage which page to display
+        dcc.Store(id='show-Take a Look at Our Other Tools', data=True),  # Store to manage which page to display
         dcc.Store(id='current_datadicc-store',data=initial_current_datadicc),
         dcc.Store(id='ulist_variable_choices-store',data=initial_ulist_variable_choices),
         dcc.Store(id='multilist_variable_choices-store',data=initial_multilist_variable_choices),
@@ -427,7 +427,7 @@ def home_page():
                 dbc.Col([
                     html.H4("Accelerating Outbreak Research Response", className="mb-3"),
                     html.P("BRIDGE automates the creation of Case Report Forms (CRFs) for specific diseases and research contexts. It generates the necessary data dictionary and XML to create a REDCap database for data capture in the ARC structure. Learn more in our ", style={"font-size": "20px", "display": "inline"}),
-                    html.A("guide for getting started.", href="https://isaricresearch.github.io/Training/", target="_blank", style={"font-size": "20px", "display": "inline"})
+                    html.A("guide for getting started.", href="https://isaricresearch.github.io/Training/bridge_starting.html", target="_blank", style={"font-size": "20px", "display": "inline"})
                 ], md=9)
             ], className="my-5"),
 
@@ -490,10 +490,22 @@ def home_page():
             ], className="my-5")
         ], className="container"),
 
-
-
-
-
+        html.Section([
+            html.Div([
+                html.H3("With Funding From:", className="text-center my-4"),
+                dbc.Row([
+                    dbc.Col([
+                        html.Img(src="/assets/logos/wellcome.jpg", className="img-fluid")
+                    ], width=2),
+                    dbc.Col([
+                        html.Img(src="/assets/logos/billandmelinda.jpg", className="img-fluid")
+                    ], width=2),
+                    dbc.Col([
+                        html.Img(src="/assets/logos/billandmelinda.jpg", className="img-fluid")
+                    ], width=2)
+                ], className="justify-content-center")  # Center the columns
+            ])
+        ]),
         # Fourth Section: Other Tools
         # Section showcasing other tools
         html.Section([
@@ -597,17 +609,17 @@ def start_app(n_clicks):
 # get URL parameter
 ####################
 @app.callback(
-    [Output(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
+    [Output('crf_name', 'value')] + [Output(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
     [Input('url', 'href')]
 )
 def update_output_based_on_url(href):
     if href is None:
-        return   [[] for _ in grouped_presets.keys()]
-    
+        return [''] + [[] for _ in grouped_presets.keys()]
+
     # Parse the URL to extract the parameters
     parsed_url = urlparse(href)
     params = parse_qs(parsed_url.query)
-    
+
     # Accessing the 'param' parameter
     param_value = params.get('param', [''])[0]  # Default to an empty string if the parameter is not present
 
@@ -620,8 +632,8 @@ def update_output_based_on_url(href):
     if group in grouped_presets and value in grouped_presets[group]:
         checklist_values[group] = [value]
 
-    # Return title and checklist values
-    return [checklist_values[key] for key in grouped_presets.keys()]
+    # Return the value for 'crf_name' and checklist values
+    return [value] + [checklist_values[key] for key in grouped_presets.keys()]
 
 
   
@@ -1189,14 +1201,14 @@ def on_generate_click(n_clicks,json_data, crf_name):
     
         
         file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
-        #file_path = 'BRIDGE/assets/config_files/'+file_name
-        file_path = 'assets/config_files/'+file_name# Change this for deploy
+        file_path = 'BRIDGE/assets/config_files/'+file_name
+        #file_path = 'assets/config_files/'+file_name# Change this for deploy
         # Open the XML file and read its content
         with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
             content = file.read()
     
     
-        return "",dcc.send_bytes(output.getvalue(), crf_name+'_'+date+'.csv'),\
+        return "",dcc.send_bytes(output.getvalue(), crf_name+'_DataDictionary_'+date+'.csv'),\
             dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf'),\
                 dcc.send_bytes(content, file_name),dcc.send_bytes(pdf_crf, crf_name+'_paperlike_'+date+'.pdf')
     else:
@@ -1388,8 +1400,8 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 def update_row3_content(selected_value,json_data):
     caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
 
-    #research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')#change for deploy
-    research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') 
+    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')#change for deploy
+    #research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') 
 
     group_elements=[]
     for tq_opGroup in research_question_elements['Option Group'].unique():
@@ -1670,5 +1682,5 @@ def on_rq_modal_button_click(submit_n_clicks, cancel_n_clicks):
         return dash.no_update
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
-    #app.run_server(debug=True, host='0.0.0.0', port='8080')#change for deploy
+    #app.run_server(debug=True)
+    app.run_server(debug=True, host='0.0.0.0', port='8080')#change for deploy
