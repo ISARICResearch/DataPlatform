@@ -495,15 +495,21 @@ def home_page():
                 html.H3("With Funding From:", className="text-center my-4"),
                 dbc.Row([
                     dbc.Col([
-                        html.Img(src="/assets/logos/wellcome.jpg", className="img-fluid")
-                    ], width=2),
+                        html.Div([
+                            html.Img(src="/assets/logos/wellcome-logo.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto"),
                     dbc.Col([
-                        html.Img(src="/assets/logos/billandmelinda.jpg", className="img-fluid")
-                    ], width=2),
+                        html.Div([
+                            html.Img(src="/assets/logos/billmelinda-logo.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto"),
                     dbc.Col([
-                        html.Img(src="/assets/logos/billandmelinda.jpg", className="img-fluid")
-                    ], width=2)
-                ], className="justify-content-center")  # Center the columns
+                        html.Div([
+                            html.Img(src="/assets/logos/uk-international-logo.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto")
+                ], className="justify-content-center")  
             ])
         ]),
         # Fourth Section: Other Tools
