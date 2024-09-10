@@ -1,0 +1,28 @@
+Drugs                                                   , Code     , Library ,Selected
+Abatacept (Orencia)                                     , L04AA24  , ATC     , 
+Adalimumab (Humira)                                     , L04AB04  , ATC     ,1
+"Alemtuzumab (Campath, Lemtrada)", L04AA34, ATC     ,
+"Azathioprine (Imuran, Azasan)                           ", L04AX01  , ATC     ,1
+Basiliximab (Simulect)                                  , L04AC02, ATC     , 
+Belatacept (Nulojix)                                    , L04AA28, ATC     , 
+"Ciclosporin  (Neoral, Sandimmune, Gengraf)               ", L04AD01  , ATC     ,1
+Etanercept (Enbrel)                                     , L04AB01  , ATC     ,1
+"Everolimus (Afinitor, Zortress)                         ", L04AA18  , ATC     , 
+"Infliximab (Avsola, Inflectra, Remicade)                      ", L04AB02  , ATC     ,1
+Leflunomide (Arava)                                     , L04AA13  , ATC     , 
+Mercaptopurine (Purixan),L01BB02,ATC,
+"Methotrexate (Trexall, Rasuvo, Otrexup)                 ",L04AX03  ,ATC     ,1
+Mycophenolate Mofetil (CellCept)                        , L04AA06  , ATC     ,1
+Mycophenolic Acid (Myfortic)                        , L04AA06, ATC     ,1
+Natalizumab (Tysabri), L04AA23  , ATC     , 
+Nivolumab (Opdivo),L01FF02,ATC,
+"Rituximab (Rituxan, MabThera)                           ",L01FA01 , ATC     ,1
+Sarilumab (Kevzara)                                 , L04AC14, ATC     ,1
+Secukinumab (Cosentyx)                                  , L04AC10  , ATC     , 
+Sirolimus (Rapamune)                                    , L04AA10  , ATC     , 
+"Tacrolimus (Prograf, Advagraf, Protopic)                 ", L04AD02  , ATC     ,1
+Thalidomide (Thalomid),L04AX02,ATC,
+Tocilizumab (Actemra)                               , L04AC07  , ATC     ,1
+Ustekinumab (Stelara)                                   , L04AC05  , ATC     , 
+Vedolizumab (Entyvio)                                   , L04AA33, ATC     , 
+Anakinra ,L04AC03,ATC,
