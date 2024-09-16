@@ -935,15 +935,79 @@ def update_output(*args):
             for value in values:
                 formatted_output.append([key, value.replace(' ', '_')])
     checked = []
-    for ps in formatted_output:
-        checked_key = 'preset_' + ps[0] + '_' + ps[1]
-        if checked_key in current_datadicc:
-            checked = checked+list(current_datadicc['Variable'].loc[current_datadicc[checked_key].notnull()])
-
-        ##########Modificacion para template options in userlist
+    if len(formatted_output)>0:
+        for ps in formatted_output:
+            checked_key = 'preset_' + ps[0] + '_' + ps[1]
+            if checked_key in current_datadicc:
+                checked = checked+list(current_datadicc['Variable'].loc[current_datadicc[checked_key].notnull()])
+    
+            ##########Modificacion para template options in userlist
+            template_ulist_var=current_datadicc.loc[current_datadicc['Type'].isin(['user_list','multi_list'])]
+            template_ulist_lists=template_ulist_var['List']
+            
+            root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
+            #for t_u_list in template_ulist_lists:
+            for index_tem_ul,row_tem_ul in template_ulist_var.iterrows():
+                print(row_tem_ul['Variable'])
+                dict1_options=[]
+                dict2_options=[]
+                t_u_list = row_tem_ul['List']
+                list_path = root+currentVersion+'/Lists/'+t_u_list.replace('_','/')+'.csv'
+                try:
+                    list_options = pd.read_csv(list_path,encoding='latin1') 
+                
+                except Exception as e:
+                    print(f"Failed to fetch remote file due to: {e}. Attempting to read from local file.")
+                    continue
+                
+                
+                #template_list_options=list_options.loc[list_options[checked_key]==1]
+                list_options=list_options.sort_values(by=list_options.columns[0],ascending=True)
+                cont_lo=1
+                select_answer_options=''
+    
+                NOT_select_answer_options=''
+                for index, row in list_options.iterrows():
+                    if cont_lo == 88:
+                        cont_lo=89
+                    elif cont_lo == 99:
+                        cont_lo =100
+                    
+                    
+                    if checked_key in list_options.columns:
+                        selected_column=checked_key
+                    else:
+                        selected_column='Selected'
+    
+                    if (row[selected_column]==1 ):
+                        if row_tem_ul['Type']=='user_list':
+                            dict1_options.append([str(cont_lo),str(row[list_options.columns[0]]),1])
+                        elif row_tem_ul['Type']=='multi_list':
+                            dict2_options.append([str(cont_lo),str(row[list_options.columns[0]]),1])
+                        select_answer_options+=str(cont_lo)+', ' +str(row[list_options.columns[0]]) +' | '
+                    else:
+                        if row_tem_ul['Type']=='user_list':
+                            dict1_options.append([str(cont_lo),str(row[list_options.columns[0]]),0])
+                        elif row_tem_ul['Type']=='multi_list':
+                            dict2_options.append([str(cont_lo),str(row[list_options.columns[0]]),0])                        
+                        NOT_select_answer_options+=str(cont_lo)+', ' +str(row[list_options.columns[0]]) +' | '
+                    cont_lo+=1     
+                current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable'], 'Answer Options'] = select_answer_options + '88, Other'
+                if  row_tem_ul['Variable']+'_otherl2' in list(current_datadicc['Variable']):
+                    current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable']+'_otherl2', 'Answer Options'] = NOT_select_answer_options + '88, Other'
+            
+            
+    
+    
+                if row_tem_ul['Type']=='user_list':
+                    templa_answer_opt_dict1.append([row_tem_ul['Variable'],dict1_options] )
+                elif row_tem_ul['Type']=='multi_list':     
+                    templa_answer_opt_dict2.append([row_tem_ul['Variable'],dict2_options]   )      
+    
+                
+    else:
         template_ulist_var=current_datadicc.loc[current_datadicc['Type'].isin(['user_list','multi_list'])]
-        template_ulist_lists=template_ulist_var['List']
-        
+
         root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
         #for t_u_list in template_ulist_lists:
         for index_tem_ul,row_tem_ul in template_ulist_var.iterrows():
@@ -954,12 +1018,12 @@ def update_output(*args):
             list_path = root+currentVersion+'/Lists/'+t_u_list.replace('_','/')+'.csv'
             try:
                 list_options = pd.read_csv(list_path,encoding='latin1') 
-            
+
             except Exception as e:
                 print(f"Failed to fetch remote file due to: {e}. Attempting to read from local file.")
                 continue
-            
-            
+
+
             #template_list_options=list_options.loc[list_options[checked_key]==1]
             list_options=list_options.sort_values(by=list_options.columns[0],ascending=True)
             cont_lo=1
@@ -971,12 +1035,9 @@ def update_output(*args):
                     cont_lo=89
                 elif cont_lo == 99:
                     cont_lo =100
-                
-                
-                if checked_key in list_options.columns:
-                    selected_column=checked_key
-                else:
-                    selected_column='Selected'
+
+
+                selected_column='Selected'
 
                 if (row[selected_column]==1 ):
                     if row_tem_ul['Type']=='user_list':
@@ -994,18 +1055,14 @@ def update_output(*args):
             current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable'], 'Answer Options'] = select_answer_options + '88, Other'
             if  row_tem_ul['Variable']+'_otherl2' in list(current_datadicc['Variable']):
                 current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable']+'_otherl2', 'Answer Options'] = NOT_select_answer_options + '88, Other'
-        
-        
-
 
             if row_tem_ul['Type']=='user_list':
                 templa_answer_opt_dict1.append([row_tem_ul['Variable'],dict1_options] )
             elif row_tem_ul['Type']=='multi_list':     
-                templa_answer_opt_dict2.append([row_tem_ul['Variable'],dict2_options]   )      
+                templa_answer_opt_dict2.append([row_tem_ul['Variable'],dict2_options]   )  
+        ###########        
 
-            ##Aqui, tengo que revisar los y actualizar cada option del current data dict
-        
-            
+                
 
 
 
