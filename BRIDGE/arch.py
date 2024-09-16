@@ -848,13 +848,14 @@ def generateCRF(datadiccDisease,db_name):
     datadiccDisease = datadiccDisease.reindex(columns=redcap_cols)
     
     datadiccDisease['Field Type'].loc[datadiccDisease['Field Type'].isin(['date_dmy', 'number','integer', 'datetime_dmy'])]='text'
+    datadiccDisease=datadiccDisease.loc[datadiccDisease['Field Type'].isin([ 'text', 'notes', 'radio', 'dropdown', 'calc',
+        'file', 'checkbox', 'yesno', 'truefalse', 'descriptive', 'slider'])]
     datadiccDisease['Section Header'] = datadiccDisease['Section Header'].where(datadiccDisease['Section Header'] != datadiccDisease['Section Header'].shift(), np.nan) 
     # For the new empty columns, fill NaN values with a default value (in this case an empty string)
     datadiccDisease.fillna('', inplace=True)
     
 
-    datadiccDisease=datadiccDisease.loc[datadiccDisease['Field Type'].isin([ 'text', 'notes', 'radio', 'dropdown', 'calc',
-                                                                            'file', 'checkbox', 'yesno', 'truefalse', 'descriptive', 'slider'])]
+
     #datadiccDisease['Branching Logic (Show field only if...)']=['']*len(datadiccDisease)
     datadiccDisease['Section Header'].replace('', np.nan, inplace=True)      
     datadiccDisease = customAlignment(datadiccDisease)
