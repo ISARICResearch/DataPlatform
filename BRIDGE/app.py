@@ -359,9 +359,9 @@ main_content = dbc.Container(
                             style={"height": "10%"}  # Remaining height for input and button
                         ),
                         dbc.Row(html.Div(["BRIDGE is being developed by ISARIC. For inquiries, support, or collaboration, please write to: ",html.A("data@isaric.org", href="mailto:data@isaric.org"),". ","Licensed under a ",
-                                         html.A("Creative Commons Attribution-ShareAlike 4.0 International License", 
+                                         html.A("Creative Commons Attribution-ShareAlike 4.0 ", 
                                                 href="https://creativecommons.org/licenses/by-sa/4.0/", target="_blank"),
-                                         " by ",
+                                         "International License by ",
                                          html.A("ISARIC", href="https://isaric.org/", target="_blank"),
                                          " on behalf of Oxford University."]))
                     ],
@@ -593,9 +593,9 @@ def home_page():
             html.Div([
                 html.P([
                     "Licensed under a ",
-                    html.A("Creative Commons Attribution-ShareAlike 4.0 International License", 
+                    html.A("Creative Commons Attribution-ShareAlike 4.0", 
                            href="https://creativecommons.org/licenses/by-sa/4.0/", target="_blank"),
-                    " by ",
+                    " International License by ",
                     html.A("ISARIC", href="https://isaric.org/", target="_blank"),
                     " on behalf of Oxford University."
                 ], className="text-center my-3")
