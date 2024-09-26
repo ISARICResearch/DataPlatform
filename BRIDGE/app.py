@@ -494,9 +494,44 @@ def home_page():
 
             ], className="my-5")
         ], className="container"),
-
         html.Section([
             html.Div([
+                html.Br(),
+                html.H3("In partnership with:", className="text-center my-4"),
+                dbc.Row([
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/FIOCRUZ_logo.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto"),
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/global_health.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto"),
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/puc_rio.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto"),
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/CONTAGIO_Logo.jpg", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto"),
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/LONG_CCCC.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto")
+                ], className="justify-content-center")  
+            ])
+        ]),
+
+        
+        html.Section([
+            html.Div([
+                html.Br(),
                 html.H3("With Funding From:", className="text-center my-4"),
                 dbc.Row([
                     dbc.Col([
@@ -513,10 +548,16 @@ def home_page():
                         html.Div([
                             html.Img(src="/assets/logos/uk-international-logo.png", className="img-fluid", style={"height": "100px"})
                         ], className="d-flex justify-content-center")
+                    ], width="auto"),
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/FundedbytheEU.png", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
                     ], width="auto")
                 ], className="justify-content-center")  
             ])
         ]),
+        
         # Fourth Section: Other Tools
         # Section showcasing other tools
         html.Section([
