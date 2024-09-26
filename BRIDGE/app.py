@@ -532,7 +532,7 @@ def home_page():
         html.Section([
             html.Div([
                 html.Br(),
-                html.H3("With Funding From:", className="text-center my-4"),
+                html.H3("With funding from:", className="text-center my-4"),
                 dbc.Row([
                     dbc.Col([
                         html.Div([
