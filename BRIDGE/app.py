@@ -498,6 +498,7 @@ def home_page():
             html.Div([
                 html.Br(),
                 html.H3("In partnership with:", className="text-center my-4"),
+                # First Row
                 dbc.Row([
                     dbc.Col([
                         html.Div([
@@ -514,6 +515,12 @@ def home_page():
                             html.Img(src="/assets/logos/puc_rio.png", className="img-fluid", style={"height": "100px"})
                         ], className="d-flex justify-content-center")
                     ], width="auto"),
+
+                ], className="justify-content-center"),
+
+                # Second Row
+                html.Br(),
+                dbc.Row([
                     dbc.Col([
                         html.Div([
                             html.Img(src="/assets/logos/CONTAGIO_Logo.jpg", className="img-fluid", style={"height": "100px"})
@@ -523,8 +530,19 @@ def home_page():
                         html.Div([
                             html.Img(src="/assets/logos/LONG_CCCC.png", className="img-fluid", style={"height": "100px"})
                         ], className="d-flex justify-content-center")
+                    ], width="auto"),
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/penta_col.jpg", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
+                    ], width="auto"),
+                    dbc.Col([
+                        html.Div([
+                            html.Img(src="/assets/logos/VERDI_Logo.jpg", className="img-fluid", style={"height": "100px"})
+                        ], className="d-flex justify-content-center")
                     ], width="auto")
-                ], className="justify-content-center")  
+                ], className="justify-content-center")
+
             ])
         ]),
 
