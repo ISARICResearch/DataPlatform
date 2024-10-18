@@ -1,0 +1,15 @@
+Drugs                                                , Code     , Library ,Selected,Preset_H5NX
+Analgesic ,373265006 |Analgesic (substance)|,SNOMED,1,
+Antibiotic ,255631004 |Antibiotic (product)|,SNOMED,1,1
+Anticoagulant,372862008 |Anticoagulant (substance)|,SNOMED,,1
+Antifungal ,373219008 |Substance with antifungal mechanism of action (substance)|,SNOMED,1,1
+Antipruritic ,312067003 |Local antipruritic agent (product)|,SNOMED,1,
+Antiviral ,372701006,SNOMED,1,1
+Convalescent plasma ,1179779000,SNOMED,,
+Corticosteroid ,116566001,SNOMED,1,1
+Inotropes / vasopressor ,373213009 |Inotropic agent (substance)|870406003 |Vasopressor (substance)|,SNOMED,,1
+Topical antibiotic  ,255631004 |Antibiotic (product)| 6064005 |Topical route (qualifier value)|,SNOMED,1,
+Antihistamine,6425004 |Product containing histamine receptor antagonist (product)|,SNOMED,,
+Antiprotozoal,788027008 |Medicinal product acting as antiprotozoal agent (product)|,SNOMED,,
+Diuretics,372695000,SNOMED,,
+Immunomodulator,372558009,SNOMED,,
