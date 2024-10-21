@@ -4,6 +4,9 @@ ARC Version 1.0.1 contains a library of questions to be used in Case Report Form
 
 ## Description of Changes
 
+### Oropouche Questions
+- Added user-generated questions for Oropouche, created as a preset called **User Generated**.
+  
 ### Inclusion of Additional Units
 - Added more units for physical and laboratory measured variables:
   - Height
@@ -14,7 +17,7 @@ ARC Version 1.0.1 contains a library of questions to be used in Case Report Form
   - CD4 count
   - Ferritin
   - Total Protein (TP)
-
+  
 ### Revision of Animal Contact Questions
 - Revised questions in the **Exposure History** section regarding contact with animals.
 - Specific animal types are now categorized into five groups:
@@ -54,9 +57,6 @@ ARC Version 1.0.1 contains a library of questions to be used in Case Report Form
 ### Complications Section
 - Removed the question on “Pleural effusion / ascites”.
 - Added a new question on “Ascites”.
-
-### Oropouche Questions
-- Added user-generated questions for Oropouche, created as a preset called **User Generated**.
 
 ### SNOMED and UMLS Codes Update
 - Updated SNOMED and UMLS codes for several variables.
