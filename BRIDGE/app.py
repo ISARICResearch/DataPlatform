@@ -59,6 +59,7 @@ initial_current_datadicc =  current_datadicc.to_json(date_format='iso', orient='
 initial_ulist_variable_choices =  json.dumps(ulist_variable_choices)
 initial_multilist_variable_choices =  json.dumps(multilist_variable_choices)
 
+
 print(versions)
 
 navbar = dbc.Navbar(
@@ -143,6 +144,8 @@ grouped_presets = {}
 for key, value in presets:
     grouped_presets.setdefault(key, []).append(value)
 
+
+initial_grouped_presets =  json.dumps(grouped_presets)
 # Creating the accordion items
 accordion_items = []
 for key, values in grouped_presets.items():
@@ -150,7 +153,8 @@ for key, values in grouped_presets.items():
     checklist = dbc.Checklist(
         options=[{"label": value, "value": value} for value in values],
         value=[],
-        id=f'checklist-{key}',
+        #id=f'checklist-{key}',
+        id={'type': 'template_check', 'index': key},
         switch=True,
     )
     # Create an accordion item with the checklist
@@ -168,7 +172,13 @@ preset_content= html.Div(
 )
 
 preset_column = dbc.Fade(
-    preset_content,
+    html.Div(
+        [
+            html.H3("Templates", id="settings-text-1"),
+            dbc.Accordion(id='preset-accordion')  # ID to be updated dynamically
+        ],
+        style={"padding": "2rem"}
+    ),
     id="presets-column",
     is_in=False,  # Initially hidden
     style={
@@ -186,7 +196,7 @@ preset_column = dbc.Fade(
 settings_content = html.Div(
     [
         html.H3("Settings", id="settings-text-2"),
-        
+
         # ICC Version dropdown
         html.Div([
             dbc.InputGroup([
@@ -201,7 +211,7 @@ settings_content = html.Div(
             dcc.Store(id='selected_data-store'),
             #dcc.Store(id='visibility-store', data={'display': 'block'})
         ], style={'margin-bottom': '20px'}),
-        
+
         # Output Files checkboxes
         html.Div([
             html.Label("Output Files", htmlFor="output-files-checkboxes"),
@@ -212,7 +222,7 @@ settings_content = html.Div(
                     {'label': 'REDCap Data Dictionary', 'value': 'redcap_csv'},
                     {'label': 'Paper-like CRF', 'value': 'paper_like'},
                     #{'label': 'Completion Guide', 'value': 'completion_guide'},
-                    
+
                     # Add more files as needed
                 ],
                 value=['file1'],  # Default selected values
@@ -254,6 +264,7 @@ settings_column = dbc.Fade(
     }
 )
 
+
 tree_items = html.Div(
     dash_treeview_antd.TreeView(
         id='input',
@@ -290,7 +301,7 @@ tree_column = dbc.Fade(
 
 column_defs = [{'headerName': "Question", 'field': "Question", 'wrapText': True}, 
                 {'headerName': "Answer Options", 'field': "Answer Options", 'wrapText': True}]
-    
+
 row_data = [{'question': "", 'options': ""},
             {'question': "", 'options': ""}]
 
@@ -320,9 +331,9 @@ grid = html.Div(
         'white-space': 'normal',  # Allow text to wrap
         'overflow-x': 'hidden',     # Hide overflowed content
 
-    
+
     }
-        
+
     ),
     style={
         'overflow-y': 'auto',  # Vertical scrollbar when needed
@@ -331,7 +342,7 @@ grid = html.Div(
         'white-space': 'normal',  # Allow text to wrap
         'overflow-x': 'hidden',     # Hide overflowed content
         'text-overflow': 'ellipsis'  # Indicate more content with an ellipsis
-    
+
     }
 )
 
@@ -344,12 +355,12 @@ main_content = dbc.Container(
         dbc.Row(
             [
                 dbc.Col([html.Div(),
-                         
+
                          #tree_items,
 
                              html.Div(id='output-expanded', style={'display': 'none'})
                          ]
-                        
+
                         , width=5),  # 45% width
                 dbc.Col(
                     [
@@ -383,6 +394,8 @@ app.layout = html.Div(
         dcc.Store(id='current_datadicc-store',data=initial_current_datadicc),
         dcc.Store(id='ulist_variable_choices-store',data=initial_ulist_variable_choices),
         dcc.Store(id='multilist_variable_choices-store',data=initial_multilist_variable_choices),
+        dcc.Store(id='grouped_presets-store',data=initial_grouped_presets),
+        dcc.Store(id='tree_items_data-store',data=initial_grouped_presets),
         #navbar,
         #sidebar,
         #settings_column,
@@ -441,7 +454,7 @@ def home_page():
             ], className="my-5"),
 
         ], className="container"),
-        
+
 
         html.Section([
             dbc.Row([
@@ -550,7 +563,7 @@ def home_page():
             ])
         ]),
 
-        
+
         html.Section([
             html.Div([
                 html.Br(),
@@ -579,7 +592,7 @@ def home_page():
                 ], className="justify-content-center")  
             ])
         ]),
-        
+
         # Fourth Section: Other Tools
         # Section showcasing other tools
         html.Section([
@@ -610,14 +623,14 @@ def home_page():
                                     "FHIRflat is a versatile library designed to transform FHIR resources in NDJSON or native Python dictionaries into a flat structure, which can be easily written to a Parquet file. ",
                                     "This facilitates reproducible analytical pipelines (RAP) by converting raw data into the FHIR R5 standard with ISARIC-specific extensions. ",
                                     "Typically, FHIR resources are stored in databases served by specialized FHIR servers. However, for RAP development, which demands reproducibility and data snapshots, a flat file format is more practical. ",
-                                    
+
                                 ], className="card-text")
 ,
                                 html.A("Find Out More",  target="_blank",href="https://fhirflat.readthedocs.io/en/latest/", style={'display': 'block', 'margin-top': '10px', 'color': '#BA0225'})
                             ], className="card-tools-fixed")
                         ])
                     ], md=3),
-                    
+
                     dbc.Col([
                         dbc.Card([
                             dbc.CardImg(src="/assets/logos/polyflame_logo.png", top=True),
@@ -630,7 +643,7 @@ def home_page():
                                 ], className="card-text"),
                                 html.A("Find Out More",  target="_blank",href="https://polyflame.readthedocs.io/en/latest/index.html", style={'display': 'block', 'margin-top': '10px', 'color': '#BA0225'})
                             ], className="card-tools-fixed"),
-                            
+
                         ])
                     ], md=3),
                     dbc.Col([
@@ -700,7 +713,9 @@ def start_app(n_clicks):
 ####################
 @app.callback(
     [Output('crf_name', 'value')] + [Output(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
-    [Input('url', 'href')]
+    [Input('url', 'href')],
+    prevent_initial_call=True,
+
 )
 def update_output_based_on_url(href):
     if href is None:
@@ -726,7 +741,7 @@ def update_output_based_on_url(href):
     return [value] + [checklist_values[key] for key in grouped_presets.keys()]
 
 
-  
+
 
 #################################
 
@@ -739,7 +754,8 @@ def update_output_based_on_url(href):
     [Input("toggle-settings-2", "n_clicks"), 
      Input("toggle-settings-1", "n_clicks")],
     [State("presets-column", "is_in"), 
-     State("settings-column", "is_in")]
+     State("settings-column", "is_in")],
+     prevent_initial_call=True
 )
 def toggle_columns(n_presets, n_settings, is_in_presets, is_in_settings):
     ctx = dash.callback_context
@@ -802,7 +818,7 @@ def display_checked(checked,current_datadicc_saved):
 
     column_defs = [{'headerName': "Question", 'field': "Question", 'wrapText': True}, 
                     {'headerName': "Answer Options", 'field': "Answer Options", 'wrapText': True}]
-        
+
     row_data = [{'question': "", 'options': ""},
                 {'question': "", 'options': ""}]
 
@@ -832,7 +848,7 @@ def display_checked(checked,current_datadicc_saved):
 
 
         selected_variables = arch.generateDailyDataType(selected_variables)
-        
+
         #############################################################
         #############################################################
 
@@ -876,7 +892,7 @@ def display_checked(checked,current_datadicc_saved):
         column_defs = [{'headerName': "Question", 'field': "Question", 'wrapText': True}, 
                         {'headerName': "Answer Options", 'field': "Answer Options", 'wrapText': True}]
 
-        
+
 
 
     return column_defs, row_data,  selected_variables.to_json(date_format='iso', orient='split')
@@ -922,8 +938,8 @@ def display_selected(selected,ulist_variable_choices_saved,multilist_variable_ch
                                 options.append({"label":str(i[0])+', '+i[1],"value":str(i[0])+'_'+i[1]})   
                                 if i[2]==1:
                                     checked_items.append(str(i[0])+'_'+i[1]) 
-                      
-   
+
+
                     return True,question+' ['+selected[0]+']',definition,completion, {"padding": "20px", "maxHeight": "250px", "overflowY": "auto"}, {"display": "none"},options,checked_items,[]
                 else:
                     options =  []
@@ -936,8 +952,8 @@ def display_selected(selected,ulist_variable_choices_saved,multilist_variable_ch
                     return True,question+' ['+selected[0]+']',definition,completion, {"display": "none"}, {"maxHeight": "250px", "overflowY": "auto"},[],[],options
 
 
-                
-        
+
+
     return False,'','','',{"display": "none"}, {"display": "none"},[],[],[]
 
 
@@ -949,23 +965,77 @@ def display_expanded(expanded):
 
 
 @app.callback(
-    Output('selected-version-store', 'data'),
+    [Output('selected-version-store', 'data', allow_duplicate=True),
+     Output('preset-accordion', 'children', allow_duplicate=True),
+     Output('grouped_presets-store','data'),
+     Output('current_datadicc-store', 'data', allow_duplicate=True)],
     [Input({'type': 'dynamic-version', 'index': dash.ALL}, 'n_clicks')],
-    [State('selected-version-store', 'data')]
+    [State('selected-version-store', 'data')],
+    prevent_initial_call=True  # Evita que se dispare inicialmente
 )
-def store_clicked_item(n_clicks, data):
+def store_clicked_item(n_clicks,data):
     ctx = dash.callback_context
     if not ctx.triggered:
-        return dash.no_update
+        return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update
     else:
         button_id = ctx.triggered[0]['prop_id']
-        # Splitting the ID string to extract the index part
-        id_json = button_id.split(".")[0]  # This should give us the JSON part of the ID
+        id_json = button_id.split(".")[0]  # Extraemos el JSON de la ID
         try:
             version_index = json.loads(id_json)["index"]
-            return {'selected_version': arch_versions[version_index]}
+            selected_version = arch_versions[version_index]
+
+            # Obtén el current_datadicc actualizado para la versión seleccionada
+            current_datadicc, presets = arch.getARCH(selected_version)
+            current_datadicc[['Sec', 'vari', 'mod']] = current_datadicc['Variable'].str.split('_', n=2, expand=True)
+            current_datadicc[['Sec_name', 'Expla']] = current_datadicc['Section'].str.split(r'[(|:]', n=1, expand=True)
+
+
+            # Actualizar el contenido de current_datadicc con las transformaciones
+            arch_lists, list_variable_choices = arch.getListContent(current_datadicc, selected_version)
+            current_datadicc = arch.addTransformedRows(current_datadicc, arch_lists, arch.getVariableOrder(current_datadicc))
+
+            # Actualizar el contenido del User List y MultiList
+            arch_ulist, ulist_variable_choices = arch.getUserListContent(current_datadicc, selected_version, modified_list)
+            current_datadicc = arch.addTransformedRows(current_datadicc, arch_ulist, arch.getVariableOrder(current_datadicc))
+
+            arch_multilist, multilist_variable_choices = arch.getMultuListContent(current_datadicc, selected_version)
+            current_datadicc = arch.addTransformedRows(current_datadicc, arch_multilist, arch.getVariableOrder(current_datadicc))
+
+            # Agrupar los presets por la primera columna (como en la versión original)
+            grouped_presets = {}
+            for key, value in presets:
+                grouped_presets.setdefault(key, []).append(value)
+
+            # Crear los elementos del acordeón
+            accordion_items = []
+            for key, values in grouped_presets.items():
+                # Para cada grupo, crear una checklist
+                checklist = dbc.Checklist(
+                    options=[{"label": value, "value": value} for value in values],
+                    value=[],
+                    #id=f'checklist-{key}',
+                    id={'type': 'template_check', 'index': key},
+                    switch=True,
+                )
+                # Crear un elemento de acordeón con la checklist
+                accordion_items.append(
+                    dbc.AccordionItem(
+                        title=key,
+                        children=checklist
+                    )
+                )
+
+
+            # Retornar los nuevos datos a los stores y actualizar el acordeón
+            print('this is the selected version in settings',selected_version)
+            print('grouped presets in settings',grouped_presets)
+            return {'selected_version': selected_version}, \
+                   accordion_items,\
+                   grouped_presets,\
+                   current_datadicc.to_json(date_format='iso', orient='split'),\
+
         except json.JSONDecodeError:
-            return dash.no_updatetree_itemsgrid
+            return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update
 
 @app.callback(
     Output("dropdown-arch_version_input", "value"),
@@ -978,18 +1048,37 @@ def update_input(data):
 
 
 @app.callback(
-    [Output('tree_items_container','children'),Output('current_datadicc-store','data',allow_duplicate=True),
-     Output('ulist_variable_choices-store','data',allow_duplicate=True),Output('multilist_variable_choices-store','data',allow_duplicate=True)],
-    [Input(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
-    #[State('visibility-store', 'data')],
+    [Output('tree_items_container', 'children'),
+     Output('current_datadicc-store', 'data', allow_duplicate=True),
+     Output('ulist_variable_choices-store', 'data', allow_duplicate=True),
+     Output('multilist_variable_choices-store', 'data', allow_duplicate=True)],
+    #[Input('grouped_presets-store', 'data'),Input('selected-version-store', 'data')]+[Input(f'checklist-{key}', 'value') for key in grouped_presets.keys()] , # Dynamically bind based on grouped_presets
+    [Input('grouped_presets-store', 'data'),Input('selected-version-store', 'data'),Input({'type': 'template_check', 'index': dash.ALL}, 'value')],
+    [State('current_datadicc-store', 'data'),],
     prevent_initial_call=True
 )
-def update_output(*args):
+def update_output(grouped_presets, selected_version_data,values,current_datadicc_saved):
+#def update_output(*args):
+    current_datadicc=pd.read_json(current_datadicc_saved, orient='split')
+    currentVersion = selected_version_data.get('selected_version', None)
+    current_datadicc_temp, presets = arch.getARCH(currentVersion)
+    current_datadicc_temp[['Sec', 'vari', 'mod']] = current_datadicc_temp['Variable'].str.split('_', n=2, expand=True)
+    current_datadicc_temp[['Sec_name', 'Expla']] = current_datadicc_temp['Section'].str.split(r'[(|:]', n=1, expand=True)
+
+    tree_items_data=arch.getTreeItems(current_datadicc_temp,currentVersion)
+
+
+
+    if currentVersion is None or grouped_presets is None:
+        raise PreventUpdate  # Prevent update if data is missing
 
     templa_answer_opt_dict1=[]
     templa_answer_opt_dict2=[]
 
-    checked_values = args
+    #checked_values = args
+    checked_values = values
+    print('checked_values',checked_values)
+    print(' grouped_presets in update output',grouped_presets)
     #checked_values = args[:-1]
     #visibility_data = args[-1]    
     formatted_output = []
@@ -1003,11 +1092,11 @@ def update_output(*args):
             checked_key = 'preset_' + ps[0] + '_' + ps[1]
             if checked_key in current_datadicc:
                 checked = checked+list(current_datadicc['Variable'].loc[current_datadicc[checked_key].notnull()])
-    
+
             ##########Modificacion para template options in userlist
             template_ulist_var=current_datadicc.loc[current_datadicc['Type'].isin(['user_list','multi_list'])]
             template_ulist_lists=template_ulist_var['List']
-            
+            print('esta es la version seleccionada',currentVersion)
             root='https://raw.githubusercontent.com/ISARICResearch/DataPlatform/main/ARCH/'
             #for t_u_list in template_ulist_lists:
             for index_tem_ul,row_tem_ul in template_ulist_var.iterrows():
@@ -1018,30 +1107,30 @@ def update_output(*args):
                 list_path = root+currentVersion+'/Lists/'+t_u_list.replace('_','/')+'.csv'
                 try:
                     list_options = pd.read_csv(list_path,encoding='latin1') 
-                
+
                 except Exception as e:
                     print(f"Failed to fetch remote file due to: {e}. Attempting to read from local file.")
                     continue
-                
-                
+
+
                 #template_list_options=list_options.loc[list_options[checked_key]==1]
                 list_options=list_options.sort_values(by=list_options.columns[0],ascending=True)
                 cont_lo=1
                 select_answer_options=''
-    
+
                 NOT_select_answer_options=''
                 for index, row in list_options.iterrows():
                     if cont_lo == 88:
                         cont_lo=89
                     elif cont_lo == 99:
                         cont_lo =100
-                    
-                    
+
+
                     if checked_key in list_options.columns:
                         selected_column=checked_key
                     else:
                         selected_column='Selected'
-    
+
                     if (row[selected_column]==1 ):
                         if row_tem_ul['Type']=='user_list':
                             dict1_options.append([str(cont_lo),str(row[list_options.columns[0]]),1])
@@ -1058,16 +1147,16 @@ def update_output(*args):
                 current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable'], 'Answer Options'] = select_answer_options + '88, Other'
                 if  row_tem_ul['Variable']+'_otherl2' in list(current_datadicc['Variable']):
                     current_datadicc.loc[current_datadicc['Variable'] == row_tem_ul['Variable']+'_otherl2', 'Answer Options'] = NOT_select_answer_options + '88, Other'
-            
-            
-    
-    
+
+
+
+
                 if row_tem_ul['Type']=='user_list':
                     templa_answer_opt_dict1.append([row_tem_ul['Variable'],dict1_options] )
                 elif row_tem_ul['Type']=='multi_list':     
                     templa_answer_opt_dict2.append([row_tem_ul['Variable'],dict2_options]   )      
-    
-                
+
+
     else:
         template_ulist_var=current_datadicc.loc[current_datadicc['Type'].isin(['user_list','multi_list'])]
 
@@ -1125,7 +1214,7 @@ def update_output(*args):
                 templa_answer_opt_dict2.append([row_tem_ul['Variable'],dict2_options]   )  
         ###########        
 
-                
+
 
 
 
@@ -1160,11 +1249,10 @@ def update_output(*args):
      Output('tree_items_container','children',allow_duplicate=True) ],
     [Input('modal_submit', 'n_clicks'), Input('modal_cancel', 'n_clicks'), Input('current_datadicc-store','data')], 
     [State('modal_title', 'children'),State('options-checklist','value'),State('input', 'checked'),State('ulist_variable_choices-store','data'),State('multilist_variable_choices-store','data')], 
-    
+
     prevent_initial_call=True
 )
 def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_saved,question,checked_options,checked,ulist_variable_choices_saved,multilist_variable_choices_saved):
-
     dict1 = json.loads(ulist_variable_choices_saved)
     dict2 = json.loads(multilist_variable_choices_saved)
 
@@ -1272,8 +1360,8 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
             return False, current_datadicc.to_json(date_format='iso', orient='split'),json.dumps(ulist_variable_choicesSubmit), json.dumps(multilist_variable_choicesSubmit),tree_items
         else:
             return False, dash.no_update, dash.no_update, dash.no_update, dash.no_update
-        
-    
+
+
 
     elif button_id == 'modal_cancel':
         # Just close the modal without doing anything else
@@ -1301,7 +1389,7 @@ def on_generate_click(n_clicks,json_data, crf_name):
         trigger_id = 'No clicks yet'
     else:
         trigger_id = ctx.triggered[0]['prop_id'].split('.')[0]
-    
+
     if n_clicks is None:
         # Return empty or initial state if button hasn't been clicked
         return "", None, None, None,None
@@ -1310,14 +1398,14 @@ def on_generate_click(n_clicks,json_data, crf_name):
         return 'No data available',None, None, None,None
     if trigger_id == 'crf_generate':
         selected_variables_fromData= pd.read_json(json_data, orient='split')
-    
-    
+
+
         date=datetime.today().strftime('%Y-%m-%d')
-        
+
         #paperCRF.generate_completionguide(selected_variables_fromData,path+crf_name+'_Completion_Guide_'+date+'.pdf',currentVersion, crf_name)
-        
+
         datadiccDisease=arch.generateCRF(selected_variables_fromData,crf_name)
-    
+
         print('#############################')
         print('#############################')
         print('#############################')
@@ -1326,35 +1414,35 @@ def on_generate_click(n_clicks,json_data, crf_name):
         print('#############################')
         for cosa in datadiccDisease.columns:
             print(cosa)
-        
+
         #datadiccDisease.to_csv(path+crf_name+'_'+date+'.csv',index=False, encoding='utf8')
         pdf_crf=paperCRF.generate_pdf(datadiccDisease,currentVersion, crf_name)
-        
-                   
+
+
         '''# Create a PDF to Word converter
         cv = Converter('dataDiccs/'+crf_name+'_'+date+'.pdf')
-    
+
         # Convert all pages of the PDF to a Word document
         cv.convert('dataDiccs/'+crf_name+'_'+date+'.docx')
-    
+
         # Close the converter
         cv.close()'''
-    
+
         df=datadiccDisease.copy()
         output = io.BytesIO()
         df.to_csv(output, index=False, encoding='utf8')
         output.seek(0)
         pdf_data = paperCRF.generate_completionguide(selected_variables_fromData, currentVersion, crf_name)
-    
-        
+
+
         file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
         file_path = 'BRIDGE/assets/config_files/'+file_name
         #file_path = 'assets/config_files/'+file_name# Change this for deploy
         # Open the XML file and read its content
         with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
             content = file.read()
-    
-    
+
+
         return "",dcc.send_bytes(output.getvalue(), crf_name+'_DataDictionary_'+date+'.csv'),\
             dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf'),\
                 dcc.send_bytes(content, file_name),dcc.send_bytes(pdf_crf, crf_name+'_paperlike_'+date+'.pdf')
@@ -1516,23 +1604,23 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 
     text=feature_text(current_datadicc,selected_variables,features)
     accord=feature_accordion(features,id_feat,selected=selected_variables)
-    
+
     pararel_features=html.Div([
         # First column with the title and the Available Columns table
         html.Div([
             html.H5('Available Features', style={'textAlign': 'center'}),
             accord
-            
+
         ], style={'width': '49%', 'display': 'inline-block', 'verticalAlign': 'top'}),
-        
+
         # Second column with the buttons
         html.Div( style={'width': '1%', 'display': 'inline-block', 'textAlign': 'center'}),
-        
+
         # Third column with the title and the Display Columns table
         html.Div([
             html.H5('Selected Features', style={'textAlign': 'center'}),
                 dcc.Markdown(id=id_feat+'_text-content', children=text, style={'height': '300px', 'overflowY': 'scroll', 'border': '1px solid #ddd', 'padding': '10px', 'color': 'black'}),
-    
+
         ], style={'width': '50%', 'display': 'inline-block', 'verticalAlign': 'top'}),
     ], style={'width': '100%', 'display': 'flex'})   
     return pararel_features
@@ -1585,7 +1673,7 @@ def update_row3_content(selected_value,json_data):
     selected_question=''
 
 
-    
+
 
     #feature_selector=createFeatureSelection('feature_selector',"Case Defining Features",caseDefiningVariables['Question'])
     if selected_value == "CD_Features":
@@ -1595,14 +1683,14 @@ def update_row3_content(selected_value,json_data):
         paralel_elements_features=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(caseDefiningVariables.iloc[0]))],'case_feat',current_datadicc,selected_variables_fromData)
         tabs_content.append(dbc.Tab(label="Features", children=[html.P(" "),paralel_elements_features]))
         selected_question="What are the [case defining features]?"
-        
+
     elif selected_value == "Spectrum_Clinical_Features":
         OptionGroup=["Clinical Features"] 
         clinicalVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
         paralel_elements_features=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(clinicalVariables.iloc[0]))],'clinic_feat',current_datadicc,selected_variables_fromData)
         tabs_content.append(dbc.Tab(label="Clinical Features", children=[html.P(" "),paralel_elements_features]))
         selected_question="What is the spectrum of [clinical features] in this disease?"
-               
+
     elif selected_value == "Clinical_Features_Patient_Outcome":
         OptionGroup=["Clinical Features"] 
         clinicalVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
@@ -1613,7 +1701,7 @@ def update_row3_content(selected_value,json_data):
         tabs_content.append(dbc.Tab(label="Clinical Features", children=[html.P(" "),paralel_elements_features]))
         tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))        
         selected_question="What are the [clinical features] occuring in those with [patient outcome]?"
-        
+
     elif selected_value == "Risk_Factors_Patient_Outcome":
         OptionGroup=["Risk Factors: Demographics",
                     "Risk Factors: Socioeconomic","Risk Factors: Comorbidities"]    
@@ -1628,7 +1716,7 @@ def update_row3_content(selected_value,json_data):
         tabs_content.append(dbc.Tab(label="Risk Factors", children=[html.P(" "),paralel_elements_risk]))
         tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))   
         selected_question="What are the [risk factors] for [patient outcome]?"
-     
+
     elif selected_value=="Treatment_Intervention_Patient_Outcome":
 
         OptionGroup=["Treatment/Intevention"] 
@@ -1645,7 +1733,7 @@ def update_row3_content(selected_value,json_data):
     elif selected_value=="Clinical_Features_Treatment_Intervention":
 
         selected_question="What proportion of patients with [clinical feature] are receiving [treatment/intervention]?"  
-         
+
         OptionGroup=["Clinical Features"] 
         clinicalVariables=group_elements['Variables'].loc[group_elements['Group Option'].isin(OptionGroup)]
         paralel_elements_features=paralel_elements(current_datadicc.loc[current_datadicc['Variable'].isin(list(clinicalVariables.iloc[0]))],'clinic_feat',current_datadicc,selected_variables_fromData)
@@ -1679,7 +1767,7 @@ def update_row3_content(selected_value,json_data):
         tabs_content.append(dbc.Tab(label="Patient Outcomes", children=[html.P(" "),paralel_elements_outcomes]))  
         selected_question="What duration of [treatment/intervention] is being used in [patient outcome]?"  
 
-    
+
     parts = re.split(r'(\[.*?\])', selected_question)  # Split by text inside brackets, keeping the brackets
 
     styled_parts = []

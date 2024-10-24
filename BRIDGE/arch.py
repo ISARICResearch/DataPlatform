@@ -43,25 +43,50 @@ def getARCHVersions():
     repo_name = "ISARICResearch/DataPlatform"
     path = "ARCH"
     url = f"https://api.github.com/repos/{repo_name}/contents/{path}"
-
+    
     # Make the request
     response = requests.get(url)
-    folder_names=[]
+    folder_names = []
+    
     # Check if the request was successful
     if response.status_code == 200:
         contents = response.json()
         folder_names = [item['name'] for item in contents if item['type'] == 'dir']
-        
     else:
         print("Failed to retrieve data:", response.status_code)
     
-    versions=set(folder_names)
-    parsed_versions = [tuple(map(int, version.split('ARCH')[1].split('.'))) for version in versions]
-    most_recent_version = max(parsed_versions)
+    versions = set(folder_names)
+    
+    # Parse versions, including handling "-rc"
+    parsed_versions = []
+    rc_version_str = None
+    for version in versions:
+        if '-rc' in version:
+            base_version = version.split('-rc')[0]
+            parsed_versions.append((tuple(map(int, base_version.split('ARCH')[1].split('.'))), '-rc'))
+            rc_version_str = version  # Store the rc version
+        else:
+            parsed_versions.append((tuple(map(int, version.split('ARCH')[1].split('.'))), ''))
+    
+    # Filter out "-rc" versions to get the most recent non-rc version
+    non_rc_versions = [v for v, suffix in parsed_versions if suffix == '']
+    most_recent_version = max(non_rc_versions)
     most_recent_version_str = 'ARCH' + '.'.join(map(str, most_recent_version))
-    #print(most_recent_version_str)    
-    return list(versions),most_recent_version_str
-
+    
+    # Include all versions back in the list
+    all_versions = list(versions)
+    
+    # Reorganize to ensure the first is the most recent version and the second is the "-rc" version
+    all_versions.remove(most_recent_version_str)
+    all_versions.insert(0, most_recent_version_str)
+    
+    if rc_version_str in all_versions:
+        all_versions.remove(rc_version_str)
+        all_versions.insert(1, rc_version_str)
+    
+    # Output the result
+    return list(all_versions), most_recent_version_str
+    
 def getVariableOrder(current_datadicc):
     current_datadicc['Sec_vari']=current_datadicc['Sec']+'_'+current_datadicc['vari']
     order=current_datadicc[['Sec_vari']]
