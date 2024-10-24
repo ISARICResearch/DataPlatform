@@ -1,0 +1,10 @@
+Drugs                                                , Code     , Library ,Selected
+Clotrimazole,5797005,http://snomed.info/sct,
+Econazole,18952006,http://snomed.info/sct,
+Miconazole,42720001,http://snomed.info/sct,
+Terbinafine,108925005,http://snomed.info/sct,
+Fluconazole,31865003,http://snomed.info/sct,1
+Ketoconazole,40232005,http://snomed.info/sct,
+Nystatin,12096000,http://snomed.info/sct,
+Amphotericin B,714520003,http://snomed.info/sct,1
+Liposomal amphotericin,773379008,http://snomed.info/sct,1
