@@ -102,7 +102,7 @@ def getARCH(version):
     datadicc_path = root+version+'/'+'ARCH.csv'
 
     try:
-        datadicc = pd.read_csv(datadicc_path, encoding='Latin1')
+        datadicc = pd.read_csv(datadicc_path, encoding='utf-8')
         dependencies=getDependencies(datadicc) 
         datadicc = pd.merge(datadicc,dependencies[['Variable','Dependencies']],on = 'Variable')
         

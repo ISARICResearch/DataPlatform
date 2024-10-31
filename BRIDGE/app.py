@@ -13,6 +13,7 @@ import dash_ag_grid as dag
 import arch
 import dash_treeview_antd
 import paperCRF
+import generate_form # Aidan: added this for format choices
 import json
 import bridge_modals 
 from dash import callback_context
@@ -869,7 +870,8 @@ def display_checked(checked,current_datadicc_saved):
 
             # Process the actual row
             if row['Type'] in ['radio', 'dropdown', 'checkbox','list','user_list','multi_list']:
-                formatted_choices = paperCRF.format_choices(row['Answer Options'], row['Type'])
+
+                formatted_choices = generate_form.format_choices(row['Answer Options'], row['Type'])
                 row['Answer Options'] = formatted_choices
             elif row['Validation'] == 'date_dmy':
                 #date_str = """[<font color="lightgrey">_D_</font>][<font color="lightgrey">_D_</font>]/[<font color="lightgrey">_M_</font>][<font color="lightgrey">_M_</font>]/[_2_][_0_][<font color="lightgrey">_Y_</font>][<font color="lightgrey">_Y_</font>]"""
@@ -1634,8 +1636,7 @@ def paralel_elements(features,id_feat,current_datadicc,selected_variables):
 )
 def update_row3_content(selected_value,json_data):
     caseDefiningVariables=arch.getResearchQuestionTypes(current_datadicc)
-
-    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv')#change for deploy
+    research_question_elements=pd.read_csv('BRIDGE/assets/config_files/researchQuestions.csv') #change for deploy
     #research_question_elements=pd.read_csv('assets/config_files/researchQuestions.csv') 
 
     group_elements=[]
