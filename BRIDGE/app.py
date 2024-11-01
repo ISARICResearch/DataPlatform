@@ -288,7 +288,7 @@ tree_column = dbc.Fade(
     tree_items,
     #html.Div("Hello"),
     id="tree-column",
-    is_in=False,  # Initially hidden
+    is_in=True,  # Initially show
     style={
         "position": "fixed",
         "top": "5rem",
