@@ -213,7 +213,10 @@ settings_content = html.Div(
             #dcc.Store(id='visibility-store', data={'display': 'block'})
         ], style={'margin-bottom': '20px'}),
 
+
         # Output Files checkboxes
+        dcc.Store(id="output-files-store"),
+        # Checklist component
         html.Div([
             html.Label("Output Files", htmlFor="output-files-checkboxes"),
             dbc.Checklist(
@@ -222,11 +225,9 @@ settings_content = html.Div(
                     {'label': 'ISARIC Clinical Characterization XML', 'value': 'redcap_xml'},
                     {'label': 'REDCap Data Dictionary', 'value': 'redcap_csv'},
                     {'label': 'Paper-like CRF', 'value': 'paper_like'},
-                    #{'label': 'Completion Guide', 'value': 'completion_guide'},
-
-                    # Add more files as needed
+                    # {'label': 'Completion Guide', 'value': 'completion_guide'},
                 ],
-                value=['file1'],  # Default selected values
+                value=['redcap_xml','redcap_csv','paper_like'],  # Default selected values
                 inline=True
             )
         ], style={'margin-bottom': '20px'}),
@@ -1387,18 +1388,44 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
     return dash.no_update, dash.no_update, dash.no_update, dash.no_update,dash.no_update
 
 @app.callback(
-    [Output("loading-output-1", "children"),
-     Output("download-dataframe-csv", "data"),
-     Output("download-compGuide-pdf", "data"),
-     Output("download-projectxml-pdf","data"),
-     Output("download-paperlike-pdf","data")]  ,
-    [Input('crf_generate', 'n_clicks'),Input('selected_data-store','data')],  
-    State('crf_name', 'value'),
+    Output("output-files-store", "data"),
+    Input("output-files-checkboxes", "value")
+)
+def update_store(checked_values):
+    return checked_values
+
+@app.callback(
+    [
+        Output("loading-output-1", "children"),
+        Output("download-dataframe-csv", "data"),
+        Output("download-compGuide-pdf", "data"),
+        Output("download-projectxml-pdf", "data"),
+        Output("download-paperlike-pdf", "data")
+    ],
+    [Input("crf_generate", "n_clicks"), Input("selected_data-store", "data")],
+    [
+        State({'type': 'template_check', 'index': dash.ALL}, "value"),
+        State("crf_name", "value"),
+        State("output-files-store", "data")  # Adding the output-files-store as a State
+    ],
     prevent_initial_call=True
 )
-def on_generate_click(n_clicks,json_data, crf_name):
-    if isinstance(crf_name, list):
-        crf_name=crf_name[0]
+def on_generate_click(n_clicks, json_data, values, crf_name, output_files):
+    print(output_files)
+    if crf_name is not None:
+
+        print('crf_name:',crf_name)
+
+        if isinstance(crf_name, list):
+            crf_name = crf_name[0]
+    else:
+        checked_values = values
+        extracted_text = [item for sublist in checked_values for item in sublist if item]
+        print(extracted_text)
+        if len(extracted_text) > 0:
+            crf_name = extracted_text[0]
+        else:
+            crf_name = 'no_name'
 
     #global selected_variables
 
@@ -1415,6 +1442,7 @@ def on_generate_click(n_clicks,json_data, crf_name):
     # Return the text from 'crf_name' input field
     if json_data is None:
         return 'No data available',None, None, None,None
+
     if trigger_id == 'crf_generate':
         selected_variables_fromData= pd.read_json(json_data, orient='split')
 
@@ -1462,11 +1490,13 @@ def on_generate_click(n_clicks,json_data, crf_name):
             content = file.read()
 
 
-        return "",dcc.send_bytes(output.getvalue(), crf_name+'_DataDictionary_'+date+'.csv'),\
-            dcc.send_bytes(pdf_data, crf_name+'_Completion_Guide_'+date+'.pdf'),\
-                dcc.send_bytes(content, file_name),dcc.send_bytes(pdf_crf, crf_name+'_paperlike_'+date+'.pdf')
+        return "", \
+            dcc.send_bytes(output.getvalue(), f"{crf_name}_DataDictionary_{date}.csv") if 'redcap_csv' in output_files else None, \
+            dcc.send_bytes(pdf_data, f"{crf_name}_Completion_Guide_{date}.pdf") if 'paper_like' in output_files else None, \
+            dcc.send_bytes(content, file_name) if 'redcap_xml' in output_files else None, \
+            dcc.send_bytes(pdf_crf, f"{crf_name}_paperlike_{date}.pdf") if 'paper_like' in output_files else None
     else:
-        return "", None, None, None,None
+        return "", None, None, None, None
 
 
 @app.callback(
