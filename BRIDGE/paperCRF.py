@@ -35,8 +35,8 @@ def header_footer(canvas, doc,title):
     formatted_date = current_date.strftime("%d%b%y").upper()
 
     # Draw the first logo
-    canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  #change for deploy# adjust the width and height accordingly
-    #canvas.drawInlineImage("BRIDGE/assets/ISARIC_logo.png", 50, 730, width=69, height=30)  
+    #canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  #change for deploy# adjust the width and height accordingly
+    canvas.drawInlineImage("BRIDGE/assets/ISARIC_logo.png", 50, 730, width=69, height=30)  
 
     # For the second logo, make sure it's positioned after the first logo + some spacing
     #canvas.drawInlineImage("assets/who_logo.png", 130, 730, width=98, height=30)  # adjust the width and height
@@ -95,6 +95,8 @@ def create_table(data):
     return table
 
 def generate_pdf(data_dictionary, version, db_name):
+    if isinstance(db_name, list):
+        db_name=db_name[0]
 
     data_dictionary = data_dictionary[~data_dictionary['Field Label'].str.startswith(('>', '->'))]
 

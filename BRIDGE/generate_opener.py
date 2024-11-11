@@ -8,6 +8,10 @@ from reportlab.platypus import Spacer
 
 def generate_opener(elements, details, db_name):
 
+    if isinstance(db_name, list):
+        db_name=db_name[0]
+        
+
     # Get the predefined styles
     styles = getSampleStyleSheet()
 

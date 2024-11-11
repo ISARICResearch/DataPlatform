@@ -1397,6 +1397,8 @@ def on_modal_button_click(submit_n_clicks, cancel_n_clicks,current_datadicc_save
     prevent_initial_call=True
 )
 def on_generate_click(n_clicks,json_data, crf_name):
+    if isinstance(crf_name, list):
+        crf_name=crf_name[0]
 
     #global selected_variables
 
@@ -1453,8 +1455,8 @@ def on_generate_click(n_clicks,json_data, crf_name):
 
 
         file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
-        #file_path = 'BRIDGE/assets/config_files/'+file_name
-        file_path = 'assets/config_files/'+file_name# Change this for deploy
+        file_path = 'BRIDGE/assets/config_files/'+file_name
+        #file_path = 'assets/config_files/'+file_name# Change this for deploy
         # Open the XML file and read its content
         with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
             content = file.read()
