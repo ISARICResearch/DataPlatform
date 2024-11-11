@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 from dash import dcc
 from dash import dash_table
 
-from dash import html, Input, Output, State
+from dash import html, Input, Output, State, ALL
 
 import pandas as pd
 from dash.exceptions import PreventUpdate
@@ -397,6 +397,9 @@ app.layout = html.Div(
         dcc.Store(id='multilist_variable_choices-store',data=initial_multilist_variable_choices),
         dcc.Store(id='grouped_presets-store',data=initial_grouped_presets),
         dcc.Store(id='tree_items_data-store',data=initial_grouped_presets),
+
+        dcc.Store(id='templates_checks_ready', data=False),
+
         #navbar,
         #sidebar,
         #settings_column,
@@ -713,33 +716,43 @@ def start_app(n_clicks):
 # get URL parameter
 ####################
 @app.callback(
-    [Output('crf_name', 'value')] + [Output(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
-    [Input('url', 'href')],
+    #[Output('crf_name', 'value')] + [Output(f'checklist-{key}', 'value') for key in grouped_presets.keys()],
+    #[Output('crf_name', 'value')] ,
+    [Output('crf_name', 'value'), Output({'type': 'template_check', 'index': ALL}, 'value')],
+    [Input('templates_checks_ready', 'data')],
+    [State('url', 'href')],
     prevent_initial_call=True,
-
 )
-def update_output_based_on_url(href):
+def update_output_based_on_url(template_check_flag,href):
+
+    if not template_check_flag:
+        return dash.no_update
+
     if href is None:
         return [''] + [[] for _ in grouped_presets.keys()]
 
-    # Parse the URL to extract the parameters
-    parsed_url = urlparse(href)
-    params = parse_qs(parsed_url.query)
+    if '?param=' in href:
+        # Parse the URL to extract the parameters
+        parsed_url = urlparse(href)
+        params = parse_qs(parsed_url.query)
 
-    # Accessing the 'param' parameter
-    param_value = params.get('param', [''])[0]  # Default to an empty string if the parameter is not present
+        # Accessing the 'param' parameter
+        param_value = params.get('param', [''])[0]  # Default to an empty string if the parameter is not present
 
-    # Example: Split param_value by underscore
-    group, value = param_value.split('_') if '_' in param_value else (None, None)
+        # Example: Split param_value by underscore
+        group, value = param_value.split('_') if '_' in param_value else (None, None)
 
-    # Prepare the outputs
-    checklist_values = {key: [] for key in grouped_presets.keys()}
+        # Prepare the outputs
+        checklist_values = {key: [] for key in grouped_presets.keys()}
 
-    if group in grouped_presets and value in grouped_presets[group]:
-        checklist_values[group] = [value]
+        if group in grouped_presets and value in grouped_presets[group]:
+            checklist_values[group] = [value]
 
-    # Return the value for 'crf_name' and checklist values
-    return [value] + [checklist_values[key] for key in grouped_presets.keys()]
+        # Return the value for 'crf_name' and checklist values
+        return [value] , [checklist_values[key] for key in grouped_presets.keys()]
+    else:
+        return dash.no_update
+    #return [value]
 
 
 
@@ -970,7 +983,8 @@ def display_expanded(expanded):
     [Output('selected-version-store', 'data', allow_duplicate=True),
      Output('preset-accordion', 'children', allow_duplicate=True),
      Output('grouped_presets-store','data'),
-     Output('current_datadicc-store', 'data', allow_duplicate=True)],
+     Output('current_datadicc-store', 'data', allow_duplicate=True),
+     Output('templates_checks_ready', 'data')],
     [Input({'type': 'dynamic-version', 'index': dash.ALL}, 'n_clicks')],
     [State('selected-version-store', 'data')],
     prevent_initial_call=True  # Evita que se dispare inicialmente
@@ -978,7 +992,7 @@ def display_expanded(expanded):
 def store_clicked_item(n_clicks,data):
     ctx = dash.callback_context
     if not ctx.triggered:
-        return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update
+        return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update, False
     else:
         button_id = ctx.triggered[0]['prop_id']
         id_json = button_id.split(".")[0]  # Extraemos el JSON de la ID
@@ -1035,9 +1049,10 @@ def store_clicked_item(n_clicks,data):
                    accordion_items,\
                    grouped_presets,\
                    current_datadicc.to_json(date_format='iso', orient='split'),\
+                   True
 
         except json.JSONDecodeError:
-            return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update
+            return dash.no_update, dash.no_update, dash.no_update, dash.no_update, dash.no_update,False
 
 @app.callback(
     Output("dropdown-arch_version_input", "value"),
@@ -1438,8 +1453,8 @@ def on_generate_click(n_clicks,json_data, crf_name):
 
 
         file_name = 'ISARIC Clinical Characterisation Setup.xml'  # Set the desired download name here
-        file_path = 'BRIDGE/assets/config_files/'+file_name
-        #file_path = 'assets/config_files/'+file_name# Change this for deploy
+        #file_path = 'BRIDGE/assets/config_files/'+file_name
+        file_path = 'assets/config_files/'+file_name# Change this for deploy
         # Open the XML file and read its content
         with open(file_path, 'rb') as file:  # 'rb' mode to read as binary
             content = file.read()

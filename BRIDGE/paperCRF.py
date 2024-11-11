@@ -35,8 +35,8 @@ def header_footer(canvas, doc,title):
     formatted_date = current_date.strftime("%d%b%y").upper()
 
     # Draw the first logo
-    #canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  #change for deploy# adjust the width and height accordingly
-    canvas.drawInlineImage("BRIDGE/assets/ISARIC_logo.png", 50, 730, width=69, height=30)  
+    canvas.drawInlineImage("assets/ISARIC_logo.png", 50, 730, width=69, height=30)  #change for deploy# adjust the width and height accordingly
+    #canvas.drawInlineImage("BRIDGE/assets/ISARIC_logo.png", 50, 730, width=69, height=30)  
 
     # For the second logo, make sure it's positioned after the first logo + some spacing
     #canvas.drawInlineImage("assets/who_logo.png", 130, 730, width=98, height=30)  # adjust the width and height
