@@ -10,6 +10,9 @@ DAILY FORM, OPTION to complete daily if of interest for specific analysis.
 DAILY FORM,Timing /Events: Hospital admission / initial assessment | Admission to ICU (if applicable) | Research sample taken (optional) | As per site protocol (optional)
 OUTCOME FORM, ALWAYS complete at discharge or death or at the end of the study period
 OUTCOME FORM,Timing /Events: Discharge / death / end of study
+FOLLOW-UP FORM,Timing /Events: As per site protocol (optional)
+WITHDRAWAL FORM,Timing /Events: As per site protocol (optional)
+Follow-up details,Continue to follow-up patients who transfer between wards.
 Timing /Events,Hospital admission / initial assessment | Admission to ICU (if applicable) | Research sample taken (optional) | As per site protocol (optional) | Discharge / death / end of study
 GENERAL GUIDANCE,Contact ISARIC Global Support Centre at data@isaric.org
 GENERAL GUIDANCE,"The CRF is designed to collect data obtained through examination, interview, review of hospital notes, or extraction from electronic health records.  Data may be collected prospectively or retrospectively if the patient is enrolled after the date of presentation to a health facility. "
