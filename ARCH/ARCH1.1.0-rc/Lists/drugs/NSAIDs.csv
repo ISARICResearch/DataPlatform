@@ -1,0 +1,16 @@
+Drugs                                              , Code    , Library ,Selected
+"Acetylsalicylic acid (Aspirin, Ascriptin, Ecotrin)                ",N02BA01, ATC     ,1
+Celecoxib (Celebrex)                               , M01AH01 , ATC     ,1
+"Diclofenac (Voltaren, Cataflam)                    ", M01AB05 , ATC     ,1
+Etoricoxib (Arcoxia)                               , M01AH05 , ATC     , 
+"Flurbiprofen (Ansaid, Ocufen)                      ", M01AE09 , ATC     , 
+"Ibuprofen (Advil, Motrin)                          ", M01AE01 , ATC     ,1
+Indomethacin (Indocin)                             , M01AB01 , ATC     , 
+"Ketoprofen (Orudis, Oruvail)                       ", M01AE03 , ATC     , 
+Ketorolac (Toradol)                                , M01AB15 , ATC     , 
+Mefenamic Acid (Ponstel)                           , M01AG01 , ATC     , 
+Meloxicam (Mobic)                                  , M01AC06 , ATC     , 
+Nabumetone (Relafen)                               , M01AX01 , ATC     , 
+"Naproxen (Aleve, Naprosyn)                         ", M01AE02 , ATC     ,1
+Piroxicam (Feldene)                                , M01AC01 , ATC     , 
+Sulindac (Clinoril)                                , M01AB02 , ATC     , 
