@@ -1,21 +1,21 @@
-﻿Sample_Type,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx
-Nasal/NP swab,1,,,1
-Throat swab,1,,1,1
-Combined nasal/NP + throat swab,1,,,1
-Sputum,1,,,1
-BAL (Bronchoalveolar Lavage),1,,,1
-ETA (Endotracheal aspirate),1,,,1
-Lesion/crust (skin) swab,,,1,
-Urine,,,1,
-Faeces/rectal swab,,,1,
-Blood,1,1,1,1
-Eye swab,,,1,
-Breast milk,,,,
-Semen,,,1,
-Stool sample,,,,
-Amniotic fluid,,,,
-Buccal swab,,,1,
-CSF (Cerebrospinal Fluid),,1,1,
-Neonate-blood,,1,,
-Vaginal swab,,,1,
-Urethral swab,,,,
+﻿Sample_Type,Selected,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx
+Nasal/NP swab,1,1,,,1
+Throat swab,1,1,,1,1
+Combined nasal/NP + throat swab,1,1,,,1
+Sputum,1,1,,,1
+BAL (Bronchoalveolar Lavage),1,1,,,1
+ETA (Endotracheal aspirate),1,1,,,1
+Lesion/crust (skin) swab,,,,1,
+Urine,,,,1,
+Faeces/rectal swab,,,,1,
+Blood,1,1,1,1,1
+Eye swab,,,,1,
+Breast milk,,,,,
+Semen,,,,1,
+Stool sample,,,,,
+Amniotic fluid,,,,,
+Buccal swab,,,,1,
+CSF (Cerebrospinal Fluid),,,1,1,
+Neonate-blood,,,1,,
+Vaginal swab,,,,1,
+Urethral swab,,,,,
