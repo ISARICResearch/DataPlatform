@@ -1,0 +1,36 @@
+Condition,Code,Library
+ Septic Shock                                  ,76571007,SNOMED
+ Acute Respiratory Distress Syndrome (ARDS)    ,67782005,SNOMED
+Acute renal failure syndrome,14669001,SNOMED
+Deep venous thrombosis,128053003,SNOMED
+ Pulmonary Embolism                            ,59282003,SNOMED
+ Myocardial Infarction                         ,22298006,SNOMED
+Ischemic stroke,422504002,SNOMED
+Cardioembolic stroke,413758000,SNOMED
+Cerebellar stroke,16371781000119100,SNOMED
+Haemorrhagic stroke,1078001000000100,SNOMED
+Thrombotic stroke,371040005,SNOMED
+Recurrent gastrointestinal bleeding,307296008,SNOMED
+Pneumothorax                                  ,36118008,SNOMED
+Disseminated Intravascular Coagulation (DIC)  ,67406007,SNOMED
+Sepsis                                        ,91302008,SNOMED
+Cardiac Arrest                                ,410429000,SNOMED
+Transient cerebral ischemia,266257000,SNOMED
+ Bacteremia                                    ,5758002,SNOMED
+Recurrent urinary tract infection,197927001,SNOMED
+ Pneumonia                                     ,233604007,SNOMED
+Transient hypotension,9.4501E+13,SNOMED
+Acquired coagulation disorder,234466008,SNOMED
+Large liver,80515008,SNOMED
+Meningitis                                    ,7180009,SNOMED
+Multisystem inflammatory syndrome in adults,1119306006,SNOMED
+Multisystem inflammatory syndrome in children,895448002,SNOMED
+Encephalitis                                  ,45170000,SNOMED
+Ventilator-Associated Pneumonia               ,429271009,SNOMED
+Empyema                                       ,312682007,SNOMED
+Ischemic encephalopathy,389100007,SNOMED
+Bleeding                                      ,131148009,SNOMED
+Cardiogenic Shock                             ,89138009,SNOMED
+Decompensation,87228002,SNOMED
+ Neurological finding                          ,102957003,SNOMED
+Hospital acquired pneumonia,425464007,SNOMED
