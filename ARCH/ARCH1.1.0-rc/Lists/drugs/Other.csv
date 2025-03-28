@@ -1,8 +1,9 @@
-Drugs                                                    , Code  , Library ,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment
 Aminophylline (Truphylline)                              , R03DA05   , ATC     ,,,,,,,,
 "Beclometasone (Qvar, Beconase AQ)                        ", R03BA01   , ATC     ,,,,,,,,
 Caspofungin (Cancidas)                                   , J02AX04   , ATC     ,,,,,,,,
 Chloroquine (Aralen)                                     , P01BA01   , ATC     ,,,1,,,,,
+"Clobetasol (Temovate, Olux, Impoyz)                 ",D07AD01,ATC,,,,,,,,Topical
+Drugs                                                    , Code  , Library ,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment
 Fluconazole (Diflucan)                                   , J02AC01   , ATC     ,,,,,,,,
 "Fluticasone (Flovent, Flonase)                           ", R03BA05   , ATC     ,,,,,,,,
 Fluticasone furoate, R03BA09, ATC     ,,,,,,,,
@@ -11,27 +12,25 @@ Formoterol and Beclometasone (Fostair)                   , R03AK11   , ATC     ,
 Formoterol and Budesonide (Symbicort)                    , R03AK07   , ATC     ,,,,,,,,
 Glycopyrronium Bromide (Seebri)                          , R03BB06   , ATC     ,,,,,,,,
 Hydroxychloroquine (Plaquenil)                           , P01BA02   , ATC     ,,,,,,,,
+"Imiquimod (Aldara, Zyclara)",D06BB10  ,ATC,,,,,,,,Topical/Locally acting
 Indacaterol and Glycopyrronium Bromide (Ultibro Breezhaler), R03AL04, ATC     ,,,,,,,,
 Interferon Alpha                                         , L03AB01 , ATC     ,,,1,,,,,
 Interferon Beta                                          , L03AB02 , ATC     ,,,1,,,,,
 Ipratropium Bromide (Atrovent)                           , R03BB01   , ATC     ,,,,,,,,
 Ivermectin (Stromectol)                                  , P02CF01   , ATC     ,,,,,,,,
+Mafenide (Sulfamylon),D06BA03,ATC,,,,,,,,Topical
 "Mometasone (Asmanex, Nasonex)", R03BA07, ATC     ,,,,,,,,
 Montelukast (Singulair)                                  , R03DC03   , ATC     ,,,,,,,,
+Mupirocin (Bactroban),D06AX09,ATC,,,,,,,,Topical/Locally acting
+"Nystatin (Bio-statin, Nyamyc)",A02AA01,ATC,,,,,,,,Locally acting
+"Podophyllotoxin (Podofilox, Condylox)",D06BB04 ,ATC,,,,,,,,Topical
 Primaquine                                               , P01BA03   , ATC     ,,,,,,,,
 "Salbutamol (Ventolin, Proventil)                         ", R03AC02   , ATC     ,,,,,,,,
 Salmeterol (Serevent)                                    , R03AC12   , ATC     ,1,,,,,,,
 "Salmeterol and Fluticasone (Advair, Seretide)            ", R03AK06   , ATC     ,,,,,,,,
+"Sulphur, precipitated in petrolatum",D10AB02,ATC,,,,,,,,Topical
 "Theophylline (Theo-24, Elixophyllin)                     ", R03DA04   , ATC     ,,,,,,,,
 Tiotropium Bromide (Spiriva)                             , R03BB04   , ATC     ,,,,,,,,
+Trichloroacetic acid,78151001,SNOMED,,,,,,,,Topical
 Vilanterol and Fluticasone Furoate (Breo Ellipta)        , R03AK10   , ATC     ,,,,,,,,
 Vilanterol and Umeclidinium Bromide (Anoro Ellipta)      ,R03AL03, ATC     ,1,,,,,,,
-"Clobetasol (Temovate, Olux, Impoyz)                 ",D07AD01,ATC,,,,,,,,Topical
-"Sulphur, precipitated in petrolatum",D10AB02,ATC,,,,,,,,Topical
-Trichloroacetic acid,78151001,SNOMED,,,,,,,,Topical
-Mupirocin (Bactroban),D06AX09,ATC,,,,,,,,Topical/Locally acting
-"Nystatin (Bio-statin, Nyamyc)",A02AA01,ATC,,,,,,,,Locally acting
-Mafenide (Sulfamylon),D06BA03,ATC,,,,,,,,Topical
-"Imiquimod (Aldara, Zyclara)",D06BB10  ,ATC,,,,,,,,Topical/Locally acting
-"Podophyllotoxin (Podofilox, Condylox)",D06BB04 ,ATC,,,,,,,,Topical
-Intravenous immunoglobulin,,,,,,,,,1,
