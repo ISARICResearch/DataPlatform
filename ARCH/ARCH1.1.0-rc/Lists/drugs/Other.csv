@@ -1,9 +1,9 @@
+Drugs                                                    , Code  , Library ,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment
 Aminophylline (Truphylline)                              , R03DA05   , ATC     ,,,,,,,,
 "Beclometasone (Qvar, Beconase AQ)                        ", R03BA01   , ATC     ,,,,,,,,
 Caspofungin (Cancidas)                                   , J02AX04   , ATC     ,,,,,,,,
 Chloroquine (Aralen)                                     , P01BA01   , ATC     ,,,1,,,,,
 "Clobetasol (Temovate, Olux, Impoyz)                 ",D07AD01,ATC,,,,,,,,Topical
-Drugs                                                    , Code  , Library ,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment
 Fluconazole (Diflucan)                                   , J02AC01   , ATC     ,,,,,,,,
 "Fluticasone (Flovent, Flonase)                           ", R03BA05   , ATC     ,,,,,,,,
 Fluticasone furoate, R03BA09, ATC     ,,,,,,,,
