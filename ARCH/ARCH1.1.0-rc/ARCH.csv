@@ -1066,7 +1066,7 @@ photographs,PHOTOGRAPHS,photo_loc_oth,text,Specify other location,,,,,,[photo_lo
 photographs,PHOTOGRAPHS,photo_sampleyn,radio,Was a sample of the photographed area taken?,"1, Yes | 2, No | 99, Unknown",,,,,,,Refers to a biological sample of the photographed part of the body. ,Indicate 'Yes' if a biological sample of the photographed part of the body was taken. ,,,,,,,,1,1,,,,,,
 photographs,PHOTOGRAPHS,photo_sampleid,text,Please enter the sample ID,,,,,,[photo_sampleyn] = '1',,Refers to identification number (ID) of the sample. ,Write the sample ID.,,,,,,,,1,1,,,,,,
 photographs,PHOTOGRAPHS,photo_desc,notes,Please provide any other relevant additional description of the photo or it's location.,,,,,,,,"Refers to any other relevant additional description of the photo or it's location, not specified above.",,,,,,,,,1,1,,,,,,
-outcome,DIAGNOSIS,diagn_primary,user_list,Primary diagnosis (clinical condition) ,,,,,inclusion_Diseases,,,,,,,,,,1,1,1,1,1,1,,,,
+outcome,DIAGNOSIS,diagn_primary,user_list,Primary diagnosis (clinical condition),,,,,inclusion_Diseases,,,,,,,,,,1,1,1,1,1,1,,,,
 outcome,DIAGNOSIS,diagn_primary_type,radio,Type of diagnosis ," 1, Clinical diagnosis | 2, Lab-confirmed | 3, Radiologically confirmed (e.g., chest X-ray, CT) | 99, Unknown |88, Other",,,,,,,,,,,,,,1,1,1,1,1,1,,,,
 outcome,DIAGNOSIS,diagn_primary_typeother,text,Specify other type of diagnosis,,,,,,[diagn_primary_type]='88',,,,,,,,,1,1,1,1,1,1,,,,
 outcome,DIAGNOSIS,diagn_secondary,user_list,Secondary diagnosis,,,,,inclusion_Diseases,,,,,,,,,,1,1,1,1,1,1,,,,
