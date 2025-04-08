@@ -1,4 +1,4 @@
-Disease,Code,Library,Selected,preset_ARChetype CRF_ARI
+﻿Disease,Code,Library,Selected,preset_ARChetype CRF_ARI
 Healthcare Worker,,,1,1
 Dairy Farm Worker,,,1,1
 Poultry Farm Worker,,,1,1
@@ -9,5 +9,5 @@ Public Transport Worker,,,,
 Sanitation Worker,,,,
 Poultry culle,,,,1
 Live bird market worker,,,,1
-Swine farm worker??�,,,,1
+Swine farm worker?? ,,,,1
 Other live animal market worker,,,,1

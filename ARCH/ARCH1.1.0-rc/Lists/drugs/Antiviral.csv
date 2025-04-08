@@ -1,4 +1,4 @@
-Drugs                                                , Code     , Library ,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_ARI,preset_Syndrome_VHF,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment
+﻿Drugs                                                , Code     , Library ,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_ARI,preset_Syndrome_VHF,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment
 "Aciclovir (Acyclovir, Zovirax)                                   ",J05AB01  ,ATC     ,,,,,,,,,,
 Atazanavir (Reyataz)                                    ,J05AE08,ATC     ,,,,,,,,,,
 Bulevirtide (Hepcludex),J05AX28,ATC     ,,,,,,,,,,
@@ -31,7 +31,7 @@ Zanamivir (Relenza)                                   ,J05AH01,ATC     ,,,1,,,1,
 Tecovirimat,J05AX24,ATC     ,1,,,,1,,,,1,
 Pocapavir,,,,,,,,,,,,
 Pleconaril,J05AX06,ATC     ,,,,,,,,,,
-Brincidofovir,J05AB17�,ATC     ,1,,,,1,,,,1,
+Brincidofovir,J05AB17 ,ATC     ,1,,,,1,,,,1,
 Fluoxetine,N06AB03,ATC     ,,,,,,,,,,
 Peramivir,619693,RxNorm,,,,,,1,,,,
 Baloxavir marboxil,782500006,SNOMED,,,,,,1,1,,,

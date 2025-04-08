@@ -1,4 +1,4 @@
-Microorganism,Code,Library,Type
+﻿Microorganism,Code,Library,Type
 Achromobacter,91620006,SNOMED,bacteria
 Achromobacter xylosoxidans,413424009,SNOMED,bacteria
 Acinetobacter,7757008,SNOMED,bacteria
@@ -54,7 +54,7 @@ Enteric bacteria,106544002,SNOMED,bacteria
 Enterobacter,58683007,SNOMED,bacteria
 Enterobacter aerogenes,62592009,SNOMED,bacteria
 Enterobacter asburiae,33115003,SNOMED,bacteria
-Enterobacter bugandensis,1.13611E+14,SNOMED,bacteria
+Enterobacter bugandensis,1.14E+14,SNOMED,bacteria
 Enterobacter cloacae,14385002,SNOMED,bacteria
 Enterobacter cloacae complex,414102007,SNOMED,bacteria
 Enterobacter hormaechei,114454006,SNOMED,bacteria
