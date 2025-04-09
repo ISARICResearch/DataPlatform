@@ -3,7 +3,7 @@ Adenovirus,,,,,,,1,,,,1
 Andes virus infection (hantavirus),359761005,SNOMED,,,,,,,1,,
 Argentine haemorrhagic fever (Junin virus),58868000,SNOMED,,,,,,,1,,
 Avian influenza A H7N9/ H5N1/ H5N8/ H7N7 ,NEW CODE (609444009 | Influenza A virus subtype H7N9 (organism) |772827006 | Influenza A virus subtype H5N1 (organism) |715346008 | Influenza A virus subtype H7N7 (organism) |708527000 | Influenza A virus subtype H5N8 (organism) |,,,,,,1,,,,1
-Bacterial infection,87628006,SNOMED,,,,,,,,,
+Bacterial infection,87628006,SNOMED,1,1,1,1,1,1,1,1,1
 Bolivian haemorrhagic fever (Machupo virus),67247008,SNOMED,,,,,,,1,,
 Chickenpox (Varicella),58750007,SNOMED,,,,1,,,,1,
 COVID-19 (SARS-CoV-2) ,840539006,SNOMED,,1,,,1,,,,1
