@@ -1,17 +1,17 @@
-﻿Drugs                                                , Code     , Library ,Selected,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics
-Analgesic ,373265006 |Analgesic (substance)|,SNOMED,1,,1
-Antibiotic ,255631004 |Antibiotic (product)|,SNOMED,1,1,
-Anticoagulant,372862008 |Anticoagulant (substance)|,SNOMED,,1,
-Antifungal ,373219008 |Substance with antifungal mechanism of action (substance)|,SNOMED,1,1,
-Antihistamine,6425004 |Product containing histamine receptor antagonist (product)|,SNOMED,,,
-Antiprotozoal,788027008 |Medicinal product acting as antiprotozoal agent (product)|,SNOMED,,,
-Antipruritic ,312067003 |Local antipruritic agent (product)|,SNOMED,1,,
-Antiviral ,372701006,SNOMED,1,1,1
-Convalescent plasma ,1179779000,SNOMED,,,
-Corticosteroid ,116566001,SNOMED,1,1,1
-Diuretics,372695000,SNOMED,,,
-Immunomodulator,372558009,SNOMED,,,1
-Immunosuppressive drugs (non-steroid),69431002,SNOMED,,,1
-Inotropes / vasopressor ,373213009 |Inotropic agent (substance)|870406003 |Vasopressor (substance)|,SNOMED,,1,
-Intravenous immunoglobulin ,698802001,SNOMED,,,1
-Topical antibiotic  ,255631004 |Antibiotic (product)| 6064005 |Topical route (qualifier value)|,SNOMED,1,,
+﻿Drugs                                                , Code     , Library ,Selected,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype CRF_ARI
+Analgesic ,373265006 |Analgesic (substance)|,SNOMED,1,,1,
+Antibiotic ,255631004 |Antibiotic (product)|,SNOMED,1,1,,1
+Anticoagulant,372862008 |Anticoagulant (substance)|,SNOMED,,1,,1
+Antifungal ,373219008 |Substance with antifungal mechanism of action (substance)|,SNOMED,1,1,,1
+Antihistamine,6425004 |Product containing histamine receptor antagonist (product)|,SNOMED,,,,
+Antiprotozoal,788027008 |Medicinal product acting as antiprotozoal agent (product)|,SNOMED,,,,
+Antipruritic ,312067003 |Local antipruritic agent (product)|,SNOMED,1,,,
+Antiviral ,372701006,SNOMED,1,1,1,1
+Convalescent plasma ,1179779000,SNOMED,,,,
+Corticosteroid ,116566001,SNOMED,1,1,1,1
+Diuretics,372695000,SNOMED,,,,
+Immunomodulator,372558009,SNOMED,,,1,
+Immunosuppressive drugs (non-steroid),69431002,SNOMED,,,1,
+Inotropes / vasopressor ,373213009 |Inotropic agent (substance)|870406003 |Vasopressor (substance)|,SNOMED,,1,,1
+Intravenous immunoglobulin ,698802001,SNOMED,,,1,
+Topical antibiotic  ,255631004 |Antibiotic (product)| 6064005 |Topical route (qualifier value)|,SNOMED,1,,,
