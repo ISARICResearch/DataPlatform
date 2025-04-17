@@ -4,7 +4,7 @@ Drugs                                               , Code    , Library ,Selecte
 Budesonide (Pulmicort),R03BA02,ATC,,,,,,,,,,
 Cortisone (Cortone)                                 ,H02AB10 ,ATC,,,,,,1,,,,
 "Dexamethasone (Decadron, Dexasone, Diodex)          ",H02AB02,ATC,1,,1,,1,,1,1,1,
-"Fludrocortisone (Astonin, Florinef)",H02AA02 ,ATC,,,,,,,,,,
+"Fludrocortisone (Astonin, Florinef)",H02AA02,ATC,,,,,,,,,,
 "Fluticasone (Flovent, Flonase)                      ",R03BA05,ATC,,,,,,,,,,
 "Hydrocortisone (Cortef, Solu-Cortef)                ",H02AB09,ATC,1,,1,,1,,1,1,1,
 "Methylprednisolone (Medrol, Solu-Medrol)            ",H02AB04 ,ATC,1,,1,,1,,1,1,1,
