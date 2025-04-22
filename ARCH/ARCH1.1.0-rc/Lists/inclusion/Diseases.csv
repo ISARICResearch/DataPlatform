@@ -28,7 +28,6 @@ Mpox ,359814004,SNOMED,1,,,1,,,,1,
 Nipah ,406597005,SNOMED,,,,,,,,,
 Oropouche,72880002,SNOMED,,,,,,1,,,
 Pneumonic plague (Yersinia pestis),38976008,SNOMED,,,,,,,,,
-Resistance to oseltamivir (Tamiflu),441734008,SNOMED,,,,,,,,,1
 Respiratory syncytial virus infection (RSV),55256001,SNOMED,,,,,,,,,1
 Severe Acute paediatric hepatitis ,37871000 | Acute hepatitis (disorder) |24484000 | Severe (severity modifier) (qualifier value) |255398004 | Childhood (qualifier value) |,SNOMED,,,,,,,,,
 Severe acute respiratory syndrome (SARS-not COVID-19),398447004,SNOMED,,,,,,,,,1
