@@ -28,7 +28,7 @@ Erectile dysfunction,N52.9,ICD10,860914002,SNOMED,,,
 Fecal incontinence,R15,ICD10,72042002,SNOMED,,,
 Fainting / blackouts (Syncope and collapse),R55,ICD10,309585006,SNOMED,,,
 Malaise and fatigue,R53,ICD10,271795006,SNOMED,,,
-Fever,R50.9,ICD10,386661006,SNOMED,1,1,
+Fever,R50.9,ICD10,386661006,SNOMED,1,1,1
 Gastrointestinal bleeding (Gastrointestinal hemorrhage),K92.2,ICD10,74474003,SNOMED,,,
 Headache,R51,ICD10,25064002,SNOMED,,,
 Hepatomegaly,R16.0,ICD10,80515008,SNOMED,,,
