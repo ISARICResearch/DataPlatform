@@ -1,13 +1,13 @@
-Disease,Code,Library,Selected,preset_ARChetype CRF_ARI
-Healthcare Worker,,,1,1
-Dairy Farm Worker,,,1,1
-Poultry Farm Worker,,,1,1
-Beef Cattle Farm Worker ,,,1,1
-Veterinarian,,,1,1
-Abattoir Worker,,,1,1
-Public Transport Worker,,,,
-Sanitation Worker,,,,
-Poultry culler,,,,1
-Live bird market worker,,,,1
-Swine farm worker,,,,1
-Other live animal market worker,,,,1
+Disease,Code,Library,Selected,preset_ARChetype CRF_ARI,Value
+Abattoir Worker,,,1.0,1.0,1
+Beef Cattle Farm Worker ,,,1.0,1.0,2
+Dairy Farm Worker,,,1.0,1.0,3
+Healthcare Worker,,,1.0,1.0,4
+Live bird market worker,,,,1.0,5
+Other live animal market worker,,,,1.0,6
+Poultry Farm Worker,,,1.0,1.0,7
+Poultry culler,,,,1.0,8
+Public Transport Worker,,,,,9
+Sanitation Worker,,,,,10
+Swine farm worker,,,,1.0,11
+Veterinarian,,,1.0,1.0,12

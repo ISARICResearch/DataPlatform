@@ -1,39 +1,39 @@
-Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_ARI,preset_Syndrome_VHF,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment
-"Aciclovir (Acyclovir, Zovirax)                                   ",J05AB01  ,ATC     ,,,,,,,,,,
-Atazanavir (Reyataz)                                    ,J05AE08,ATC     ,,,,,,,,,,
-Bulevirtide (Hepcludex),J05AX28,ATC     ,,,,,,,,,,
-Cidofovir (Vistide)                                   ,J05AB12,ATC     ,1,,,,1,,,,1,
-Darunavir (Prezista)                                  ,J05AE10,ATC     ,,,,,,,,,,
-Dolutegravir (Tivicay)                                ,J05AJ03,ATC     ,,,,,,,,,,
-Efavirenz (Sustiva)                                   ,J05AG03,ATC     ,,,,,,,,,,
-Emtricitabine (Emtriva)                               ,J05AF09,ATC     ,,,,,,,,,,
-Famciclovir (Famvir)                                  ,J05AB09,ATC     ,,,,,,,,,,
-Favipiravir (Avigan)                                  ,J05AX27,ATC     ,,,1,,,1,1,1,,
-Ganciclovir (Cytovene)                                ,J05AB06,ATC     ,,,,,,,,,,
-"Lamivudine (Epivir, 3TC)                              ",J05AF05,ATC     ,,,,,,,,,,
-Lopinavir/Ritonavir (Kaletra)                         ,J05AR10  ,ATC     ,,,1,,,,,,,
-Molnupiravir (Lagevrio)                               ,J05AB18 ,ATC     ,,,,,,,,,,
-Nirmatrelvir/Retonavir (Paxlovid),J05AE30,ATC     ,,,,,,,,,,
-Oseltamivir (Tamiflu)                                 ,J05AH02  ,ATC     ,,,1,,,1,1,,,
-Penciclovir (Denavir),J05AB13  ,ATC     ,,,,,,,,,,
-Raltegravir (Isentress)                               ,J05AJ01,ATC     ,,,,,,,,,,
-Remdesivir (Veklury)                                  ,J05AB16,ATC     ,,,1,,,,,1,,
-"Ribavirin (Rebetol, Copegus)                          ",J05AP01,ATC     ,,,,,,,,1,,
-Rimantadine (Flumadine)                               ,J05AC02,ATC     ,,,,,,,1,,,
-Tenofovir alafenamide,J05AF13,ATC     ,,,,,,,,,,
-Tenofovir Disoproxil (Viread)                ,J05AF07,ATC     ,,,,,,,,,,
-Umifenovir (Arbidol)                                 ,J05AX13,ATC     ,,,,,,1,1,,,
-Valaciclovir (Valtrex)                                ,J05AB11,ATC     ,,,,,,,,,,
-Valganciclovir (Valcyte)                               ,J05AB14,ATC     ,,,,,,,,,,
-Zalcitabine,J05AF03,ATC     ,,,,,,,,,,
-Zanamivir (Relenza)                                   ,J05AH01,ATC     ,,,1,,,1,1,,,
-"Zidovudine (Retrovir, AZT)                            ",J05AF01,ATC     ,,,,,,,,,,
-Tecovirimat,J05AX24,ATC     ,1,,,,1,,,,1,
-Pocapavir,,,,,,,,,,,,
-Pleconaril,J05AX06,ATC     ,,,,,,,,,,
-Brincidofovir,J05AB17,ATC     ,1,,,,1,,,,1,
-Fluoxetine,N06AB03,ATC     ,,,,,,,,,,
-Peramivir,619693,RxNorm,,,,,,1,,,,
-Baloxavir marboxil (Xofluza)​,782500006,SNOMED,,,,,,1,1,,,
-Laninamivir,OMOP5173449,RxNorm Extension,,,,,,1,,,,
-"Amantadine (Gocovri, Osmolex ER, Symmetrel)",N04BB01,ATC,,,,,,,1,,,
+Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_ARI,preset_Syndrome_VHF,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment,Value
+"Aciclovir (Acyclovir, Zovirax)                                   ",J05AB01  ,ATC     ,,,,,,,,,,,1
+"Amantadine (Gocovri, Osmolex ER, Symmetrel)",N04BB01,ATC,,,,,,,1.0,,,,2
+Atazanavir (Reyataz)                                    ,J05AE08,ATC     ,,,,,,,,,,,3
+Baloxavir marboxil (Xofluza)​,782500006,SNOMED,,,,,,1.0,1.0,,,,4
+Brincidofovir,J05AB17,ATC     ,1.0,,,,1.0,,,,1.0,,5
+Bulevirtide (Hepcludex),J05AX28,ATC     ,,,,,,,,,,,6
+Cidofovir (Vistide)                                   ,J05AB12,ATC     ,1.0,,,,1.0,,,,1.0,,7
+Darunavir (Prezista)                                  ,J05AE10,ATC     ,,,,,,,,,,,8
+Dolutegravir (Tivicay)                                ,J05AJ03,ATC     ,,,,,,,,,,,9
+Efavirenz (Sustiva)                                   ,J05AG03,ATC     ,,,,,,,,,,,10
+Emtricitabine (Emtriva)                               ,J05AF09,ATC     ,,,,,,,,,,,11
+Famciclovir (Famvir)                                  ,J05AB09,ATC     ,,,,,,,,,,,12
+Favipiravir (Avigan)                                  ,J05AX27,ATC     ,,,1.0,,,1.0,1.0,1.0,,,13
+Fluoxetine,N06AB03,ATC     ,,,,,,,,,,,14
+Ganciclovir (Cytovene)                                ,J05AB06,ATC     ,,,,,,,,,,,15
+"Lamivudine (Epivir, 3TC)                              ",J05AF05,ATC     ,,,,,,,,,,,16
+Laninamivir,OMOP5173449,RxNorm Extension,,,,,,1.0,,,,,17
+Lopinavir/Ritonavir (Kaletra)                         ,J05AR10  ,ATC     ,,,1.0,,,,,,,,18
+Molnupiravir (Lagevrio)                               ,J05AB18 ,ATC     ,,,,,,,,,,,19
+Nirmatrelvir/Retonavir (Paxlovid),J05AE30,ATC     ,,,,,,,,,,,20
+Oseltamivir (Tamiflu)                                 ,J05AH02  ,ATC     ,,,1.0,,,1.0,1.0,,,,21
+Penciclovir (Denavir),J05AB13  ,ATC     ,,,,,,,,,,,22
+Peramivir,619693,RxNorm,,,,,,1.0,,,,,23
+Pleconaril,J05AX06,ATC     ,,,,,,,,,,,24
+Pocapavir,,,,,,,,,,,,,25
+Raltegravir (Isentress)                               ,J05AJ01,ATC     ,,,,,,,,,,,26
+Remdesivir (Veklury)                                  ,J05AB16,ATC     ,,,1.0,,,,,1.0,,,27
+"Ribavirin (Rebetol, Copegus)                          ",J05AP01,ATC     ,,,,,,,,1.0,,,28
+Rimantadine (Flumadine)                               ,J05AC02,ATC     ,,,,,,,1.0,,,,29
+Tecovirimat,J05AX24,ATC     ,1.0,,,,1.0,,,,1.0,,30
+Tenofovir Disoproxil (Viread)                ,J05AF07,ATC     ,,,,,,,,,,,31
+Tenofovir alafenamide,J05AF13,ATC     ,,,,,,,,,,,32
+Umifenovir (Arbidol)                                 ,J05AX13,ATC     ,,,,,,1.0,1.0,,,,33
+Valaciclovir (Valtrex)                                ,J05AB11,ATC     ,,,,,,,,,,,34
+Valganciclovir (Valcyte)                               ,J05AB14,ATC     ,,,,,,,,,,,35
+Zalcitabine,J05AF03,ATC     ,,,,,,,,,,,36
+Zanamivir (Relenza)                                   ,J05AH01,ATC     ,,,1.0,,,1.0,1.0,,,,37
+"Zidovudine (Retrovir, AZT)                            ",J05AF01,ATC     ,,,,,,,,,,,38
