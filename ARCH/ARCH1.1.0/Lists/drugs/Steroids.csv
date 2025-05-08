@@ -1,4 +1,4 @@
-Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_Syndrome_VHF,preset_ARChetype CRF_ARI,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment,Value
+Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_Syndrome_VHF,preset_ARChetype Syndromic CRF_ARI,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment,Value
 "Beclomethasone (Beclometasone, Beconase)",R03BA01,ATC,,,,,,,,,,,1
 "Betamethasone (Celestone, Betnelan)                 ",H02AB01,ATC, ,,,,,,,,,,2
 Budesonide (Pulmicort),R03BA02,ATC,,,,,,,,,,,3
