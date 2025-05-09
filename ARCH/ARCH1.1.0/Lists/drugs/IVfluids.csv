@@ -1,4 +1,4 @@
-Drugs,Code, Library,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_UserGenerated_Oropouche,preset_Syndrome_VHF,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment,Value
+Drugs,Code, Library,Selected,preset_Respiratory,preset_ARChetype Disease CRF_Covid,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_H5Nx,preset_UserGenerated_Oropouche,preset_Syndrome_VHF,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,Comment,Value
 0.18%-0.3% Sodium Chloride + 4% Glucose (Hypotonic saline with dextrose) ,,,,,,1,,,1,1,,,1
 0.45% Sodium Chloride (Half-normal saline),,,,,,1,,,1,1,,,2
 0.45% normal saline + 4% Glucose (Half-normal saline with dextrose),,,,,,1,,,1,1,,,3

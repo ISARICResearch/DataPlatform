@@ -1,4 +1,4 @@
-Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,Unnamed: 6,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Comment,Value
+Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype Disease CRF_Covid,Unnamed: 6,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,Comment,Value
 Acetylsalicylic Acid (Aspirin),B01AC06 , ATC     ,1,,,,,,,,1
 Alteplase (Activase),B01AD02, ATC     ,,,,,,,,,2
 Apixaban (Eliquis),B01AF02 , ATC     ,1,,1.0,,,,,,3

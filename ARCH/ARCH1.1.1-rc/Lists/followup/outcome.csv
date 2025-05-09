@@ -1,4 +1,4 @@
-Outcome,Code,Selected,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,Value
+Outcome,Code,Selected,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,Value
 All lesions are completely resolved and no serious complications,,,1.0,1.0,,1
 All lesions are no longer active and no serious complications,,,1.0,1.0,,2
 Death,,1.0,1.0,1.0,1.0,3

@@ -1,4 +1,4 @@
-Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,Comment,Value
+Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype Disease CRF_Covid,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,Comment,Value
 Aminophylline (Truphylline)                              , R03DA05   , ATC     ,,,,,,,,,,1
 "Beclometasone (Qvar, Beconase AQ)                        ", R03BA01   , ATC     ,,,,,,,,,,2
 Caspofungin (Cancidas)                                   , J02AX04   , ATC     ,,,,,,,,,,3
