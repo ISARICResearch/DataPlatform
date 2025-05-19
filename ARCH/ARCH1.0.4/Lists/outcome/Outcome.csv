@@ -1,8 +1,8 @@
-Outcome,Selected
-Discharged alive,1
-Still hospitalised,1
-Transfer to other facility,1
-Death,1
-Palliative care,1
-Discharged against medical advice,1
-"Alive, not admitted",
+Outcome,Selected,Value
+"Alive, not admitted",,1
+Death,1.0,2
+Discharged against medical advice,1.0,3
+Discharged alive,1.0,4
+Palliative care,1.0,5
+Still hospitalised,1.0,6
+Transfer to other facility,1.0,7

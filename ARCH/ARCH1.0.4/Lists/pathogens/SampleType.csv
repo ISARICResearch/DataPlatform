@@ -1,21 +1,21 @@
-Sample_Type,Code,Library,Selected,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics
-Nasal/NP swab,TEMP,TEMP,1,1,,,1,
-Throat swab,TEMP,TEMP,1,1,,1,1,1
-Combined nasal/NP + throat swab,TEMP,TEMP,1,1,,,1,
-Sputum,TEMP,TEMP,1,1,,,1,
-BAL (Bronchoalveolar Lavage),TEMP,TEMP,1,1,,,1,
-ETA (Endotracheal aspirate),TEMP,TEMP,1,1,,,1,
-Lesion/crust (skin) swab,TEMP,TEMP,,,,1,,1
-Urine,TEMP,TEMP,,,,1,,1
-Faeces/rectal swab,TEMP,TEMP,,,,1,,1
-Blood,TEMP,TEMP,1,1,1,1,1,1
-Eye swab,TEMP,TEMP,,,,1,,1
-Breast milk,TEMP,TEMP,,,,,,
-Semen,TEMP,TEMP,,,,1,,1
-Stool sample,TEMP,TEMP,,,,,,
-Amniotic fluid,TEMP,TEMP,,,,,,
-Buccal swab,TEMP,TEMP,,,,1,,1
-CSF (Cerebrospinal Fluid),TEMP,TEMP,,,1,1,,1
-Neonate-blood,TEMP,TEMP,,,1,,,
-Vaginal swab,TEMP,TEMP,,,,1,,1
-Urethral swab,TEMP,TEMP,,,,,,
+Sample_Type,Code,Library,Selected,preset_ARChetype CRF_Covid,preset_ARChetype CRF_Dengue,preset_ARChetype CRF_Mpox,preset_ARChetype CRF_H5Nx,preset_ARChetype CRF_Mpox-Pregnancy&Paediatrics,Value
+Amniotic fluid,TEMP,TEMP,,,,,,,1
+BAL (Bronchoalveolar Lavage),TEMP,TEMP,1.0,1.0,,,1.0,,2
+Blood,TEMP,TEMP,1.0,1.0,1.0,1.0,1.0,1.0,3
+Breast milk,TEMP,TEMP,,,,,,,4
+Buccal swab,TEMP,TEMP,,,,1.0,,1.0,5
+CSF (Cerebrospinal Fluid),TEMP,TEMP,,,1.0,1.0,,1.0,6
+Combined nasal/NP + throat swab,TEMP,TEMP,1.0,1.0,,,1.0,,7
+ETA (Endotracheal aspirate),TEMP,TEMP,1.0,1.0,,,1.0,,8
+Eye swab,TEMP,TEMP,,,,1.0,,1.0,9
+Faeces/rectal swab,TEMP,TEMP,,,,1.0,,1.0,10
+Lesion/crust (skin) swab,TEMP,TEMP,,,,1.0,,1.0,11
+Nasal/NP swab,TEMP,TEMP,1.0,1.0,,,1.0,,12
+Neonate-blood,TEMP,TEMP,,,1.0,,,,13
+Semen,TEMP,TEMP,,,,1.0,,1.0,14
+Sputum,TEMP,TEMP,1.0,1.0,,,1.0,,15
+Stool sample,TEMP,TEMP,,,,,,,16
+Throat swab,TEMP,TEMP,1.0,1.0,,1.0,1.0,1.0,17
+Urethral swab,TEMP,TEMP,,,,,,,18
+Urine,TEMP,TEMP,,,,1.0,,1.0,19
+Vaginal swab,TEMP,TEMP,,,,1.0,,1.0,20
