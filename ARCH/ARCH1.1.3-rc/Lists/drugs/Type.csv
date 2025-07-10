@@ -1,0 +1,17 @@
+Drugs,Code,Library,Selected,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,Value
+Analgesic ,373265006 |Analgesic (substance)|,SNOMED,1.0,,1.0,,1
+Antibiotic ,255631004 |Antibiotic (product)|,SNOMED,1.0,1.0,,1.0,2
+Anticoagulant,372862008 |Anticoagulant (substance)|,SNOMED,,1.0,,1.0,3
+Antifungal ,373219008 |Substance with antifungal mechanism of action (substance)|,SNOMED,1.0,1.0,,1.0,4
+Antihistamine,6425004 |Product containing histamine receptor antagonist (product)|,SNOMED,,,,,5
+Antiprotozoal,788027008 |Medicinal product acting as antiprotozoal agent (product)|,SNOMED,,,,,6
+Antipruritic ,312067003 |Local antipruritic agent (product)|,SNOMED,1.0,,,,7
+Antiviral ,372701006,SNOMED,1.0,1.0,1.0,1.0,8
+Convalescent plasma ,1179779000,SNOMED,,,,,9
+Corticosteroid ,116566001,SNOMED,1.0,1.0,1.0,1.0,10
+Diuretics,372695000,SNOMED,,,,,11
+Immunomodulator,372558009,SNOMED,,,1.0,,12
+Immunosuppressive drugs (non-steroid),69431002,SNOMED,,,1.0,,13
+Inotropes / vasopressor ,373213009 |Inotropic agent (substance)|870406003 |Vasopressor (substance)|,SNOMED,,1.0,,1.0,14
+Intravenous immunoglobulin ,698802001,SNOMED,,,1.0,,15
+Topical antibiotic  ,255631004 |Antibiotic (product)| 6064005 |Topical route (qualifier value)|,SNOMED,1.0,,,,16
