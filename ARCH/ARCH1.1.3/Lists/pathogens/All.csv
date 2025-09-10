@@ -93,7 +93,7 @@ Cytomegalovirus,407444007,SNOMED,virus,,,,,,,,,,92
 Delftia,416493002,SNOMED,bacteria,,,,,,,,,,93
 Delftia acidovorans,20432002,SNOMED,bacteria,,,,,,,,,,94
 Deltavirus,83617006,SNOMED,virus,,,,,,,,,,95
-Dengue virus,34348001,SNOMED,virus,,,,,,,,,,96
+Dengue virus,34348001,SNOMED,virus,,,1,,,,,,,96
 Dermabacter,413976002,SNOMED,bacteria,,,,,,,,,,97
 Diphtheroid,54642001,SNOMED,bacteria,,,,,,,,,,98
 Diphyllobothrium latum,40406002,SNOMED,"parasite, helminth",,,,,,,,,,100
@@ -150,11 +150,11 @@ Hantavirus,49445003,SNOMED,virus,,1,,,,,,,,150
 Helicobacter pylori,80774000,SNOMED,bacteria,,,,,,,,,,151
 Hendra virus,115510008,SNOMED,virus,,,,,,,,,,152
 Hepadnaviridae,422951006,SNOMED,virus,,,,,,,,,,153
-Hepatitis A virus,32452004,SNOMED,virus,,,,,,,,,,154
-Hepatitis B virus,81665004,SNOMED,virus,,,,,,,1,,,155
-Hepatitis C virus,62944002,SNOMED,virus,,,,,,,1,,,156
-Hepatitis D,83617006,SNOMED,virus,,,,,,,,,,157
-Hepatitis E virus,78475006,SNOMED,virus,,,,,,,,,,158
+Hepatitis A virus,32452004,SNOMED,virus,,,1,,,,,,,154
+Hepatitis B virus,81665004,SNOMED,virus,,,1,,,,1,,,155
+Hepatitis C virus,62944002,SNOMED,virus,,,1,,,,1,,,156
+Hepatitis D virus,83617006,SNOMED,virus,,,1,,,,,,,157
+Hepatitis E virus,78475006,SNOMED,virus,,,1,,,,,,,158
 Herpesviridae,128377001,SNOMED,virus,,,,,,,,,,159
 Histoplasma,81951003,SNOMED,fungi,,,,,,,,,,160
 Histoplasma capsulatum,56596006,SNOMED,fungi,,,,,,,,,,161
@@ -164,7 +164,7 @@ Histoplasma capsulatum,56596006,SNOMED,fungi,,,,,,,,,,161
 "Human Herpesvirus 4 (Epstein-Barr virus, EBV)",40168006,SNOMED,virus,,,,,,,,,,165
 "Human Herpesvirus 5 (Cytomegalovirus humanbeta5, hCMV)",243579005,SNOMED,virus,,,,,,,,,,166
 Human Herpesvirus 6 (Roseola infantum virus),103528003,SNOMED,virus,,,,,,,,,,167
-Human Immunodeficiency Virus (HIV),19030005,SNOMED,virus,,,,,,,1,,,168
+Human Immunodeficiency Virus (HIV),19030005,SNOMED,virus,,,1,,,,1,,,168
 Human Immunodeficiency virus type 1 (HIV-1),89293008,SNOMED,virus,,,,,,,,,,169
 Human Immunodeficiency virus type 2 (HIV-2),36115006,SNOMED,virus,,,,,,,,,,170
 Human Metapneumovirus (hMPV),416730002,SNOMED,virus,,,,,,,,,,171
@@ -304,7 +304,7 @@ SARS-CoV-2  Theta- P.3,840533018,SNOMED,virus,,,,,,,,,,304
 SARS-CoV-2  Zeta - P.2,840533019,SNOMED,virus,,,,,,,,,,305
 SARS-CoV-2 Alpha - B.1.1.7,840533020,SNOMED,virus,,,,,,,,,,306
 SARS-CoV-2 Antigen,840536004,SNOMED,virus (substance),,,,,,,,,,307
-SARS-CoV-2 IgG Antibody,6.3E+13,SNOMED,virus (substance),,,,,,,,,,308
+SARS-CoV-2 IgG Antibody,6.30E+13,SNOMED,virus (substance),,,,,,,,,,308
 SARS-CoV-2 IgG/IgM Antibody,840535000,SNOMED,virus (substance),,,,,,,,,,309
 SARS-CoV-2 IgM Antibody,5.06E+13,SNOMED,virus (substance),,,,,,,,,,310
 Saccharomyces cerevisiae,765320007,SNOMED,fungi,,,,,,,,,,311
