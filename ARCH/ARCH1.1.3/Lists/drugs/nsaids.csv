@@ -1,0 +1,16 @@
+Drugs,Code,Library,Selected,preset_ARChetype Syndromic CRF_ARI,Value
+"Acetylsalicylic acid (Aspirin, Ascriptin, Ecotrin)",N02BA01, ATC     ,1,1,1
+Celecoxib (Celebrex), M01AH01 , ATC     ,1,1,2
+"Diclofenac (Voltaren, Cataflam)", M01AB05 , ATC     ,1,1,3
+Etoricoxib (Arcoxia), M01AH05 , ATC     , , ,4
+"Flurbiprofen (Ansaid, Ocufen)", M01AE09 , ATC     , , ,5
+"Ibuprofen (Advil, Motrin)", M01AE01 , ATC     ,1,1,6
+Indomethacin (Indocin), M01AB01 , ATC     ,1,1,7
+"Ketoprofen (Orudis, Oruvail)", M01AE03 , ATC     , , ,8
+Ketorolac (Toradol), M01AB15 , ATC     , , ,9
+Mefenamic Acid (Ponstel), M01AG01 , ATC     , , ,10
+Meloxicam (Mobic), M01AC06 , ATC     , , ,11
+Nabumetone (Relafen), M01AX01 , ATC     , , ,12
+"Naproxen (Aleve, Naprosyn)", M01AE02 , ATC     ,1,1,13
+Piroxicam (Feldene), M01AC01 , ATC     , , ,14
+Sulindac (Clinoril), M01AB02 , ATC     , , ,15
