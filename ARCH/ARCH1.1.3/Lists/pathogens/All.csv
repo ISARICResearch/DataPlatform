@@ -153,8 +153,8 @@ Hepadnaviridae,422951006,SNOMED,virus,,,,,,,,,,,153
 Hepatitis A virus,32452004,SNOMED,virus,,,1,,,,,,,,154
 Hepatitis B virus,81665004,SNOMED,virus,,,1,,,,1,,,,155
 Hepatitis C virus,62944002,SNOMED,virus,,,1,,,,1,,,,156
-Hepatitis D virus,83617006,SNOMED,virus,,,1,,,,,,,,157
-Hepatitis E virus,78475006,SNOMED,virus,,,1,,,,,,,,158
+Hepatitis D virus,83617006,SNOMED,virus,,,,,,,,,,,157
+Hepatitis E virus,78475006,SNOMED,virus,,,,,,,,,,,158
 Herpesviridae,128377001,SNOMED,virus,,,,,,,,,,,159
 Histoplasma,81951003,SNOMED,fungi,,,,,,,,,,,160
 Histoplasma capsulatum,56596006,SNOMED,fungi,,,,,,,,,,,161
