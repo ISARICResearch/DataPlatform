@@ -2,13 +2,13 @@ Drugs,Code,Library,Selected,preset_Respiratory,preset_ARChetype Disease CRF_Covi
 "Beclomethasone (Beclometasone, Beconase)",R03BA01,ATC,,,,,,,,,,,1
 "Betamethasone (Celestone, Betnelan)                 ",H02AB01,ATC, ,,,,,,,,,,2
 Budesonide (Pulmicort),R03BA02,ATC,,,,,,,,,,,3
-Cortisone (Cortone)                                 ,H02AB10 ,ATC,,,,,,1.0,,,,,4
-"Dexamethasone (Decadron, Dexasone, Diodex)          ",H02AB02,ATC,1,,1.0,,1.0,,1.0,1.0,1.0,,5
+Cortisone (Cortone)                                 ,H02AB10 ,ATC,,,,,,1,,,,,4
+"Dexamethasone (Decadron, Dexasone, Diodex)          ",H02AB02,ATC,1,,1,1,1,,1,1,1,,5
 "Fludrocortisone (Astonin, Florinef)",H02AA02,ATC,,,,,,,,,,,6
 "Fluticasone (Flovent, Flonase)                      ",R03BA05,ATC,,,,,,,,,,,7
-"Hydrocortisone (Cortef, Solu-Cortef)                ",H02AB09,ATC,1,,1.0,,1.0,,1.0,1.0,1.0,,8
-"Methylprednisolone (Medrol, Solu-Medrol)            ",H02AB04 ,ATC,1,,1.0,,1.0,,1.0,1.0,1.0,,9
+"Hydrocortisone (Cortef, Solu-Cortef)                ",H02AB09,ATC,1,,1,1,1,,1,1,1,,8
+"Methylprednisolone (Medrol, Solu-Medrol)            ",H02AB04 ,ATC,1,,1,1,1,,1,1,1,,9
 "Mometasone (Asmanex, Elocon, Nasonex)               ",R03BA07,ATC,,,,,,,,,,,10
-"Prednisolone (Prelone, Orapred)                     ",H02AB06 ,ATC,1,,1.0,,,,1.0,1.0,,,11
-Prednisone (Deltasone)                       ,H02AB07 ,ATC,1,,,,1.0,,,,1.0,,12
+"Prednisolone (Prelone, Orapred)                     ",H02AB06 ,ATC,1,,1,1,,,1,1,,,11
+Prednisone (Deltasone)                       ,H02AB07 ,ATC,1,,,1,1,,,,1,,12
 "Triamcinolone (Kenalog, Aristocort)                 ",H02AB08 ,ATC, ,,,,,,,,,,13
