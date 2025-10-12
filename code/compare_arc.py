@@ -8,8 +8,8 @@ Created on Mon Apr 28 13:02:16 2025
 import pandas as pd
 
 # Define versions
-old_version = '1.1.0'
-new_version = '1.1.1'
+old_version = '1.1.2'
+new_version = '1.1.3'
 
 # Load the two files
 file_old = f"C:/Users/sduquevallejo/Documents/GitHub/DataPlatform/ARCH/ARCH{old_version}/ARCH.csv"  # OLD file
