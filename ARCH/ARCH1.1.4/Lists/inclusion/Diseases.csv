@@ -1,5 +1,5 @@
 Disease,Code,Library,Selected,preset_ARChetype Disease CRF_Covid,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_H5Nx,preset_UserGenerated_Oropouche,preset_Syndrome_VHF,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,Value
-Adenovirus,,,,,,,1,,,,1,1
+Adenovirus,,,,,,,1,,,,,1
 Andes virus infection (hantavirus),359761005,SNOMED,,,,,,,1,,,2
 Argentine haemorrhagic fever (Junin virus),58868000,SNOMED,,,,,,,1,,,3
 Avian influenza A H7N9/ H5N1/ H5N8/ H7N7 ,NEW CODE (609444009 | Influenza A virus subtype H7N9 (organism) |772827006 | Influenza A virus subtype H5N1 (organism) |715346008 | Influenza A virus subtype H7N7 (organism) |708527000 | Influenza A virus subtype H5N8 (organism) |,,,,,,1,,,,,4
@@ -17,14 +17,14 @@ HSV ,88594005,SNOMED,,,,,,,,,,15
 "Hepatitis (general, unspecified)",40468003,SNOMED,,,1,,,,,,,16
 Herpes simplex virus infection (HSV),88594005,SNOMED,,,,1,,,,1,,17
 Human immunodeficiency virus infection (HIV infection),86406008,SNOMED,,,,1,,,,1,,18
-Influenza A H1N1,442352004,SNOMED,,,,,,,,,1,19
-Influenza A H5N1,772827006,SNOMED,,,,,,,,,1,20
-Influenza A H5N8,708527000,SNOMED,,,,,,,,,1,21
-Influenza A H7N7,715346008,SNOMED,,,,,,,,,1,22
-Influenza A H7N9,609444009,SNOMED,,,,,,,,,1,23
-Influenza A virus,407479009,SNOMED,,,,,,,,,1,24
-Influenza B virus,407480007,SNOMED,,,,,,,,,1,25
-Influenza virus,725894000,SNOMED,,,,,,,,1,1,26
+Influenza A H1N1,442352004,SNOMED,,,,,,,,,,19
+Influenza A H5N1,772827006,SNOMED,,,,,,,,,,20
+Influenza A H5N8,708527000,SNOMED,,,,,,,,,,21
+Influenza A H7N7,715346008,SNOMED,,,,,,,,,,22
+Influenza A H7N9,609444009,SNOMED,,,,,,,,,,23
+Influenza A virus,407479009,SNOMED,,,,,,,,,,24
+Influenza B virus,407480007,SNOMED,,,,,,,,,,25
+Influenza virus,725894000,SNOMED,,,,,,,,1,,26
 JE ,52947006,SNOMED,,,,,,,,,,27
 Lassa fever,19065005,SNOMED,,,,,,,1,,,28
 Lujo virus disease,721784007,SNOMED,,,,,,,1,,,29
@@ -41,3 +41,7 @@ Severe acute respiratory syndrome (SARS-not COVID-19),398447004,SNOMED,,,,,,,,,1
 Severe fever with thrombocytopaenia syndrome (SFTS),722401001,SNOMED,,,,,,,,,,40
 Undefined influenza,155559006,SNOMED,,,,,,,,,1,41
 Rift Valley Fever,,,,,,,,,,,,42
+Community acquired pneumonia,,,,,,,,,,,1,43
+Hospital acquired pneumonia,,,,,,,,,,,1,44
+Influenza like Illness,,,,,,,,,,,1,45
+Viral ARI,,,,,,,,,,,1,46
