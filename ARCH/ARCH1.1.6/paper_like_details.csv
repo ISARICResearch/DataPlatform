@@ -17,7 +17,7 @@ PREGNANCY FORM,"OPTION to complete for Pregnant woman OR mother of a neonate  , 
 PREGNANCY FORM,Timing /Events: Pregnant individuals=Delivery or at end of study;  Mother of a neonate OR Neonate of which mother is not included=at presentation
 NEONATE FORM,OPTION to complete for Neonates OR if neonate not included for mother of the neonate
 NEONATE FORM,Timing /Events: Neonate = at presentation ; mother of neonate = at delivery
-Timing /Events,Hospital admission / initial assessment | Admission to ICU (if applicable) | Research sample taken (optional) | As per site protocol (optional) | Discharge / death / end of study | Pregnant individuals=Delivery or at end of study;  Mother of a neonate OR Neonate of which mother is not included=at presentation |Neonate = at presentation ; mother of neonate = at delivery
+Timing /Events,Hospital admission / initial assessment | Admission to ICU (if applicable) | Research sample taken (optional) | As per site protocol (optional) | Discharge / death / end of study | Pregnant individuals=Delivery or at end of study;  Mother of a neonate OR Neonate of which mother is not included=at presentation | Neonate = at presentation ; mother of neonate = at delivery
 GENERAL GUIDANCE,Contact ISARIC Global Support Centre at data@isaric.org
 GENERAL GUIDANCE,"The CRF is designed to collect data obtained through examination, interview, review of hospital notes, or extraction from electronic health records.  Data may be collected prospectively or retrospectively if the patient is enrolled after the date of presentation to a health facility. "
 GENERAL GUIDANCE,Please refer to the CRF Completion Guideline for detailed guidance on how to complete these forms.
