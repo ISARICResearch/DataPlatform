@@ -1230,179 +1230,179 @@ outcome,OUTCOME,outco_transfersite,radio,If transfer to other facility: is the t
 outcome,OUTCOME,outco_transfersite_pin,text,What is the Participant Identification Number at the new facility?,"1, Yes | 0, No | 99, Unknown",,,,,[outco_transfersite]='1',,This refers to the participant identification number at the transfer facility.,Indicate the participant identification number at the transfer facility.,,,,,,,,,,1,,,,,,,,
 outcome,OUTCOME,outco_ceiling,radio,Was a maximal level of medical support ('ceiling of care') set for the patient during their admission?,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to the maximal level of medical support set for the patient during the current admission.,"Indicate 'Yes', if a maximal level of medical support for set for this patient during the current admission. ",,,,,,,,,,,1,,,,,,,
 outcome,OUTCOME,outco_ceiling_descri,notes,Describe what this was (e.g. not for invasive ventilation; not for ICU; or not for CPR),,,,,,[outco_ceiling]='1',,This refers to the maximal level of medical support set for the patient during the current admission.,"If 'Yes', describe the maximal level of medical support set for this patient during the current admission.",,,,,,,,,,,1,,,,,,,
-pregnancy,PREGNANCY DETAILS,preg_form,descriptive,Complete the form only if the patient is pregnant or within the postpartum period within 28 days of delivery,,,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,preg_date,text,Date of form completion,,date_dmy,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,pregdet_medirep,radio,Medically assisted reproduction? ,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,pregdet_edd,text,Estimated date of delivery (EDD),,date_dmy,,today,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,pregdet_lmp,text,Date of last menstrual period (LMP) ,,date_dmy,,today,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,pregdet_parity,text,Parity,,number,0,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,pregdet_gravidity,text,Gravidity,,number,0,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,pregdet_prevcs,text,Number of previous surgical (caesarean section) deliveries.,,number,0,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY DETAILS,pregdet_fetnum,text,Number of embryos/foetuses in this pregnancy.,,number,0,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_comor,radio,Co-morbidities during the current pregnancy,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_diabetes,radio,Diabetes,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_obesity,radio,Obesity,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_hypertension,radio,Hypertension,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_sicklecell,radio,Sickle cell,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_renal,radio,Renal diseases,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_immsup,radio,Immunosuppression,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_immcom,radio,Immunocompromised,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_othcomor,radio,Other,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_othcomor_spec,text,"If other, specify",,,,,,[preg_othcomor]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_smoking,radio,Smoking status,"1, Current smoker | 2, Former smoker (stopped PRIOR TO pregnancy) | 3, Former smoker (stopped DURING pregnancy) | 0, Never smoked",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-COMORBIDITIES,preg_substance,radio,Substance use during pregnancy,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY MEDICATIONS,pregmed_immunosupyn,radio,Any immunosuppressive treatment during pregnancy?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY MEDICATIONS,pregmed_immunosupnum,text,How many immunosuppressive drugs?,,number,,,,[pregmed_immunosupyn] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY MEDICATIONS,pregmed_immunosupname,text,Name(s) of immunosuppressive drug(s).,,,,,,[pregmed_immunosupyn] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY MEDICATIONS,pregmed_otheryn,radio,Any other pregnancy medications?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY MEDICATIONS,pregmed_othernum,text,How many pregnancy medications?,,number,,,,[pregmed_otheryn] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY MEDICATIONS,pregmed_othername,text,Name(s) of medication(s).,,,,,,[pregmed_otheryn] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY VACCINES,pregmed_antvacc,checkbox,Antenatal vaccines administered,"1, COVID-19 | 2, Hepatitis B | 3, Yellow fever | 4, Chickenpox | 999, Other",,,,,,,,,,,,,,,,,,1,,,,,,,,
-pregnancy,PREGNANCY VACCINES,pregmed_antvacc_oth,checkbox,"If other, specify",,,,,,[pregmed_antvacc(88)]='1',,,,,,,,,,,,,1,,,,,,,,
-pregnancy,PREGNANCY-RELATED TESTING,pregtest_yn,radio,Were biological samples taken tested during pregnancy?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED TESTING,pregtest_type,checkbox,Which of the following samples were taken? ,"1, Amniotic fluid | 2, Placenta | 3, Cord blood | 4, Vaginal swab | 5, Faecal/rectal swab | 6, Pregnancy tissue | 99, Unknown | 88, Other",,,,,[pregtest_yn] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED TESTING,pregtest_desc,text,Describe the sample testing and results.,,,,,,[pregtest_yn] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_mat,radio,Maternal pregnancy complications?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_preecl,radio,Pre-eclampsia,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_preecl_week,text,Gestational week of onset,,number,,,,[pregcomp_preecl]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_ecl,radio,Eclampsia ,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_ecl_week,text,Gestational week of onset,,number,,,,[pregcomp_ecl]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_hellp,radio,HELLP Syndrome,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_hellp_week,text,Gestational week of onset,,number,,,,[pregcomp_hellp]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_gdm,radio,Gestational diabetes,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_gdm_week,text,Gestational week of onset,,number,,,,[pregcomp_gdm]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pih,radio,Pregnancy-induced hypertension,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pihl_week,text,Gestational week of onset,,number,,,,[pregcomp_pih]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_utbleed,radio,Uterine bleeding,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_utbleed_week,text,Gestational week of onset,,number,,,,[pregcomp_utbleed]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_malaria,radio,Malaria infection in pregnancy,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_malaria_week,text,Gestational week of onset,,number,,,,[pregcomp_malaria]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_oth,radio,Other maternal pregnancy complication(s),"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_othspec,text,Specify other maternal pregnancy complication(s),,,,,,[pregcomp_oth] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_placfetab,radio,Placental / amniotic fluid / foetal abnormalities identified antenatally,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_lowaf,radio,Diminished amniotic fluid,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_lowaf_week,text,Gestational week of onset,,number,,,,[pregcomp_lowaf]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_highaf,radio,Excessive amniotic fluid,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_highaf_week,text,Gestational week of onset,,number,,,,[pregcomp_highaf]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pprevia,radio,Placenta previa,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pprevia_week,text,Gestational week of onset,,number,,,,[pregcomp_pprevia]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_plowlying,radio,Low-lying placenta,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_plowlying_week,text,Gestational week of onset,,number,,,,[pregcomp_plowlying]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pinsuff,radio,Placental insufficiency,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pinsuff_week,text,Gestational week of onset,,number,,,,[pregcomp_pinsuff]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_iugr,radio,Intrauterine growth restriction,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_iugr_week,text,Gestational week of onset,,number,,,,[pregcomp_iugr]='1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_othpyn,radio,Other placental / amniotic fluid / foetal abnormalities identified antenatally,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_othpspec,text,specify other placental / amniotic fluid / foetal abnormalities identified antenatally,,,,,,[pregcomp_othpyn] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_bboutc,radio,Pregnancy outcome,"1, Livebirth (even if infant died after birth) | 2, Miscarriage (<22 weeks) | 3, Termination by choice | 4, Termination - ultrasound abnormality | 5, Termination - other/unknown reason | 6, Stillbirth (intra-uterine / intrapartum death from 22 gest weeks) | 7, Ectopic pregnancy | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_weeks,text,Gestational age at outcome (completed weeks),,number,,,,[pregout_bboutc] = '1' or [pregout_bboutc] = '2' or [pregout_bboutc] = '3' or [pregout_bboutc] = '4' or [pregout_bboutc] = '5' or [pregout_bboutc] = '6',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_bbtest,radio,Baby tested for mother's infection of interest?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_bbresl,radio,Specify test result from mother's infection of interest ,"1, Positive | 0, Negative | 99, Unknown",,,,,[pregout_bbtest] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_bboutc_termreas,text,"If termination for ultrasound abnormality or other reason, specify",,,,,,[pregout_bboutc] = '4' or [pregout_bboutc] = '5',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_bboutc_stillb,radio,If stillbirth: macerated or fresh?,"1, Macerated | 2, Fresh | 99, Unknown",,,,,[pregout_bboutc] = '6',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_matdeath,radio,Did mother die in pregnancy?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_matdeath_age,text,Age at death,,number,0,,,[pregout_matdeath] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_matdeath_cause,text,Cause(s) of death,,,,,,[pregout_matdeath] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_matdeath_place,radio,Place of death,"1, At home | 2, Hospital/medical facility | 99, Unknown",,,,,[pregout_matdeath] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_matdeath_time,radio,Death timepoint,"1, Pre-delivery | 2, During delivery | 3, Post-delivery (within 40 days) | 99, Unknown",,,,,[pregout_matdeath] = '1',,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_othdet,text,"Other details about pregnancy, not specified above.",,,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_nbornincl,radio,Is the newborn included in the study?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,,1
-pregnancy,PREGNANCY OUTCOME,pregout_nborpin,text,Indicate the newborn's Participant Identification Number (PIN),,,,,,[pregout_nbornincl]='1',,,,,,,,,,,,,1,,,,,,,,1
-neonate,NEWBORN OUTCOMES,nborn_sex,radio,Newborn sex at birth,"1, Male | 2, Female | 99, Unknown | 88, Other",,,,,,,This refers to the physical sexual characteristics at birth.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_modedel,radio,Mode of delivery,"1, Vaginal | 2, Assisted vaginal | 3, Elective caesarean (before labour, before rupture of membranes) | 4, Emergency caesarean (after labour and/or rupture of membranes)",,,,,,,This refers to the method by which a foetus is delivered.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_placedel,radio,Place of delivery,"1, At home | 2, Hospital/medical facility | 99, Unknown",,,,,,,This refers to the place of delivery of the foetus.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_ga,text,Gestational age (weeks),,number,0,,,,,This refers to the gestational age of the foetus (written in completed weeks). It can be calculated from the woman's last menstrual period (LMP) or calculated using the best obstetrical estimated due date (EDD) based on the following formula: Gestational Age = (28 - (EDD - Reference Date)) / 7. The reference date is the date in which you are trying to determine the gestational age.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_gamethod,radio,How was gestation estimated?,"1, LMP | 2, EDD | 99, Unknown",,,,,,,This refers to the method of estimating the gestational age. LMP refers to the date of the first day of the most recent menstrual cycle. EDD refers to the estimated date of delivery. ,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthweight,text,Newborn weight at birth ,,number,0,,,,,"This refers to the measurement of a newborn’s weight immediately after birth, typically recorded within the first minutes of life.",,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthweight_units,radio,Newborn weight at birth  (select units),"1,g| 2,lb",,,,,,,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_length,text,Newborn length at birth ,,number,0,,,,,This refers to the measurement of a newborn's length from the top of their head to the bottom of one of their heels,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_length_units,radio,Newborn length at birth (select units),"1,inches | 2,cm",,,,,,,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_infhc,text,Head circumference at birth ,,number,0,,,,,This refers to the measurement of the largest area of the head (distance from around the back of the head to above the eyebrows and ears) (in cm).,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_infhc_units,radio,Head circumference at birth (select units),"1,inches | 2,cm",,,,,,,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_apgar,text,APGAR score at 5 mins (1-1),,number,1,10,,,,"This refers to a score to evaluate a newborn's adjustment to extrauterine life. Five items - heart rate, respiratory effort, muscle tone, reflex irritability, and color - are evaluated 6 seconds after birth and again five minutes later on a scale from -2,  being the lowest, 2 being normal. The five numbers are added for the Apgar score. A score of -3 represents severe distress, 4-7 indicates moderate distress, and a score of 7-1 predicts an absence of difficulty in adjusting to extrauterine life.",,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_resusc,radio,Resuscitation required following delivery,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to measures applied for the restoration of life to a newborn.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_resuscdet,text,Give details,,,,,,[nborn_resusc] = '1',,This refers to measures applied for the restoration of life to a newborn.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_nicu,radio,Admission to NICU,"1, Yes, related to pathogen of interest | 2, Yes, not related to pathogen of interest | 3, No, due to non-availability of NICUs | 0, No | 4, Not applicable | 99, Unknown",,,,,,,This refers to admission of the newborn to the neonatal intensive care unit.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_hospdur,text,Duration of hospital stay,,number,0,,,,,This refers to the total duration of hospital stay during the current admisssion (in days).,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_outc,radio,Neonatal outcome,"1, Discharged healthy | 2, Discharged with complications/sequelae | 3, Still in neonatal ward | 4, Referred to other hospital | 5, Death  | 99, Unknown  | 6, Not applicable",,,,,,,This refers to the outcome of the newborn. ,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_conginfectyn,radio,Congenitally-acquired infections,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to suspected or confirmed infections in the newborn that are acquired in utero and persisting after birth.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_conginfecttype,checkbox,Type of congenitally-acquired infections,"1, CMV | 2, Syphilis | 3, Toxoplasmosis | 4, HIV | 5, HCV | 6, HBV | 7, HSV-1 | 8, HSV-2 | 99, Unknown | 88, Other",,,,,[nborn_conginfectyn] = '1',,This refers to type(s) of suspected or confirmed infections in the newborn that are acquired in utero and persisting after birth.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_conginfectother,text,Specify other congenitally-acquired infections,,,,,,[nborn_conginfecttype(88)] = '1',,"This refers to other suspected or confirmed infections, not specified above, in the newborn that are acquired in utero and persisting after birth.",,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_compyn,radio,Did any neonatal complications occur?,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to any complications which occurred during the neonatal period.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_compsel,checkbox,Select all that apply.,"1, Respiratory distress syndrome | 2, Intraventricular haemorrhage | 3, Necrotising enterocolitis | 4, Neonatal encephalopathy | 5, Chronic lung disease | 6, Severe jaundice requiring phototherapy | 7, Major congenital anomaly |  8, Severe infection/sepsis |  9, Meningitis | 10, Exchange transfusion | 99, Unknown | 88, Other",,,,,[nborn_compyn] = '1',,This refers to any complications which occurred during the neonatal period.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_compoth,text,If other: Specify,,,,,,[nborn_compsel(88)] ='1',,This refers to any complications which occurred during the neonatal period.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefectyn,radio,Congenital anomaly present?,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefectnum,text,How many?,,number,0,,,[nborn_birthdefectyn] = '1',,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefect1,text,Describe congenital anomaly ,,,,,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 1,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefect1_date,text,Date of congenital anomaly diagnosis,,date_dmy,,today,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 1,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefect2,text,Describe congenital anomaly ,,,,,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 2,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefect2_date,text,Date of congenital anomaly diagnosis,,date_dmy,,today,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 2,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefect3,text,Describe congenital anomaly ,,,,,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 3,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_birthdefect3_date,text,Date of congenital anomaly diagnosis,,date_dmy,,today,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 3,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_death,radio,Newborn or infant death,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to death of the newborn or infant,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_deathage,text,Age at death ,,number,0,,,[nborn_death] = '1',,This refers to the age of the newborn or infant at the time of death (months).,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_deathage_units,radio,Age at death (select units),"1,months | 2,days",,,,,[nborn_death] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN OUTCOMES,nborn_deathcause,text,Cause(s) of death,,,,,,[nborn_death] = '1',,This refers to the cause of death of the newborn or infant. ,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LESIONS,nborn_lesion,radio,Neonatal skin or mucosal lesions,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to the presence of skin or mucosal lesions observed in the neonate.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LESIONS,nborn_lesion_age,text,Age at onset of lesions (completed weeks),,number,0,,,[nborn_lesion] = '1',,This refers to the age (in completed weeks) at which lesions first appeared.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LESIONS,nborn_lesion_num,radio,Maximum number of lesions observed,"1, Mild (< 25 skin lesions) | 2, Moderate (25–99 skin lesions) | 3, Severe (100–250 skin lesions) | 4, Very severe (> 250 skin lesions) | 99, Unknown",,,,,[nborn_lesion] = '1',,This refers to the maximum number of lesions observed.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LESIONS,nborn_lesion_site,checkbox,Lesion site(s) and pain score (0 = no pain  10 = worst pain),"1, Head/face/neck | 2, Inside of mouth | 3, Torso | 4, Arms and/or hands | 5, Legs and/or feet | 6, External genitalia | 7, Perianal | 8, Vaginal canal | 9, Rectum | 88, Other ",,,,,[nborn_lesion] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LESIONS,nborn_lesion_site_oth,text,"If other,  specify lesion site",,,,,,[nborn_lesion_site(88)] = '1',,This refers to lesion sites not listed above.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LESIONS,nborn_lesion_type,checkbox,Type(s) of lesions currently present,"1, Vesicle | 2, Pustule | 3, Ulcerated lesion | 4, Crusted/scabbed mature lesion | 5, Residual evidence of resolved lesions (scar/discoloration) | 6, Haemorrhagic / bleeding lesions",,,,,[nborn_lesion] = '1',,This refers to the morphological type(s) of lesions present today.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_sympt,radio,Neonatal symptoms at clinical examination,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to signs or symptoms identified during neonatal clinical examination.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_fever,radio,Fever,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_cough,radio,Cough,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_wheeze,radio,Wheezing,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_rhino,radio,Runny nose (rhinorrhoea),"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_respdist,radio,Respiratory distress,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_tachypnoea,radio,Fast breathing (tachypnoea),"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_nasalflar,radio,Nasal flaring,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_grunt,radio,Grunting,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_apnoea,radio,Apnoea,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_nasalcongestion,radio,Nasal congestion,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_vomit,radio,Vomiting,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_diarrhoea,radio,Diarrhoea,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_consti,radio,Constipation,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lowurine,radio,Reduced urine output,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_jaundice,radio,Jaundice,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_skinpallor,radio,Skin pallor,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_ftt,radio,Failure to thrive,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_hypotonia,radio,Decreased tone / hypotonia,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_bulgefont,radio,Bulging fontanelle,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_hypotherm,radio,Hypothermia,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_feedingdiff,radio,Feeding difficulty,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_hepatomegally,radio,Hepatomegaly,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_anaemia,radio,Anaemia,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_seizconv,radio,Seizures,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_keratitis,radio,Keratitis,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_conjunctiv,radio,Conjunctivitis,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_ocularother,radio,Other ocular findings,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_ocularother_spec,text,Please specify,,,,,,[nborn_ocularother] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lymph,radio,Lymphadenopathy,"1, Yes-painful | 2, Yes-not painful | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lymph_site,checkbox,Specify lymphadenopathy site(s),"1, Axillary (arm pits) | 2, Cervical (neck)| 3, Inguinal (groin) | 99, Unknown | 88, Other",,,,,[nborn_lymph]='1' or [nborn_lymph]='2',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lymph_site_oth,text,Specify other lymphadenopathy site(s),,,,,,[nborn_lymph_site]='88',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_haemorrhag,radio,Bleeding (haemorrhage),"1, Yes | 0, No | 99, Unknown",,,,,[nborn_haemorrhag] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_haemorrhag_site,multi_list,Specify bleeding site(s),,,,,conditions_Site,[nborn_haemorrhag] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_haemorrhag_site_oth,text,Specify other bleeding / haemorrhage site(s),,,,,,[nborn_haemorrhag_site(88)]='1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_other,,Other symptom(s),,,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_other_spec,,"If yes, specify other",,,,,,[nborn_other]='1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging,radio,Imaging conducted,"1, Cranial ultrasound | 2, MRI | 88, Other | 0, None",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging_oth,text,Specify,,,,,,[nborn_imaging] = '88',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging_res,radio,Imaging results,"1, Normal findings | 2, Abnormal findings",,,,,[nborn_imaging] <> '0',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging_res_det,text,"If abnormal findings,  provide details",,,,,,[nborn_imaging_res] = '2',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nbor_otherinf,radio,Other congenital infections,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nbor_otherinf_spec,text,Specify,,,,,,[nbor_otherinf]='1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_breastfed,radio,Was baby ever breastfed?,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_breastfed_status,radio,Breastfeeding status,"1, Currently breastfed | 0, Breastfeeding discontinued",,,,,,,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_breastfed_dur,text,"If breastfeeding discontinued, how long did breastfeeding last? (in weeks)",,number,,,,[nborn_breastfed_status]='0',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LABORATORY TESTS,nborn_labtestyn,radio,Infant Mpox testing performed?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LABORATORY TESTS,nborn_specimen,radio,Mpox specimen type,"1, Amniotic fluid | 2, Cord blood during pregnancy | 3, Cord blood after delivery | 4, Placental sample during pregnancy | 5, Placental sample after delivery | 6, Skin lesion | 7, Blood | 8, Nasopharyngeal swab | 9, Urine |88, Other",,,,,[nborn_labtestyn] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LABORATORY TESTS,nborn_specimenother,text,Specify,,,,,,[nborn_specimen] = '88',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LABORATORY TESTS,nborn_labmethod,radio,Mpox laboratory method,"1, PCR | 2, Ortho PCR | 3, Serology | 999, Other",,,,,[nborn_labtestyn] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LABORATORY TESTS,nborn_pcrres,radio,PCR result,"1, Positive | 0, Negative",,,,,[nborn_labmethod] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEWBORN LABORATORY TESTS,nborn_pcrct,text,PCR Cycle Threshold (CT),,number,0,,,[nborn_labmethod] = '1',,,,,,,,,,,,,1,,,,,,,1,
-neonate,NEONATE DETAILS,nborn_motherincl,radio,Is the mother included in the study ? ,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to inclusion of the mother in the same study.,,,,,,,,,,,1,,,,,,,1,
-neonate,NEONATE DETAILS,nborn_motherpin,text,specify their PIN,,,,,,[nborn_motherincl]='1',,This refers to the participant identification number allocated to the mother of a newborn in the study.,,,,,,,,,,,1,,,,,,,1,
+pregnancy,PREGNANCY DETAILS,preg_form,descriptive,Complete the form only if the patient is pregnant or within the postpartum period within 28 days of delivery,,,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,preg_date,text,Date of form completion,,date_dmy,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,pregdet_medirep,radio,Medically assisted reproduction? ,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,pregdet_edd,text,Estimated date of delivery (EDD),,date_dmy,,today,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,pregdet_lmp,text,Date of last menstrual period (LMP) ,,date_dmy,,today,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,pregdet_parity,text,Parity,,number,0,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,pregdet_gravidity,text,Gravidity,,number,0,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,pregdet_prevcs,text,Number of previous surgical (caesarean section) deliveries.,,number,0,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY DETAILS,pregdet_fetnum,text,Number of embryos/foetuses in this pregnancy.,,number,0,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_comor,radio,Co-morbidities during the current pregnancy,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_diabetes,radio,Diabetes,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_obesity,radio,Obesity,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_hypertension,radio,Hypertension,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_sicklecell,radio,Sickle cell,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_renal,radio,Renal diseases,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_immsup,radio,Immunosuppression,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_immcom,radio,Immunocompromised,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_othcomor,radio,Other,"1, Yes | 0, No | 99, Unknown",,,,,[preg_comor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_othcomor_spec,text,"If other, specify",,,,,,[preg_othcomor]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_smoking,radio,Smoking status,"1, Current smoker | 2, Former smoker (stopped PRIOR TO pregnancy) | 3, Former smoker (stopped DURING pregnancy) | 0, Never smoked",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-COMORBIDITIES,preg_substance,radio,Substance use during pregnancy,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY MEDICATIONS,pregmed_immunosupyn,radio,Any immunosuppressive treatment during pregnancy?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY MEDICATIONS,pregmed_immunosupnum,text,How many immunosuppressive drugs?,,number,,,,[pregmed_immunosupyn] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY MEDICATIONS,pregmed_immunosupname,text,Name(s) of immunosuppressive drug(s).,,,,,,[pregmed_immunosupyn] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY MEDICATIONS,pregmed_otheryn,radio,Any other pregnancy medications?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY MEDICATIONS,pregmed_othernum,text,How many pregnancy medications?,,number,,,,[pregmed_otheryn] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY MEDICATIONS,pregmed_othername,text,Name(s) of medication(s).,,,,,,[pregmed_otheryn] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY VACCINES,pregmed_antvacc,checkbox,Antenatal vaccines administered,"1, COVID-19 | 2, Hepatitis B | 3, Yellow fever | 4, Chickenpox | 999, Other",,,,,,,,,,,,,,,,,,,,,,,,,,
+pregnancy,PREGNANCY VACCINES,pregmed_antvacc_oth,checkbox,"If other, specify",,,,,,[pregmed_antvacc(88)]='1',,,,,,,,,,,,,,,,,,,,,
+pregnancy,PREGNANCY-RELATED TESTING,pregtest_yn,radio,Were biological samples taken tested during pregnancy?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED TESTING,pregtest_type,checkbox,Which of the following samples were taken? ,"1, Amniotic fluid | 2, Placenta | 3, Cord blood | 4, Vaginal swab | 5, Faecal/rectal swab | 6, Pregnancy tissue | 99, Unknown | 88, Other",,,,,[pregtest_yn] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED TESTING,pregtest_desc,text,Describe the sample testing and results.,,,,,,[pregtest_yn] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_mat,radio,Maternal pregnancy complications?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_preecl,radio,Pre-eclampsia,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_preecl_week,text,Gestational week of onset,,number,,,,[pregcomp_preecl]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_ecl,radio,Eclampsia ,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_ecl_week,text,Gestational week of onset,,number,,,,[pregcomp_ecl]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_hellp,radio,HELLP Syndrome,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_hellp_week,text,Gestational week of onset,,number,,,,[pregcomp_hellp]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_gdm,radio,Gestational diabetes,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_gdm_week,text,Gestational week of onset,,number,,,,[pregcomp_gdm]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pih,radio,Pregnancy-induced hypertension,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pihl_week,text,Gestational week of onset,,number,,,,[pregcomp_pih]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_utbleed,radio,Uterine bleeding,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_utbleed_week,text,Gestational week of onset,,number,,,,[pregcomp_utbleed]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_malaria,radio,Malaria infection in pregnancy,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_malaria_week,text,Gestational week of onset,,number,,,,[pregcomp_malaria]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_oth,radio,Other maternal pregnancy complication(s),"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_mat] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_othspec,text,Specify other maternal pregnancy complication(s),,,,,,[pregcomp_oth] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_placfetab,radio,Placental / amniotic fluid / foetal abnormalities identified antenatally,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_lowaf,radio,Diminished amniotic fluid,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_lowaf_week,text,Gestational week of onset,,number,,,,[pregcomp_lowaf]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_highaf,radio,Excessive amniotic fluid,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_highaf_week,text,Gestational week of onset,,number,,,,[pregcomp_highaf]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pprevia,radio,Placenta previa,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pprevia_week,text,Gestational week of onset,,number,,,,[pregcomp_pprevia]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_plowlying,radio,Low-lying placenta,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_plowlying_week,text,Gestational week of onset,,number,,,,[pregcomp_plowlying]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pinsuff,radio,Placental insufficiency,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_pinsuff_week,text,Gestational week of onset,,number,,,,[pregcomp_pinsuff]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_iugr,radio,Intrauterine growth restriction,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_iugr_week,text,Gestational week of onset,,number,,,,[pregcomp_iugr]='1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_othpyn,radio,Other placental / amniotic fluid / foetal abnormalities identified antenatally,"1, Yes | 0, No | 99, Unknown",,,,,[pregcomp_placfetab] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY-RELATED COMPLICATIONS ,pregcomp_othpspec,text,specify other placental / amniotic fluid / foetal abnormalities identified antenatally,,,,,,[pregcomp_othpyn] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_bboutc,radio,Pregnancy outcome,"1, Livebirth (even if infant died after birth) | 2, Miscarriage (<22 weeks) | 3, Termination by choice | 4, Termination - ultrasound abnormality | 5, Termination - other/unknown reason | 6, Stillbirth (intra-uterine / intrapartum death from 22 gest weeks) | 7, Ectopic pregnancy | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_weeks,text,Gestational age at outcome (completed weeks),,number,,,,[pregout_bboutc] = '1' or [pregout_bboutc] = '2' or [pregout_bboutc] = '3' or [pregout_bboutc] = '4' or [pregout_bboutc] = '5' or [pregout_bboutc] = '6',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_bbtest,radio,Baby tested for mother's infection of interest?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_bbresl,radio,Specify test result from mother's infection of interest ,"1, Positive | 0, Negative | 99, Unknown",,,,,[pregout_bbtest] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_bboutc_termreas,text,"If termination for ultrasound abnormality or other reason, specify",,,,,,[pregout_bboutc] = '4' or [pregout_bboutc] = '5',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_bboutc_stillb,radio,If stillbirth: macerated or fresh?,"1, Macerated | 2, Fresh | 99, Unknown",,,,,[pregout_bboutc] = '6',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_matdeath,radio,Did mother die in pregnancy?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_matdeath_age,text,Age at death,,number,0,,,[pregout_matdeath] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_matdeath_cause,text,Cause(s) of death,,,,,,[pregout_matdeath] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_matdeath_place,radio,Place of death,"1, At home | 2, Hospital/medical facility | 99, Unknown",,,,,[pregout_matdeath] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_matdeath_time,radio,Death timepoint,"1, Pre-delivery | 2, During delivery | 3, Post-delivery (within 40 days) | 99, Unknown",,,,,[pregout_matdeath] = '1',,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_othdet,text,"Other details about pregnancy, not specified above.",,,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_nbornincl,radio,Is the newborn included in the study?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,,1
+pregnancy,PREGNANCY OUTCOME,pregout_nborpin,text,Indicate the newborn's Participant Identification Number (PIN),,,,,,[pregout_nbornincl]='1',,,,,,,,,,,,,,,,,,,,,1
+neonate,NEWBORN OUTCOMES,nborn_sex,radio,Newborn sex at birth,"1, Male | 2, Female | 99, Unknown | 88, Other",,,,,,,This refers to the physical sexual characteristics at birth.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_modedel,radio,Mode of delivery,"1, Vaginal | 2, Assisted vaginal | 3, Elective caesarean (before labour, before rupture of membranes) | 4, Emergency caesarean (after labour and/or rupture of membranes)",,,,,,,This refers to the method by which a foetus is delivered.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_placedel,radio,Place of delivery,"1, At home | 2, Hospital/medical facility | 99, Unknown",,,,,,,This refers to the place of delivery of the foetus.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_ga,text,Gestational age (weeks),,number,0,,,,,This refers to the gestational age of the foetus (written in completed weeks). It can be calculated from the woman's last menstrual period (LMP) or calculated using the best obstetrical estimated due date (EDD) based on the following formula: Gestational Age = (28 - (EDD - Reference Date)) / 7. The reference date is the date in which you are trying to determine the gestational age.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_gamethod,radio,How was gestation estimated?,"1, LMP | 2, EDD | 99, Unknown",,,,,,,This refers to the method of estimating the gestational age. LMP refers to the date of the first day of the most recent menstrual cycle. EDD refers to the estimated date of delivery. ,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthweight,text,Newborn weight at birth ,,number,0,,,,,"This refers to the measurement of a newborn’s weight immediately after birth, typically recorded within the first minutes of life.",,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthweight_units,radio,Newborn weight at birth  (select units),"1,g| 2,lb",,,,,,,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_length,text,Newborn length at birth ,,number,0,,,,,This refers to the measurement of a newborn's length from the top of their head to the bottom of one of their heels,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_length_units,radio,Newborn length at birth (select units),"1,inches | 2,cm",,,,,,,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_infhc,text,Head circumference at birth ,,number,0,,,,,This refers to the measurement of the largest area of the head (distance from around the back of the head to above the eyebrows and ears) (in cm).,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_infhc_units,radio,Head circumference at birth (select units),"1,inches | 2,cm",,,,,,,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_apgar,text,APGAR score at 5 mins (1-1),,number,1,10,,,,"This refers to a score to evaluate a newborn's adjustment to extrauterine life. Five items - heart rate, respiratory effort, muscle tone, reflex irritability, and color - are evaluated 6 seconds after birth and again five minutes later on a scale from -2,  being the lowest, 2 being normal. The five numbers are added for the Apgar score. A score of -3 represents severe distress, 4-7 indicates moderate distress, and a score of 7-1 predicts an absence of difficulty in adjusting to extrauterine life.",,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_resusc,radio,Resuscitation required following delivery,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to measures applied for the restoration of life to a newborn.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_resuscdet,text,Give details,,,,,,[nborn_resusc] = '1',,This refers to measures applied for the restoration of life to a newborn.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_nicu,radio,Admission to NICU,"1, Yes, related to pathogen of interest | 2, Yes, not related to pathogen of interest | 3, No, due to non-availability of NICUs | 0, No | 4, Not applicable | 99, Unknown",,,,,,,This refers to admission of the newborn to the neonatal intensive care unit.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_hospdur,text,Duration of hospital stay,,number,0,,,,,This refers to the total duration of hospital stay during the current admisssion (in days).,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_outc,radio,Neonatal outcome,"1, Discharged healthy | 2, Discharged with complications/sequelae | 3, Still in neonatal ward | 4, Referred to other hospital | 5, Death  | 99, Unknown  | 6, Not applicable",,,,,,,This refers to the outcome of the newborn. ,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_conginfectyn,radio,Congenitally-acquired infections,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to suspected or confirmed infections in the newborn that are acquired in utero and persisting after birth.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_conginfecttype,checkbox,Type of congenitally-acquired infections,"1, CMV | 2, Syphilis | 3, Toxoplasmosis | 4, HIV | 5, HCV | 6, HBV | 7, HSV-1 | 8, HSV-2 | 99, Unknown | 88, Other",,,,,[nborn_conginfectyn] = '1',,This refers to type(s) of suspected or confirmed infections in the newborn that are acquired in utero and persisting after birth.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_conginfectother,text,Specify other congenitally-acquired infections,,,,,,[nborn_conginfecttype(88)] = '1',,"This refers to other suspected or confirmed infections, not specified above, in the newborn that are acquired in utero and persisting after birth.",,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_compyn,radio,Did any neonatal complications occur?,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to any complications which occurred during the neonatal period.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_compsel,checkbox,Select all that apply.,"1, Respiratory distress syndrome | 2, Intraventricular haemorrhage | 3, Necrotising enterocolitis | 4, Neonatal encephalopathy | 5, Chronic lung disease | 6, Severe jaundice requiring phototherapy | 7, Major congenital anomaly |  8, Severe infection/sepsis |  9, Meningitis | 10, Exchange transfusion | 99, Unknown | 88, Other",,,,,[nborn_compyn] = '1',,This refers to any complications which occurred during the neonatal period.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_compoth,text,If other: Specify,,,,,,[nborn_compsel(88)] ='1',,This refers to any complications which occurred during the neonatal period.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefectyn,radio,Congenital anomaly present?,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefectnum,text,How many?,,number,0,,,[nborn_birthdefectyn] = '1',,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefect1,text,Describe congenital anomaly ,,,,,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 1,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefect1_date,text,Date of congenital anomaly diagnosis,,date_dmy,,today,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 1,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefect2,text,Describe congenital anomaly ,,,,,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 2,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefect2_date,text,Date of congenital anomaly diagnosis,,date_dmy,,today,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 2,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefect3,text,Describe congenital anomaly ,,,,,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 3,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_birthdefect3_date,text,Date of congenital anomaly diagnosis,,date_dmy,,today,,[nborn_birthdefectyn] = '1' and [nborn_birthdefectnum] >= 3,,This refers to structural or functional abnormalities of the foetus which occurred during development in-utero.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_death,radio,Newborn or infant death,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to death of the newborn or infant,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_deathage,text,Age at death ,,number,0,,,[nborn_death] = '1',,This refers to the age of the newborn or infant at the time of death (months).,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_deathage_units,radio,Age at death (select units),"1,months | 2,days",,,,,[nborn_death] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN OUTCOMES,nborn_deathcause,text,Cause(s) of death,,,,,,[nborn_death] = '1',,This refers to the cause of death of the newborn or infant. ,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LESIONS,nborn_lesion,radio,Neonatal skin or mucosal lesions,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to the presence of skin or mucosal lesions observed in the neonate.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LESIONS,nborn_lesion_age,text,Age at onset of lesions (completed weeks),,number,0,,,[nborn_lesion] = '1',,This refers to the age (in completed weeks) at which lesions first appeared.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LESIONS,nborn_lesion_num,radio,Maximum number of lesions observed,"1, Mild (< 25 skin lesions) | 2, Moderate (25–99 skin lesions) | 3, Severe (100–250 skin lesions) | 4, Very severe (> 250 skin lesions) | 99, Unknown",,,,,[nborn_lesion] = '1',,This refers to the maximum number of lesions observed.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LESIONS,nborn_lesion_site,checkbox,Lesion site(s) and pain score (0 = no pain  10 = worst pain),"1, Head/face/neck | 2, Inside of mouth | 3, Torso | 4, Arms and/or hands | 5, Legs and/or feet | 6, External genitalia | 7, Perianal | 8, Vaginal canal | 9, Rectum | 88, Other ",,,,,[nborn_lesion] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LESIONS,nborn_lesion_site_oth,text,"If other,  specify lesion site",,,,,,[nborn_lesion_site(88)] = '1',,This refers to lesion sites not listed above.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LESIONS,nborn_lesion_type,checkbox,Type(s) of lesions currently present,"1, Vesicle | 2, Pustule | 3, Ulcerated lesion | 4, Crusted/scabbed mature lesion | 5, Residual evidence of resolved lesions (scar/discoloration) | 6, Haemorrhagic / bleeding lesions",,,,,[nborn_lesion] = '1',,This refers to the morphological type(s) of lesions present today.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_sympt,radio,Neonatal symptoms at clinical examination,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to signs or symptoms identified during neonatal clinical examination.,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_fever,radio,Fever,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_cough,radio,Cough,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_wheeze,radio,Wheezing,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_rhino,radio,Runny nose (rhinorrhoea),"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_respdist,radio,Respiratory distress,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_tachypnoea,radio,Fast breathing (tachypnoea),"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_nasalflar,radio,Nasal flaring,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_grunt,radio,Grunting,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_apnoea,radio,Apnoea,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_nasalcongestion,radio,Nasal congestion,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_vomit,radio,Vomiting,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_diarrhoea,radio,Diarrhoea,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_consti,radio,Constipation,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lowurine,radio,Reduced urine output,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_jaundice,radio,Jaundice,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_skinpallor,radio,Skin pallor,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_ftt,radio,Failure to thrive,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_hypotonia,radio,Decreased tone / hypotonia,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_bulgefont,radio,Bulging fontanelle,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_hypotherm,radio,Hypothermia,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_feedingdiff,radio,Feeding difficulty,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_hepatomegally,radio,Hepatomegaly,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_anaemia,radio,Anaemia,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_seizconv,radio,Seizures,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_keratitis,radio,Keratitis,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_conjunctiv,radio,Conjunctivitis,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_ocularother,radio,Other ocular findings,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_ocularother_spec,text,Please specify,,,,,,[nborn_ocularother] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lymph,radio,Lymphadenopathy,"1, Yes-painful | 2, Yes-not painful | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lymph_site,checkbox,Specify lymphadenopathy site(s),"1, Axillary (arm pits) | 2, Cervical (neck)| 3, Inguinal (groin) | 99, Unknown | 88, Other",,,,,[nborn_lymph]='1' or [nborn_lymph]='2',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_lymph_site_oth,text,Specify other lymphadenopathy site(s),,,,,,[nborn_lymph_site]='88',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_haemorrhag,radio,Bleeding (haemorrhage),"1, Yes | 0, No | 99, Unknown",,,,,[nborn_haemorrhag] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_haemorrhag_site,multi_list,Specify bleeding site(s),,,,,conditions_Site,[nborn_haemorrhag] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_haemorrhag_site_oth,text,Specify other bleeding / haemorrhage site(s),,,,,,[nborn_haemorrhag_site(88)]='1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_other,,Other symptom(s),,,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_other_spec,,"If yes, specify other",,,,,,[nborn_other]='1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging,radio,Imaging conducted,"1, Cranial ultrasound | 2, MRI | 88, Other | 0, None",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging_oth,text,Specify,,,,,,[nborn_imaging] = '88',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging_res,radio,Imaging results,"1, Normal findings | 2, Abnormal findings",,,,,[nborn_imaging] <> '0',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_imaging_res_det,text,"If abnormal findings,  provide details",,,,,,[nborn_imaging_res] = '2',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nbor_otherinf,radio,Other congenital infections,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nbor_otherinf_spec,text,Specify,,,,,,[nbor_otherinf]='1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_breastfed,radio,Was baby ever breastfed?,"1, Yes | 0, No | 99, Unknown",,,,,[nborn_sympt] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_breastfed_status,radio,Breastfeeding status,"1, Currently breastfed | 0, Breastfeeding discontinued",,,,,,,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN SIGNS AND SYMPTOMS,nborn_breastfed_dur,text,"If breastfeeding discontinued, how long did breastfeeding last? (in weeks)",,number,,,,[nborn_breastfed_status]='0',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LABORATORY TESTS,nborn_labtestyn,radio,Infant Mpox testing performed?,"1, Yes | 0, No | 99, Unknown",,,,,,,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LABORATORY TESTS,nborn_specimen,radio,Mpox specimen type,"1, Amniotic fluid | 2, Cord blood during pregnancy | 3, Cord blood after delivery | 4, Placental sample during pregnancy | 5, Placental sample after delivery | 6, Skin lesion | 7, Blood | 8, Nasopharyngeal swab | 9, Urine |88, Other",,,,,[nborn_labtestyn] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LABORATORY TESTS,nborn_specimenother,text,Specify,,,,,,[nborn_specimen] = '88',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LABORATORY TESTS,nborn_labmethod,radio,Mpox laboratory method,"1, PCR | 2, Ortho PCR | 3, Serology | 999, Other",,,,,[nborn_labtestyn] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LABORATORY TESTS,nborn_pcrres,radio,PCR result,"1, Positive | 0, Negative",,,,,[nborn_labmethod] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEWBORN LABORATORY TESTS,nborn_pcrct,text,PCR Cycle Threshold (CT),,number,0,,,[nborn_labmethod] = '1',,,,,,,,,,,,,,,,,,,,1,
+neonate,NEONATE DETAILS,nborn_motherincl,radio,Is the mother included in the study ? ,"1, Yes | 0, No | 99, Unknown",,,,,,,This refers to inclusion of the mother in the same study.,,,,,,,,,,,,,,,,,,1,
+neonate,NEONATE DETAILS,nborn_motherpin,text,specify their PIN,,,,,,[nborn_motherincl]='1',,This refers to the participant identification number allocated to the mother of a newborn in the study.,,,,,,,,,,,,,,,,,,1,
 follow_up,FOLLOW-UP ASSESSMENT,follow_date,date_dmy,Date of follow up,,date_dmy,,today,,,,This refers to the date of the patient follow-up.,Enter the date of follow up. (Use the format DD/MM/YYYY),,,,,,,,,1,1,1,,,,,,,
 follow_up,FOLLOW-UP ASSESSMENT,follow_outcome,user_list,Patient outcome,,,,,followup_outcome,,,This refers to an assessment of the patient outcome on follow-up.,Select the single most appropriate option that represents the patient outcome.,,,,,,,,,1,1,1,,,,,,,
 follow_up,FOLLOW-UP ASSESSMENT,follow_outcome_date,date_dmy,First / earliest date on which the selected outcome was true,,date_dmy,,today,,,,This refers to the first / earliest date on which the selected outcome was true.,Enter the first or earliest date in which the selected outcome occurred. (Use the format DD/MM/YYYY),,,,,,,,,1,1,1,,,,,,,
