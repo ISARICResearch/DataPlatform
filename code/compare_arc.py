@@ -8,19 +8,19 @@ Created on Mon Apr 28 13:02:16 2025
 import pandas as pd
 
 # Define versions
-old_version = '1.1.3'
-new_version = '1.1.4'
+old_version = '1.1.5'
+new_version = '1.1.6'
 
 # Load the two files
-file_old = f"C:/Users/sduquevallejo/Documents/GitHub/DataPlatform/ARCH/ARCH{old_version}/ARCH.csv"  # OLD file
-file_new = f"C:/Users/sduquevallejo/Documents/GitHub/DataPlatform/ARCH/ARCH{new_version}/ARCH.csv"  # NEW file
+file_old = f"C:/Users/sduquevallejo/OneDrive - Nexus365/Documents/GitHub/DataPlatform/ARCH/ARCH{old_version}/ARCH.csv"  # OLD file
+file_new = f"C:/Users/sduquevallejo/OneDrive - Nexus365/Documents/GitHub/DataPlatform/ARCH/ARCH{new_version}/ARCH.csv"  # NEW file
 
 df_old = pd.read_csv(file_old)
 df_new = pd.read_csv(file_new)
 
 # Remove rows where Form == "pregnancy" or "neonate"
-df_old = df_old[(df_old['Form'] != 'pregnancy') & (df_old['Form'] != 'neonate')]
-df_new = df_new[(df_new['Form'] != 'pregnancy') & (df_new['Form'] != 'neonate')]
+#df_old = df_old[(df_old['Form'] != 'pregnancy') & (df_old['Form'] != 'neonate')]
+#df_new = df_new[(df_new['Form'] != 'pregnancy') & (df_new['Form'] != 'neonate')]
 
 # Focus on important columns including Form and Section
 cols_of_interest = ['Variable', 'Form', 'Section', 'Question', 'Answer Options']
@@ -122,7 +122,7 @@ variable_replacements_df = pd.DataFrame({
 })
 
 # 6. Create the final Excel
-final_corrected_output_path = f"C:/Users/sduquevallejo/Documents/GitHub/DataPlatform/ARCH/ARCH{new_version}/ARCH{new_version}_ChangesLOG.xlsx"
+final_corrected_output_path = f"C:/Users/sduquevallejo/OneDrive - Nexus365/Documents/GitHub/DataPlatform/ARCH/ARCH{new_version}/ARCH{new_version}_ChangesLOG.xlsx"
 
 with pd.ExcelWriter(final_corrected_output_path) as writer:
     added_variables_df.to_excel(writer, index=False, sheet_name='Added Variables')
