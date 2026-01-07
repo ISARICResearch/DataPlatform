@@ -13,7 +13,7 @@ OUTCOME FORM,Timing /Events: Discharge / death / end of study
 FOLLOW-UP FORM,Timing /Events: As per site protocol (optional)
 WITHDRAWAL FORM,Timing /Events: As per site protocol (optional)
 Follow-up details,Continue to follow-up patients who transfer between wards.
-PREGNANCY FORM,"OPTION to complete for Pregnant woman OR mother of a neonate  , OR neonate if mother is not  included "
+PREGNANCY FORM,"OPTION to complete for Pregnant inividual OR mother of a neonate  , OR neonate if mother is not  included "
 PREGNANCY FORM,Timing /Events: Pregnant individuals – delivery or end of study; Mother of a neonate or neonate (if mother not included) – at presentation
 NEONATE FORM,OPTION to complete for Neonates OR if neonate not included for mother of the neonate
 NEONATE FORM,Timing /Events: Neonate – at presentation; Mother of neonate – at delivery
