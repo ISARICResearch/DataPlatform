@@ -1,0 +1,14 @@
+Outcome,Code,Selected,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_Mpox Pregnancy and Paediatric,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,Value
+All lesions are completely resolved and no serious complications,,,1.0,1.0,1.0,,1
+All lesions are no longer active and no serious complications,,,1.0,1.0,1.0,,2
+Death,,1.0,1.0,1.0,1.0,1.0,3
+Discharged alive - medical grounds ,,1.0,1.0,1.0,1.0,1.0,4
+Discharged alive - patient's preference,,1.0,1.0,1.0,1.0,1.0,5
+Early withdrawal,,1.0,1.0,1.0,1.0,1.0,6
+Loss to follow-up,,1.0,1.0,1.0,1.0,1.0,7
+No lesions ever developed and no serious complications,,,1.0,1.0,1.0,,8
+One or more lesion(s) are active and no serious complications,,,1.0,1.0,1.0,,9
+Palliative Care,,,,,,1.0,10
+Serious complication and/or re-hospitalisation due to infection with pathogen of interest,,,1.0,1.0,1.0,1.0,11
+Still hospitalised,,1.0,1.0,1.0,1.0,1.0,12
+Transfer to other facility,,1.0,1.0,1.0,1.0,1.0,13
