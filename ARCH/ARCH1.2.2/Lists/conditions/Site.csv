@@ -1,0 +1,15 @@
+Site,Code,Library,Selected,preset_ARChetype Disease CRF_Covid,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_Mpox Pregnancy and Paediatric,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics+extended,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Syndromic CRF_ARI,preset_UserGenerated_Oropouche,preset_Score_CharlsonCI,preset_Module_Pregmpoxnompox,preset_Module_Pregnancy,preset_Module_Neonates,preset_Module_Paediatric,preset_Module_ExtendedMpoxPregnan,preset_Recommended Outcomes_Dengue,preset_Hospitalsed Outcomes_Dengue,preset_Early Stage Outcomes_Dengue,Value
+Skin ,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,1,1,1,1
+Petechiae ,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,1,1,1,2
+Nose ,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,1,1,1,3
+Gums ,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,1,1,1,4
+GI tract ,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,1,1,1,5
+Urinary tract,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,1,1,1,6
+Vagina ,,,,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,1,1,1,7
+Intracranial ,,,,,,,,,,,,,,,,,,,1,1,1,8
+Intraspinal ,,,,,,,,,,,,,,,,,,,1,1,1,9
+Intraocular ,,,,,,,,,,,,,,,,,,,1,1,1,10
+Retroperitoneal ,,,,,,,,,,,,,,,,,,,1,1,1,11
+Intra-articular ,,,,,,,,,,,,,,,,,,,1,1,1,12
+Pericardial ,,,,,,,,,,,,,,,,,,,1,1,1,13
+Intramuscular (with compartment syndrome) ,,,,,,,,,,,,,,,,,,,1,1,1,14
