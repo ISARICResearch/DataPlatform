@@ -14,7 +14,7 @@ Enterovirus,53648006,SNOMED,,,,,,,,,,,,12
 Exposure to CBRN agent,,,,,,,,,,,,,,13
 Exposure to Harmful Energy,,,,,,,,,,,,,,14
 HSV ,88594005,SNOMED,,,,,,,,,,,,15
-"Hepatitis (general, unspecified)",40468003,SNOMED,,,1,,,,,,,,,16
+Hepatitis,40468003,SNOMED,,,1,,,,,,,1,,16
 Herpes simplex virus infection (HSV),88594005,SNOMED,,,,1,1,,,,1,,,17
 Human immunodeficiency virus infection (HIV infection),86406008,SNOMED,,,,1,1,,,,1,,,18
 Influenza A H1N1,442352004,SNOMED,,,,,,,,,,,,19
