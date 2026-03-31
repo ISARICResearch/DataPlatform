@@ -92,7 +92,7 @@ Cytomegalovirus,407444007,SNOMED,virus,,,,,,,,,,,,1,,,92
 Delftia,416493002,SNOMED,bacteria,,,,,,,,,,,,,,,93
 Delftia acidovorans,20432002,SNOMED,bacteria,,,,,,,,,,,,,,,94
 Deltavirus,83617006,SNOMED,virus,,,,,,,,,,,,,,,95
-Dengue virus,34348001,SNOMED,virus,,,1,,,,,,1,,1,,,1,96
+Dengue virus,34348001,SNOMED,virus,,,1,,,,,,1,,1,,1,1,96
 Dermabacter,413976002,SNOMED,bacteria,,,,,,,,,,,,,,,97
 Diphtheroid,54642001,SNOMED,bacteria,,,,,,,,,,,,,,,98
 Diphyllobothrium latum,40406002,SNOMED,"parasite, helminth",,,,,,,,,,,,,,,100
@@ -204,7 +204,7 @@ Leishmania Viannia,712933004,SNOMED,"parasite, protozoa",,,,,,,,,,,,,,,205
 Leishmania braziliensis,83196002,SNOMED,"parasite, protozoa",,,,,,,,,,,,,,,206
 Leishmania braziliensis complex,7400004,SNOMED,"parasite, protozoa",,,,,,,,,,,,,,,207
 Leishmania donovani complex,79781008,SNOMED,"parasite, protozoa",,,,,,,,,,,,,,,208
-Leptospira interrogans,116401006,SNOMED,bacteria,,,,,,,,,,,,,,1,209
+Leptospira interrogans,116401006,SNOMED,bacteria,,,,,,,,,,,,,1,1,209
 Lichthiemia,734206002,SNOMED,fungi,,,,,,,,,,,,,,,210
 Listeria monocytogenes,36094007,SNOMED,bacteria,,,,,,,,,,,,,,,211
 Lomentospora prolificans (Scedosporium prlificans),69564000,SNOMED,fungi,,,,,,,,,,,,,,,212
@@ -393,6 +393,6 @@ West Nile virus,57311007,SNOMED,virus,,,,,,,,,,,,1,,,394
 Wuchereria bancrofti,84925004,SNOMED,"parasite, helminth",,,,,,,,,,,,,,,395
 Yeast,62093005,SNOMED,fungi,,,,,,,,,,,,,,,396
 Yersinia pestis,54365000,SNOMED,bacteria,,,,,,,,,,,,,,,397
-Zika virus,50471002,SNOMED,virus,,,,,,,,,1,,,1,,1,398
-Chikungunya virus,,,virus,,,,,,,,,1,,,,,1,399
+Zika virus,50471002,SNOMED,virus,,,,,,,,,1,,,1,1,1,398
+Chikungunya virus,,,virus,,,,,,,,,1,,,,1,1,399
 Oropouche virus ,,,virus,,,,,,,,,1,,,,,,400
