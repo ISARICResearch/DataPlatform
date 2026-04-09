@@ -8,8 +8,8 @@ Created on Mon Apr 28 13:02:16 2025
 import pandas as pd
 
 # Define versions
-old_version = '1.1.5'
-new_version = '1.2.0'
+old_version = '1.2.1'
+new_version = '1.2.2'
 
 # Load the two files
 file_old = f"C:/Users/sduquevallejo/OneDrive - Nexus365/Documents/GitHub/DataPlatform/ARCH/ARCH{old_version}/ARCH.csv"  # OLD file
