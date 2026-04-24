@@ -1,0 +1,20 @@
+Drugs,Code,Library,Selected,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Disease CRF_Mpox-Pregnancy&Paediatrics,preset_ARChetype Syndromic CRF_ARI,preset_ARChetype Disease CRF_Chikungunya,Value
+Analgesic ,373265006 |Analgesic (substance)|,SNOMED,1,,1,,1,1
+Antibiotic ,255631004 |Antibiotic (product)|,SNOMED,1,1,,1,,2
+Anticoagulant,372862008 |Anticoagulant (substance)|,SNOMED,,1,,1,1,3
+Antifungal ,373219008 |Substance with antifungal mechanism of action (substance)|,SNOMED,1,1,,1,,4
+Antihistamine,6425004 |Product containing histamine receptor antagonist (product)|,SNOMED,,,,,,5
+Antiprotozoal,788027008 |Medicinal product acting as antiprotozoal agent (product)|,SNOMED,,,,,,6
+Antipruritic ,312067003 |Local antipruritic agent (product)|,SNOMED,1,,,,,7
+Antiviral ,372701006,SNOMED,1,1,1,1,,8
+Convalescent plasma ,1179779000,SNOMED,,,,,,9
+Corticosteroid ,116566001,SNOMED,1,1,1,1,1,10
+Diuretics,372695000,SNOMED,,,,,,11
+Immunomodulator,372558009,SNOMED,,,1,,,12
+Immunosuppressive drugs (non-steroid),69431002,SNOMED,,,1,,,13
+Inotropes / vasopressor ,373213009 |Inotropic agent (substance)|870406003 |Vasopressor (substance)|,SNOMED,,1,,1,,14
+Intravenous immunoglobulin ,698802001,SNOMED,,,1,,,15
+Topical antibiotic  ,255631004 |Antibiotic (product)| 6064005 |Topical route (qualifier value)|,SNOMED,1,,,,,16
+Local anaesthetic,,,,,,,1,17
+Antidepressants and Anxiolytics,,,,,,,1,18
+Antiepileptics,,,,,,,1,19

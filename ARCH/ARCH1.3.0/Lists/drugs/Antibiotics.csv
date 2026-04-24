@@ -1,0 +1,129 @@
+﻿Drugs,Code,Library,Selected,preset_ARChetype Disease CRF_Covid,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_Mpox Pregnancy and Paediatric,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Syndromic CRF_ARI,preset_ARChetype Syndromic CRF_Arbovirus,preset_Syndrome_VHF,preset_ARChetype Syndromic CRF_Encephalitis,Comment,Value
+Amikacin,J01GB06 ,ATC     ,1,,,,,,,,,1,,1
+Amoxicillin,J01CA04 ,ATC     ,1,1,,,,,1,,,1,,2
+Amoxicillin/Beta-lactamase inhibitor,J01CR02 ,ATC     ,1,1,,,,,1,,,1,,3
+Amphotericin,J02AA01 ,ATC     , ,,,,,,,,,,,4
+Ampicillin,J01CA01,ATC,1,,,,,,,,,1,,5
+Ampicillin/Beta-lactamase inhibitor,J01CR01 ,ATC     ,1,,,,,,,,,1,,6
+Atovaquone,P01AX06,ATC,2,,,,,,,,,,,7
+Azithromycin,J01FA10,ATC     ,1,1,1,1,1,1,1,1,1,1,,8
+Aztreonam,J01DF01,ATC,2,,,,,,,,,,,9
+Bacampicillin,J01CA06,ATC,2,,,,,,,,,,,10
+Bacitracin,J01XX10,ATC,2,,,,,,,,,,,11
+Benzathine phenoxymethylpenicillin,J01CE10,ATC,,,,,,,,,,,,12
+Benzylpenicillin,J01CE01,ATC     ,1,,,,,,,,,1,,13
+Capreomycin,J04AB30,ATC,2,,,,,,,,,,,14
+Carbenicillin indanyl sodium,J01CA05 ,ATC,2,,,,,,,,,,,15
+Caspofungin,J02AX04,ATC, ,,,,,,,,,,,16
+Cefaclor,J01DC04,ATC,2,,,,,,,,,,,17
+Cefadroxil,J01DB05,ATC,2,,,,,,,,,,,18
+Cefalexin,J01DB01,ATC,1,,,,,,,,,1,,19
+Cefamandole,J01DC03,ATC,2,,,,,,,,,,,20
+Cefazolin,J01DB04,ATC,1,,,,,,,,,1,,21
+Cefdinir,J01DD15,ATC,2,,,,,,,,,,,22
+Cefditoren,J01DD16,ATC,2,,,,,,,,,,,23
+Cefepime,J01DE01,ATC,1,,,,,,,,,1,,24
+Cefixime,J01DD08,ATC,2,,,,,,,,,,,25
+Cefmetazole,J01DC09,ATC,2,,,,,,,,,,,26
+Cefoperazone,J01DD12,ATC, ,,,,,,,,,,,27
+Cefotaxime,J01DD01,ATC,1,,,,,,,,,1,,28
+Cefotetan,J01DC05,ATC,2,,,,,,,,,,,29
+Cefoxitin,J01DC01,ATC,2,,,,,,,,,,,30
+Cefpodoxime Proxetil,J01DD13  ,ATC,2,,,,,,,,,,,31
+Cefprozil,J01DC10,ATC,2,,,,,,,,,,,32
+Ceftaroline Fosamil,J01DI02  ,ATC,1,,,,,,,,,1,,33
+Ceftazidime,J01DD02 ,ATC,1,,,,,,,,,1,,34
+Ceftazidime/beta-lactamase inhibitor,J01DD52,ATC,,,,,,,,,,,,35
+Ceftibuten,J01DD14,ATC,2,,,,,,,,,,,36
+Ceftizoxime,J01DD07,ATC, ,,,,,,,,,,,37
+Ceftobiprole Medocaril,J01DI01 ,ATC,1,,,,,,,,,1,,38
+Ceftriaxone,J01DD04 ,ATC,1,1,1,,,1,1,1,1,1,,39
+Cefuroxime,J01DC02,ATC,1,,,,,,,,,1,,40
+Cephalexin,J01DB01  ,ATC,2,,,,,,,,,,,41
+Cephalothin,J01DB03  ,ATC,2,,,,,,,,,,,42
+Cephapirin,J01DB08,ATC,2,,,,,,,,,,,43
+Cephradine,J01DB09,ATC,2,,,,,,,,,,,44
+Chloramphenicol,J01BA01,ATC, ,,,,,,,,,,,45
+Cinoxacin,J01MB06,ATC,2,,,,,,,,,,,46
+Ciprofloxacin,J01MA02,ATC,1,,,,,,,,,1,,47
+Clarithromycin,J01FA09,ATC,1,,,,,,,,,1,,48
+Clindamycin,J01FF01,ATC,1,,,,,,,,,1,,49
+Cloxacillin,J01CF02,ATC, ,,,,,,,,,,,50
+Colistin,J01XB01,ATC, ,,,,,,,,,,,51
+Cycloserine,J04AB01,ATC,2,,,,,,,,,,,52
+Daptomycin,J01XX09 ,ATC, ,,,,,,,,,,,53
+Demeclocycline,J01AA01,ATC,2,,,,,,,,,,,54
+Dicloxacillin,J01CF01,ATC,2,,,,,,,,,,,55
+Dirithromycin,J01FA13  ,ATC,2,,,,,,,,,,,56
+Doripenem,J01DH04  ,ATC,2,,,,,,,,,,,57
+Doxycycline,J01AA02,ATC,1,1,,1,1,,,,,1,,58
+Enoxacin,J01MA04,ATC,2,,,,,,,,,,,59
+Ertapenem,J01DH03,ATC,1,,,,,,,,,1,,60
+Erythromycin,J01FA01,ATC,1,,,,,,,,,1,,61
+Ethambutol,J04AK02,ATC,,,,,,,,,,,,62
+Flucloxacillin,J01CF05  ,ATC,1,,,,,,,,,1,,63
+Fluconazole,J02AC01 ,ATC,1,,,,,,,,,1,,64
+Fosfomycin,J01XX01 ,ATC,1,,,,,,,,,1,,65
+Fusidic acid,J01XC01,ATC,,,,,,,,,,,,66
+Gatifloxacin,J01MA16,ATC, ,,,,,,,,,,,67
+Gemifloxacin,J01MA15,ATC,2,,,,,,,,,,,68
+Gentamicin,J01GB03,ATC,1,,,,,,,,,1,,69
+Grepafloxacin,J01MA11,ATC,2,,,,,,,,,,,70
+Imipenem/Cilastatin,J01DH51,ATC,1,,,,,,,,,1,,71
+Isoniazid,J04AC01,ATC,1,,,,,,,,,1,,72
+Kanamycin,J01GB04 ,ATC, ,,,,,,,,,,,73
+Levofloxacin,J01MA12,ATC,1,,,,,1,1,,,1,,74
+Lincomycin,J01FF02,ATC,2,,,,,,,,,,,75
+Linezolid,J01XX08,ATC,1,,,,,,,,,1,,76
+Lomefloxacin,J01MA07,ATC,2,,,,,,,,,,,77
+Meropenem,J01DH02 ,ATC,1,,,,,,,,,1,,78
+Methenamine hippurate,J01XX05  ,ATC,2,,,,,,,,,,,79
+Methicillin,J01CF03,ATC,2,,,,,,,,,,,80
+Metronidazole,J01XD01,ATC,1,,,,,,,,,1,,81
+Mezlocillin,J01CA10,ATC,2,,,,,,,,,,,82
+Minocycline,J01AA08,ATC,2,,,,,,,,,,,83
+Moxifloxacin,J01MA14,ATC,1,,,,,,,,,1,,84
+Nafcillin,J01CF06,ATC,2,,,,,,,,,,,85
+Nalidixic Acid,J01MB02,ATC,2,,,,,,,,,,,86
+Neomycin,J01GB05,ATC,2,,,,,,,,,,,87
+Netilmicin,J01GB07,ATC, ,,,,,,,,,,,89
+Nitrofural,D08AF01,ATC,2,,,,,,,,,,,90
+Nitrofurantoin,J01XE01  ,ATC,1,,,,,,,,,1,,91
+Norfloxacin,J01MA06,ATC,2,,,,,,,,,,,92
+Novobiocin,90220005,SNOMED,2,,,,,,,,,,,93
+Ofloxacin,J01MA01,ATC,2,,,,,,,,,,,94
+Oxacillin,J01CF04,ATC,2,,,,,,,,,,,95
+Oxytetracycline,J01AA06,ATC,2,,,,,,,,,,,96
+Piperacillin,J01CA12,ATC,,,,,,,,,,,,97
+Piperacillin/Beta-lactamase inhibitor,J01CR05 ,ATC,1,,,,,,,,,1,,98
+Pivmecillinam,J01CA08 ,ATC,1,,,,,,,,,1,,100
+Plazomicin,J01GB14,ATC,,,,,,,,,,,,101
+Polymyxin B,J01XB02,ATC, ,,,,,,,,,,,102
+Procaine benzylpenicillin,J01CE09,ATC,,,,,,,,,,,,103
+Pyrazinamide,J04AK01,ATC,,,,,,,,,,,,104
+Quinupristin/Dalfopristin,J01FG02  ,ATC,2,,,,,,,,,,,105
+Retapamulin,D06AX13,ATC,2,,,,,,,,,,,106
+Rifampicin,J04AB02  ,ATC,1,,,,,,,,,1,,107
+Rifapentine,J04AB05,ATC,2,,,,,,,,,,,108
+Rifaximin,A07AA11,ATC,1,,,,,,,,,1,,109
+Roxithromycin,J01FA06,ATC,,,,,,,,,,,,110
+Sparfloxacin,J01MA09  ,ATC,2,,,,,,,,,,,111
+Spectinomycin,J01XX04,ATC,2,,,,,,,,,,,112
+Streptomycin,J01GA01,ATC,2,,,,,,,,,,,113
+Sulfadiazine,J01EC02,ATC,2,,,,,,,,,,,114
+Sulfamethoxazole,J01EC01,ATC,1,,,,,,,,,1,,115
+Sulfamethoxazole/Trimethoprim,J01EE01  ,ATC,1,,,,,,,,,1,,116
+Sulfisoxazole,J01EB05,ATC,2,,,,,,,,,,,117
+Teicoplanin,J01XA02,ATC, ,,,,,,,,,,,118
+Telavancin,J01XA03,ATC,2,,,,,,,,,,,119
+Telithromycin,J01FA15,ATC,2,,,,,,,,,,,120
+Tetracycline,J01AA07,ATC,2,,,,,,,,,,,121
+Ticarcillin,J01CA13,ATC,2,,,,,,,,,,,122
+Ticarcillin/Beta-lactamase inhibitor,J01CR03  ,ATC,2,,,,,,,,,,,123
+Tigecycline,J01AA12 ,ATC,1,,,,,,,,,1,,124
+Tobramycin,J01GB01,ATC,1,,,,,,,,,1,,125
+Trimethoprim,J01EA01,ATC,1,,,,,,,,,1,,126
+Trovafloxacin,J01MA13 ,ATC, ,,,,,,,,,,,127
+Vancomycin,J01XA01,ATC,1,,,,,,1,,,1,,128
+Voriconazole,J02AC03 ,ATC, ,,,,,,,,,,,129
+Xibornol,J01XX02,ATC,,,,,,,,,,,,130

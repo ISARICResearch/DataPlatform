@@ -1,0 +1,83 @@
+Condition,Code,Library,Code_2,Library_2,Selected,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Syndromic CRF_ARI,Value
+Abdominal pain,R10.9,ICD10,21522001,SNOMED,,,,1
+Abnormal weight loss,R63.4,ICD10,267024001,SNOMED,,,,2
+Alopecia (Nonscarring hair loss),L65.9,ICD10,56317004,SNOMED,,,,3
+Altered consciousness / Confusion (Disorientation),R41.0,ICD10,62476001 |Disorientated (finding)|,SNOMED,,,,4
+Anorexia,R63.0,ICD10,79890006,SNOMED,,,,5
+Apnoea,R06.81,ICD10,1023001,SNOMED,,,,6
+Ascites,R18.8,ICD10,389026000,SNOMED,,,,7
+Bleeding (Haemorrhage),R58,ICD10,131148009,SNOMED,,,,8
+Bruising (Spontaneous ecchymoses),R23.3,ICD10,308492005,SNOMED,,,,9
+Can't feel one side of the body or face (Hemiplegia),I69.959,ICD10,20022000,SNOMED,,,,10
+Can't fully move or control movement (Paralytic syndrome),G83.9,ICD10,44695005,SNOMED,,,,11
+Cardiac arrhythmia,I49.9,ICD10,698247007,SNOMED,,,,12
+Changes in menstruation (Irregular menstruation),N92.6,ICD10,80182007,SNOMED,,,,13
+Changes in skin texture,R23.4,ICD10,274672009,SNOMED,,,,14
+Chest pain,R07.9,ICD10,29857009,SNOMED,,,,15
+Chest pain on breathing,R07.1,ICD10,274664007,SNOMED,,,1.0,16
+Chills (without fever),R68.83,ICD10,43724002,SNOMED,,,,17
+Cognitive impairment (Unspecified intellectual disabilities),F79,ICD10,386806002,SNOMED,,,,18
+Conjunctivitis,H10.9,ICD10,9826008,SNOMED,,,,19
+Constipation,K59.0,ICD10,14760008,SNOMED,,,,20
+Convulsions,R56.9,ICD10,91175000,SNOMED,,,,21
+Cough,R05,ICD10,49727002,SNOMED,,,1.0,22
+Diarrhea,R19.7,ICD10,267060006,SNOMED,,,,23
+Difficulty eating or drinking (Dysphagia),R13.10,ICD10,40739000,SNOMED,,,,24
+Difficulty in walking,R26.2,ICD10,719232003,SNOMED,,,,25
+Disorders of nose and nasal sinuses,J34,ICD10,89488007,SNOMED,,,,26
+Disturbance in attention (Altered mental status),R41.82,ICD10,419284004,SNOMED,,,,27
+Dizziness/light headedness (Dizziness and giddiness),R42,ICD10,271789005,SNOMED,,,,28
+Dry skin (Xerosis cutis),L85.3,ICD10,52475004,SNOMED,,,,29
+Ear pain (Otalgia),H92.0,ICD10,301354004,SNOMED,,,,30
+Erectile dysfunction,N52.9,ICD10,860914002,SNOMED,,,,31
+Fainting / blackouts (Syncope and collapse),R55,ICD10,309585006,SNOMED,,,,32
+Fecal incontinence,R15,ICD10,72042002,SNOMED,,,,33
+Feeding difficulty,R63.3,ICD10,78164000,SNOMED,,,,34
+Fever,R50.9,ICD10,386661006,SNOMED,1.0,1.0,1.0,35
+Gastrointestinal bleeding (Gastrointestinal hemorrhage),K92.2,ICD10,74474003,SNOMED,,,,36
+Headache,R51,ICD10,25064002,SNOMED,,,,37
+Hepatomegaly,R16.0,ICD10,80515008,SNOMED,,,,38
+Increased thirst (Polydipsia),R63.1,ICD10,249477003,SNOMED,,,,39
+Increased urination (polyuria),R35.8,ICD10,28442001,SNOMED,,,,40
+Irritability,R45.4,ICD10,55929007,SNOMED,,,,41
+Itchy eye,H57.8,ICD10,74776002,SNOMED,,,,42
+Jaundice,R17,ICD10,18165001,SNOMED,,,,43
+Joint pain (Arthralgia),M25.5,ICD10,57676002,SNOMED,,,,44
+Keratitis,H16.9,ICD10,5888003,SNOMED,,,,45
+Limb weakness / paralysis (Monoplegia),G83.3,ICD10,713514005,SNOMED,,,,46
+Localized edema,R60.0,ICD10,274724004,SNOMED,,,,47
+Loss of appetite (Anorexia),R63.0,ICD10,79890006,SNOMED,,,,48
+Loss of smell (Anosmia),R43.0,ICD10,44169009,SNOMED,,,,49
+Loss of taste (Parageusia),R43.2,ICD10,271801002,SNOMED,,,,50
+Lymphadenitis,I88,ICD10,19471005,SNOMED,,,,51
+Malaise and fatigue,R53,ICD10,271795006,SNOMED,,,,52
+Mouth ulcers (Recurrent oral aphthae),K12.0,ICD10,26284000,SNOMED,,,,53
+Mucosal lesion,,,427752005,SNOMED,1.0,1.0,,54
+Muscle aches (Myalgia),M79.1,ICD10,68962001,SNOMED,,,,55
+Muscle weakness,M62.81,ICD10,26544005,SNOMED,,,,56
+Nasal congestion,R09.81,ICD10,68235000,SNOMED,,,1.0,57
+Nausea or vomiting,R11,ICD10,16932000,SNOMED,,,,58
+Pain during urination (Dysuria),R30.0,ICD10,49650001,SNOMED,,,,59
+Pallor,R23.1,ICD10,398979000,SNOMED,,,,60
+Palpitations,R00.2,ICD10,80313002,SNOMED,,,,61
+Paresthesia of skin,R20.2,ICD10,91019004,SNOMED,,,,62
+Problems swallowing or chewing (Dysphagia),R13.10,ICD10,40739000,SNOMED,,,,63
+Pruritus,L29,ICD10,418363000,SNOMED,,,,64
+Rapid heart beat/Pulse (Tachycardia),R00.0,ICD10,3424008,SNOMED,,,,65
+Rashes or skin lesions,R21,ICD10,271807003,SNOMED,,,,66
+Retention of urine,R33.9,ICD10,267064002,SNOMED,,,,67
+Shortness of breath (Dyspnea),R06.0,ICD10,267036007,SNOMED,,,1.0,68
+Skin lesion,,,,SNOMED,1.0,,,69
+Skin rash,R21,ICD10,271807003,SNOMED,,1.0,,70
+Sleep disorder,F51.9,ICD10,39898005,SNOMED,,,,71
+Sneezing,R06.7,ICD10,162367006,SNOMED,,,1.0,72
+Sore throat (Pain in throat),R07.0,ICD10,267102003,SNOMED,,,1.0,73
+Speech disturbances,R47.9,ICD10,29164008,SNOMED,,,,74
+Spontaneous bruising (Spontaneous ecchymoses),R23.3,ICD10,161887000,SNOMED,,,,75
+Sweating (hyperhidrosis),R61,ICD10,312230002,SNOMED,,,,76
+Swollen lymph nodes (Enlarged lymph nodes),R59.9,ICD10,30746006,SNOMED,,,,77
+Tinnitus,H93.1,ICD10,60862001,SNOMED,,,,78
+Tremor,R25.1,ICD10,26079004,SNOMED,,,,79
+Urinary incontinence,R32,ICD10,165232002,SNOMED,,,,80
+Visual disturbances,H53,ICD10,63102001,SNOMED,,,,81
+Wheezing,R06.2,ICD10,56018004,SNOMED,,,1.0,82
