@@ -38,7 +38,7 @@ Pneumonic plague (Yersinia pestis),38976008,SNOMED,,,,,,,,,,,,36
 Respiratory syncytial virus infection (RSV),55256001,SNOMED,,,,,,,,,,,,37
 Severe Acute paediatric hepatitis ,37871000 | Acute hepatitis (disorder) |24484000 | Severe (severity modifier) (qualifier value) |255398004 | Childhood (qualifier value) |,SNOMED,,,,,,,,,,,,38
 Severe acute respiratory syndrome (SARS-not COVID-19),398447004,SNOMED,,,,,,,,,,,,39
-Severe fever with thrombocytopaenia syndrome (SFTS),722401001,SNOMED,,,,,,,1,,,,,40
+Severe fever with thrombocytopaenia syndrome (SFTS) (Bandavirus disease),722401001,SNOMED,,,,,,,1,,,,,40
 Undefined influenza,155559006,SNOMED,,,,,,,,,,,,41
 Rift Valley Fever,6142004,SNOMED,,,,,,,1,,,,,42
 Community acquired pneumonia,233604007,SNOMED,,,,,,,,,1,,,43
@@ -48,3 +48,4 @@ Viral ARI,312118003,SNOMED,,,,,,,,,1,,,46
 Chikungunya,37109004,SNOMED,,,,,,,,1,,,1,47
 Zika,373722009,SNOMED,,,,,,,,1,,,,48
 Malaria,61462000,SNOMED,,,,,,,1,,,,,49
+Chapare haemorrhagic fever,716584007,SNOMED,,,,,,,1,,,,,50
