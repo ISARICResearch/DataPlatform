@@ -1,6 +1,6 @@
 ﻿Disease,Code,Library,Selected,preset_ARChetype Disease CRF_Covid,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Disease CRF_Mpox,preset_ARChetype Disease CRF_Mpox Pregnancy and Paediatric,preset_ARChetype Disease CRF_H5Nx,preset_ARChetype Syndromic CRF_VHF,preset_ARChetype Syndromic CRF_Arbovirus,preset_ARChetype Syndromic CRF_ARI,preset_ARChetype Syndromic CRF_Encephalitis,preset_ARChetype Disease CRF_Chikungunya,Value
 Adenovirus,,,,,,,,1,,,,,,1
-Andes virus infection (hantavirus),359761005,SNOMED,,,,,,,1,,,,,2
+Andes virus infection (hantavirus),359761005,SNOMED,,,,,,,,,,,,2
 Argentine haemorrhagic fever (Junin virus),58868000,SNOMED,,,,,,,1,,,,,3
 Avian influenza A H7N9/ H5N1/ H5N8/ H7N7 ,NEW CODE (609444009 | Influenza A virus subtype H7N9 (organism) |772827006 | Influenza A virus subtype H5N1 (organism) |715346008 | Influenza A virus subtype H7N7 (organism) |708527000 | Influenza A virus subtype H5N8 (organism) |,,,,,,,1,,,,,,4
 Bacterial infection,87628006,SNOMED,1,1,1,1,1,1,1,,1,1,,5
