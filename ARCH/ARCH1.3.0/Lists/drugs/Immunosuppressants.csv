@@ -1,28 +1,28 @@
-﻿Drugs,Code,Library,Selected,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Syndromic CRF_Arbovirus,preset_ARChetype Syndromic CRF_ARI,preset_ARChetype Syndromic CRF_Encephalitis,Value
-Abatacept, L04AA24  , ATC     , ,,,,,1
-Adalimumab (Humira), L04AB04  , ATC     ,1,,,,1,2
-Alemtuzumab, L04AA34, ATC     ,,1,1,,,3
-Anakinra,L04AC03,ATC,,,,,1,4
-Azathioprine, L04AX01  , ATC     ,1,1,1,1,1,5
-Basiliximab, L04AC02, ATC     , ,,,,,6
-Belatacept, L04AA28, ATC     , ,,,,1,7
-Ciclosporin, L04AD01  , ATC     ,1,1,1,,1,8
-Etanercept, L04AB01  , ATC     ,1,,,,1,9
-Everolimus, L04AA18  , ATC     , ,1,1,,,10
-Infliximab, L04AB02  , ATC     ,1,,,,1,11
-Leflunomide, L04AA13  , ATC     , ,,,,1,12
-Mercaptopurine,L01BB02,ATC,,,,,1,13
-Methotrexate,L04AX03  ,ATC     ,1,1,1,1,1,14
-Mycophenolate Mofetil, L04AA06  , ATC     ,1,1,1,,1,15
-Mycophenolic Acid, L04AA06, ATC     ,1,,,1,1,16
-Natalizumab, L04AA23  , ATC     , ,,,,,17
-Nivolumab,L01FF02,ATC,,,,,,18
-Rituximab,L01FA01 , ATC     ,1,1,1,1,1,19
-Sarilumab, L04AC14, ATC     ,1,,,,1,20
-Secukinumab, L04AC10  , ATC     , ,,,,,21
-Sirolimus, L04AA10  , ATC     , ,1,1,,1,22
-Tacrolimus, L04AD02  , ATC     ,1,1,1,,1,23
-Thalidomide,L04AX02,ATC,,,,,,24
-Tocilizumab, L04AC07  , ATC     ,1,,,1,1,25
-Ustekinumab, L04AC05  , ATC     , ,,,,,26
-Vedolizumab, L04AA33, ATC     , ,,,,,27
+﻿Drugs,Code,Library,Selected,preset_ARChetype Disease CRF_Dengue,preset_ARChetype Syndromic CRF_Arbovirus,preset_ARChetype Syndromic CRF_ARI,preset_ARChetype Syndromic CRF_VHF,preset_ARChetype Syndromic CRF_Encephalitis,Value
+Abatacept, L04AA24  , ATC     , ,,,,,,1
+Adalimumab (Humira), L04AB04  , ATC     ,1,,,,,1,2
+Alemtuzumab, L04AA34, ATC     ,,1,1,,1,,3
+Anakinra,L04AC03,ATC,,,,,,1,4
+Azathioprine, L04AX01  , ATC     ,1,1,1,1,1,1,5
+Basiliximab, L04AC02, ATC     , ,,,,,,6
+Belatacept, L04AA28, ATC     , ,,,,,1,7
+Ciclosporin, L04AD01  , ATC     ,1,1,1,,1,1,8
+Etanercept, L04AB01  , ATC     ,1,,,,,1,9
+Everolimus, L04AA18  , ATC     , ,1,1,,,,10
+Infliximab, L04AB02  , ATC     ,1,,,,,1,11
+Leflunomide, L04AA13  , ATC     , ,,,,,1,12
+Mercaptopurine,L01BB02,ATC,,,,,,1,13
+Methotrexate,L04AX03  ,ATC     ,1,1,1,1,,1,14
+Mycophenolate Mofetil, L04AA06  , ATC     ,1,1,1,,,1,15
+Mycophenolic Acid, L04AA06, ATC     ,1,,,1,,1,16
+Natalizumab, L04AA23  , ATC     , ,,,,,,17
+Nivolumab,L01FF02,ATC,,,,,,,18
+Rituximab,L01FA01 , ATC     ,1,1,1,1,,1,19
+Sarilumab, L04AC14, ATC     ,1,,,,,1,20
+Secukinumab, L04AC10  , ATC     , ,,,,,,21
+Sirolimus, L04AA10  , ATC     , ,1,1,,1,1,22
+Tacrolimus, L04AD02  , ATC     ,1,1,1,,1,1,23
+Thalidomide,L04AX02,ATC,,,,,,,24
+Tocilizumab, L04AC07  , ATC     ,1,,,1,,1,25
+Ustekinumab, L04AC05  , ATC     , ,,,,,,26
+Vedolizumab, L04AA33, ATC     , ,,,,,,27
