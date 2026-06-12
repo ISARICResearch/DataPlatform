@@ -115,10 +115,13 @@ deleted_variables_df = deleted_records.rename(columns={
     'Answer Options': 'Answer Options (Old)'
 })
 
+old_renamed = list(deleted_variables - deleted_variables_corrected)
+new_renamed = list(added_variables - added_variables_corrected)
+
 # For variable replacements
 variable_replacements_df = pd.DataFrame({
-    f"Old Variable ({old_version})": renamed_old_variables,
-    f"New Variable ({new_version})": renamed_new_variables
+    f"Old Variable ({old_version})": old_renamed,
+    f"New Variable ({new_version})": new_renamed
 })
 
 # 6. Create the final Excel
@@ -128,6 +131,6 @@ with pd.ExcelWriter(final_corrected_output_path) as writer:
     added_variables_df.to_excel(writer, index=False, sheet_name='Added Variables')
     deleted_variables_df.to_excel(writer, index=False, sheet_name='Deleted Variables')
     content_changes_df.to_excel(writer, index=False, sheet_name='Content Changes')
-  
+    variable_replacements_df.to_excel(writer, index=False, sheet_name='Variable Replacements')
 
 print(f"Excel file generated at: {final_corrected_output_path}")
