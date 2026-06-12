@@ -8,8 +8,8 @@ Created on Mon Apr 28 13:02:16 2025
 import pandas as pd
 
 # Define versions
-old_version = '1.2.2'
-new_version = '1.2.3'
+old_version = '1.3.0'
+new_version = '1.4.0'
 
 # Load the two files
 file_old = f"C:/Users/sduquevallejo/OneDrive - Nexus365/Documents/GitHub/DataPlatform/ARCH/ARCH{old_version}/ARCH.csv"  # OLD file
@@ -128,6 +128,6 @@ with pd.ExcelWriter(final_corrected_output_path) as writer:
     added_variables_df.to_excel(writer, index=False, sheet_name='Added Variables')
     deleted_variables_df.to_excel(writer, index=False, sheet_name='Deleted Variables')
     content_changes_df.to_excel(writer, index=False, sheet_name='Content Changes')
-    variable_replacements_df.to_excel(writer, index=False, sheet_name='Variable Replacements')
+  
 
 print(f"Excel file generated at: {final_corrected_output_path}")
